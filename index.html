@@ -26,7 +26,11 @@
         <header id="encabezado">
 
             <!-- ENCABEZADO -->
-            <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top justify-content-between">
+            <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top d-flex justify-content-sm-between">
+
+              <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
 
                 <a class="navbar-brand" href="#">No Limits</a>
 
@@ -44,14 +48,22 @@
                 </div>
                 <!-- </div> -->
 
-                <form class="form-inline">
+                <!-- <form class="form-inline d-block d-sm-none">
                     <input class="form-control mr-sm-2" type="text" placeholder="Usuario">
                     <input class="form-control mr-sm-2" type="text" placeholder="Contraseña">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Ingresar</button>
-                </form>
+                </form> -->
 
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <div class="collapse navbar-collapse" id="navbarSearch">
+                  <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar enfermedad">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">B</button>
+                  </form>
+                </div>
+
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search">
+                    <span class="glyphicon glyphicon-search"></span>
+                    <!-- <span class="glyphicon glyphicon-search" aria-hidden="true"></span> -->
                 </button>
             </nav>
         </header>
