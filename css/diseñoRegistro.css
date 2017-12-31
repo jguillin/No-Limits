@@ -1,0 +1,43 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+
+}
+body{
+	background-image: url(medical.jpg);
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	padding: 8%;
+}
+.titulo-1{
+	margin-bottom: 16px;
+	font-weight: bold;
+	font-size: 22px;
+	text-align: center;
+	color: #336666;
+}
+.titulo{
+	margin-bottom: 10px;
+	font-weight: bold;
+	font-size: 22px;
+	text-align: center;
+	color: #8a8c8b;
+}
+.contenedor{
+	width: 34%;
+	margin: 0 auto;
+	background-color: #F3F3F3;
+	padding: 2rem;
+	border-top: solid 3rem #336666; 
+	box-sizing: border-box;
+	height: auto;
+	border-radius: 5px;
+	justify-content: space-around;
+}
+.registro{
+	background: #00CC33;
+	color: white;
+	margin: 0 auto;
+	height: auto;
