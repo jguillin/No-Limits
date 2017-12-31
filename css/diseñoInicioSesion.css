@@ -26,4 +26,30 @@ body{
 	border-radius: 5px;
 	padding: 2rem;
 	justify-content: space-around;
-
+}
+input{
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	margin-bottom: 15px;
+	padding: 10px 0;
+	font-size: 16px;
+	border-radius: 4px;
+	border: 1px solid #CCCCCC;
+}
+.acceder{
+	background: #3399FF;
+	color: white;
+	margin: 0 auto;
+	height: auto;
+	padding: 10px 40px;
+	border-radius: 10px;
+	font-size: 16px;
+	opacity: 0.8;
+}
+.acceder:active{
+	transform: scale(1.04);
+}
+.acceder:hover{
+	opacity: 1;
+}
