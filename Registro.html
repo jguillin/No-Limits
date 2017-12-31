@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<title>Mi pagina</title>
+</head>
+<body>
+	<form>
+
+		<legend>Crea tu cuenta</legend>
+		Nombres:
+		<input type="text" name="nombreUsuario" placeholder="ej: John Matías" required>
+		Apellidos:
+		<input type="text" name="apellidoUsuario" placeholder="ej: Silva Bermeo" required>
+		<br/>
+		Fecha de nacimiento:
+		<input type="number" name="diaNacimiento" placeholder="Día" required>
+		<select name="mesNacimiento">
+			<option value="0">Mes</option>
+			<option value="1">Enero</option>
+			<option value="2">Febrero</option>
+			<option value="3">Marzo</option>
+			<option value="4">Abril</option>
+			<option value="5">Mayo</option>
+			<option value="6">Junio</option>
+			<option value="7">Julio</option>
+			<option value="8">Agosto</option>
+			<option value="9">Septiembre</option>
+			<option value="10">Octubre</option>
+			<option value="11">Noviembre</option>
+			<option value="12">Diciembre</option>
+		</select>
+		<input type="number" name="anioNacimiento" placeholder="Año" required>
+		<br/>
+		Correo:
+		<input type="mail" name="email" placeholder="usuario@ejemplo.com" required>
+		<br/>
+		Contraseña:
+		<input type="password" name="clave" placeholder="..." required>
+		<br/>
+		<input type="submit" value="Registrarse">
+
+	</form>
+</body>
+</html>
