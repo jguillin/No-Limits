@@ -1,0 +1,29 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+body{
+	background-image: url(fondo.jpg);
+	justify-content: center;
+	display: flex;
+	min-height: 10vh;
+	height: 100%;
+	padding: 8%;
+}
+.titulo{
+	margin-bottom: 20px;
+	font-weight: bold;
+	font-size: 22px;
+	text-align: center;
+	color: #336666;
+}
+.formulario{
+	margin: 0 auto;
+	width: 35%;
+	height: 0 auto;
+	background-color: #F3F3F3;
+	border-radius: 5px;
+	padding: 2rem;
+	justify-content: space-around;
+
