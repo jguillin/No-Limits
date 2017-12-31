@@ -26,11 +26,11 @@
         <header id="encabezado">
 
             <!-- ENCABEZADO -->
-            <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top d-flex justify-content-sm-between">
+            <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top d-flex justify-content-sm-between">
 
-              <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <!-- <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
-              </button>
+              </button> -->
 
                 <a class="navbar-brand" href="#">No Limits</a>
 
@@ -38,11 +38,20 @@
 
                 <div class="collapse navbar-collapse" id="navbarNav" role="navigation">
                     <ul class="navbar-nav justify-content-end">
-                        <li class="nav-item active">
+                        <!-- <li class="nav-item active">
                             <a class="nav-link" href="#about">Acerca de <span class="sr-only">(current)</span></a>
+                        </li> -->
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="#">Contacto</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Noticias</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contacto</a>
+                            <a class="nav-link" href="#">Inciclopedia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Recursos</a>
                         </li>
                     </ul>
                 </div>
@@ -62,11 +71,33 @@
                 </div>
 
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search">
-                    <span class="glyphicon glyphicon-search"></span>
-                    <!-- <span class="glyphicon glyphicon-search" aria-hidden="true"></span> -->
+                  <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
             </nav>
         </header>
+
+        <nav class="navbar-light bg-light fixed-bottom d-sm-none" id="mobileMenu">
+          <ul class="navbar-nav d-flex flex-row text-center">
+            <a class="col nav-link" href="#">
+              <i class="icon-home m-auto text-primary"></i>
+            </a>
+            <a class="col nav-link" href="#">
+              <i class="icon-bubbles m-auto"></i>
+            </a>
+            <a class="col nav-link" href="#">
+              <i class="icon-book-open m-auto"></i>
+            </a>
+            <a class="col nav-link" href="#">
+              <!-- <i class="icon-docs m-auto text-primary"></i> -->
+              <i class="fa fa-newspaper-o m-auto" aria-hidden="true"></i>
+            </a>
+            <a class="col nav-link" href="login.html">
+              <i class="icon-user m-auto"></i>
+            </a>
+          </ul>
+        </nav>
+
+
 
         <!-- Masthead -->
         <header class="masthead text-white text-center mt-5">
@@ -102,28 +133,28 @@
               <div class="col-lg-4">
                 <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                   <div class="features-icons-icon d-flex">
-                    <i class="icon-screen-desktop m-auto text-primary"></i>
+                    <i class="icon-book-open m-auto text-primary"></i>
                   </div>
-                  <h3>Fully Responsive</h3>
-                  <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
+                  <h3>Inciclopedia</h3>
+                  <p class="lead mb-0">Una basta selección de información sobre enfermedades raras a tu disposición.<br><br><a href="#">Ver más...</a></p>
                 </div>
               </div>
               <div class="col-lg-4">
                 <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                   <div class="features-icons-icon d-flex">
-                    <i class="icon-layers m-auto text-primary"></i>
+                    <i class="icon-bubbles m-auto text-primary"></i>
                   </div>
-                  <h3>Bootstrap 4 Ready</h3>
-                  <p class="lead mb-0">Featuring the latest build of the new Bootstrap 4 framework!</p>
+                  <h3>Foro</h3>
+                  <p class="lead mb-0">Pregunta y responde sobre todas las dudas que tengas.<br><br><a href="#">Ver más...</a></p>
                 </div>
               </div>
               <div class="col-lg-4">
                 <div class="features-icons-item mx-auto mb-0 mb-lg-3">
                   <div class="features-icons-icon d-flex">
-                    <i class="icon-check m-auto text-primary"></i>
+                    <i class="icon-directions m-auto text-primary"></i>
                   </div>
-                  <h3>Easy to Use</h3>
-                  <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
+                  <h3>Recursos</h3>
+                  <p class="lead mb-0">Enlaces a centros de ayuda especializada y más información.<br><br><a href="#">Ver más...</a></p>
                 </div>
               </div>
             </div>
