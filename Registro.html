@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+	<title>Registro</title>
 	<meta charset="utf-8"/>
-	<title>Mi pagina</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="diseñoRegistro.css">
 </head>
+
 <body>
-	<form>
-
-		<legend>Crea tu cuenta</legend>
-		Nombres:
-		<input type="text" name="nombreUsuario" placeholder="ej: John Matías" required>
-		Apellidos:
-		<input type="text" name="apellidoUsuario" placeholder="ej: Silva Bermeo" required>
-		<br/>
-		Fecha de nacimiento:
-		<input type="number" name="diaNacimiento" placeholder="Día" required>
-		<select name="mesNacimiento">
-			<option value="0">Mes</option>
-			<option value="1">Enero</option>
-			<option value="2">Febrero</option>
-			<option value="3">Marzo</option>
-			<option value="4">Abril</option>
-			<option value="5">Mayo</option>
-			<option value="6">Junio</option>
-			<option value="7">Julio</option>
-			<option value="8">Agosto</option>
-			<option value="9">Septiembre</option>
-			<option value="10">Octubre</option>
-			<option value="11">Noviembre</option>
-			<option value="12">Diciembre</option>
-		</select>
-		<input type="number" name="anioNacimiento" placeholder="Año" required>
-		<br/>
-		Correo:
-		<input type="mail" name="email" placeholder="usuario@ejemplo.com" required>
-		<br/>
-		Contraseña:
-		<input type="password" name="clave" placeholder="..." required>
-		<br/>
-		<input type="submit" value="Registrarse">
-
-	</form>
+	<div class="contenedor">
+	<h1 class="titulo-1"> Formulario de registro</h1>
+		<form class="formulario">
+			<h1 class="titulo"><legend >Crea tu cuenta</legend></h1>
+			<br/>
+			Nombres:
+			<input type="text" name="nombresUsuario" placeholder="Nombres" required>
+			Apellidos:
+			<input type="text" name="apellidosUsuario" placeholder="Apellidos" required>
+			<br/>
+			Fecha de nacimiento:
+			<input type="date" name="diaNacimiento" required>
+			<br/>
+			Sexo:
+			<br/>
+			<select class="seleccionar" name="genero" required>
+				<option value="0">Seleccionar</option>
+				<option value="1">Hombre</option>
+				<option value="2">Mujer</option>
+			</select>
+			<br/>
+			Correo:
+			<input type="email" name="email" placeholder="usuario@ejemplo.com" required>
+			<br/>
+			Contraseña:
+			<input type="password" name="clave" placeholder="**********" required>
+			<br/>
+			Confirmar contraseña:
+			<input type="password" name="confirmarclave" placeholder="**********" required>
+			<br/><br/>
+			<input class="registro" type="submit" value="Registrar" >
+		</form>
+	</div>
 </body>
 </html>
