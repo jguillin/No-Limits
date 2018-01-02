@@ -26,11 +26,11 @@ body{
 	color: #8a8c8b;
 }
 .contenedor{
-	width: 34%;
+	width: 80%;
 	margin: 0 auto;
 	background-color: #F3F3F3;
 	padding: 2rem;
-	border-top: solid 3rem #336666; 
+	border-top: solid 3rem #336666;
 	box-sizing: border-box;
 	height: auto;
 	border-radius: 5px;

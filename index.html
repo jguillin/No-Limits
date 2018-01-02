@@ -23,85 +23,72 @@
     </head>
 
     <body>
-        <header id="encabezado">
+        <header class="container-fluid" id="encabezado">
 
             <!-- ENCABEZADO -->
-            <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top d-flex justify-content-sm-between">
-
-              <!-- <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button> -->
-
-                <a class="navbar-brand collapse" href="#">No Limits</a>
+            <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top justify-content-between">
+                <a class="navbar-brand" href="#">No Limits</a>
 
                 <!-- MENU PRINCIPAL -->
 
-                <div class="collapse navbar-collapse" id="navbarNav" role="navigation">
-                    <ul class="navbar-nav justify-content-end">
+                <div class="navbar navbar-expand-sm" id="navbarNav" role="navigation">
+                    <ul class="navbar-nav d-none d-sm-flex">
                         <!-- <li class="nav-item active">
                             <a class="nav-link" href="#about">Acerca de <span class="sr-only">(current)</span></a>
                         </li> -->
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="#">Contacto</a>
-                        </li> -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Noticias</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Inciclopedia</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="#">Noticias</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="#">Recursos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Ingresar</a>
                         </li>
                     </ul>
                 </div>
-                <!-- </div> -->
 
-                <!-- <form class="form-inline d-block d-sm-none">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Usuario">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Contraseña">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Ingresar</button>
-                </form> -->
+                <!-- BARRA DE BÚSQUEDA -->
 
-                <div class="collapse navbar-collapse" id="navbarSearch">
-                  <form class="navbar-form" role="search">
-                    <input class="form-control mr-sm-2 border-top-0 border-left-0 border-right-0" type="search" placeholder="Buscar enfermedad">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">B</button>
+                <button class="navbar-toggler navbar-toggler-right d-flex d-md-none" type="button" data-toggle="collapse" data-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+
+                <div class="collapse navbar-collapse col-12 col-md-4 col-xl-5" id="navbarSearch">
+                  <form class="form-inline my-0 w-100 justify-content-center justify-content-md-end" role="search">
+                    <input class="form-control border-top-0 border-left-0 border-right-0 col-9" type="search" placeholder="Buscar enfermedad">
+                    <button class="btn btn-outline-success my-2 my-sm-0 ml-2 col-2 col-sm-1 col-md-2 col-xl-1" type="submit">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
                   </form>
                 </div>
 
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
             </nav>
         </header>
 
         <!-- MENÚ MÓVIL -->
-        <nav class="navbar-light bg-light fixed-bottom d-sm-none" id="mobileMenu">
+        <nav class="navbar-light bg-light fixed-bottom d-block d-sm-none" id="mobileMenu">
           <ul class="navbar-nav d-flex flex-row text-center">
             <a class="col nav-link" href="#">
-              <!-- <i class="icon-home m-auto text-primary"></i> -->
               <i class="fa fa-home fa-2x m-auto text-primary" aria-hidden="true"></i>
             </a>
             <a class="col nav-link" href="#">
-              <!-- <i class="icon-bubbles m-auto"></i> -->
               <i class="fa fa-comments-o fa-2x m-auto" aria-hidden="true"></i>
             </a>
             <a class="col nav-link" href="#">
-              <!-- <i class="icon-book-open m-auto"></i> -->
               <i class="fa fa-book fa-2x m-auto" aria-hidden="true"></i>
             </a>
             <a class="col nav-link" href="#">
-              <!-- <i class="icon-docs m-auto text-primary"></i> -->
               <i class="fa fa-newspaper-o fa-2x m-auto" aria-hidden="true"></i>
             </a>
             <a class="col nav-link" href="login.html">
-              <!-- <i class="icon-user m-auto"></i> -->
               <i class="fa fa-user-circle-o fa-2x m-auto" aria-hidden="true"></i>
             </a>
           </ul>
         </nav>
-
 
 
         <!-- Masthead -->
@@ -112,17 +99,19 @@
               <div class="col-xl-6 mx-auto">
                 <h1 class="mb-5">¡No estás solo, aquí siempre estamos para apoyarte!</h1>
               </div>
-              <div class="col-xl-6 mx-auto">
-                <h1 class="mb-5">¡No estás solo, aquí siempre estamos para apoyarte!</h1>
-              </div>
               <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
                 <form>
                   <div class="form-row">
-                    <div class="col-12 col-md-9 mb-2 mb-md-0">
+                    <!-- <div class="col-12 col-md-9 mb-2 mb-md-0">
                       <input type="email" class="form-control form-control-lg" placeholder="Buscar">
-                    </div>
-                    <div class="col-12 col-md-3">
-                      <button type="submit" class="btn btn-lg btn-success">¡Buscar!</button>
+                    </div> -->
+                    <div class="col-12 ">
+                      <a class="btn btn-lg btn-outline-success" href="signup.html">¡Registrate ya!</a>
+                      <!-- <button type="submit" class="btn btn-lg btn-success d-inline d-sm-none">XS</button>
+                      <button type="submit" class="btn btn-lg btn-success d-none d-sm-inline d-md-none">SM</button>
+                      <button type="submit" class="btn btn-lg btn-success d-none d-md-inline d-lg-none">MD</button>
+                      <button type="submit" class="btn btn-lg btn-success d-none d-lg-inline d-xl-none">LG</button>
+                      <button type="submit" class="btn btn-lg btn-success d-none d-xl-inline">XL</button> -->
                     </div>
                   </div>
                 </form>

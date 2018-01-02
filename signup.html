@@ -1,45 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-	<title>Registro</title>
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="css/diseñoRegistro.css">
-</head>
+	<head>
+		<title>Registro</title>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/diseñoRegistro.css">
 
-<body>
-	<div class="contenedor">
-	<h1 class="titulo-1"> Formulario de registro</h1>
-		<form class="formulario">
-			<h1 class="titulo"><legend >Crea tu cuenta</legend></h1>
-			<br/>
-			Nombres:
-			<input type="text" name="nombresUsuario" placeholder="Nombres" required>
-			Apellidos:
-			<input type="text" name="apellidosUsuario" placeholder="Apellidos" required>
-			<br/>
-			Fecha de nacimiento:
-			<input type="date" name="diaNacimiento" required>
-			<br/>
-			Sexo:
-			<br/>
-			<select class="seleccionar" name="genero" required>
-				<option value="0">Seleccionar</option>
-				<option value="1">Hombre</option>
-				<option value="2">Mujer</option>
-			</select>
-			<br/>
-			Correo:
-			<input type="email" name="email" placeholder="usuario@ejemplo.com" required>
-			<br/>
-			Contraseña:
-			<input type="password" name="clave" placeholder="**********" required>
-			<br/>
-			Confirmar contraseña:
-			<input type="password" name="confirmarclave" placeholder="**********" required>
-			<br/><br/>
-			<input class="registro" type="submit" value="Registrar" >
-		</form>
-	</div>
-</body>
+		<!-- Bootstrap core CSS -->
+		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Custom fonts for this template -->
+		<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+		<!-- Custom styles for this template -->
+		<link href="css/landing-page.min.css" rel="stylesheet">
+
+
+	</head>
+
+	<body>
+		<div class="contenedor">
+		<h1 class="titulo-1"> Formulario de registro</h1>
+			<form class="formulario">
+				<h1 class="titulo"><legend >Crea tu cuenta</legend></h1>
+				<br/>
+				Nombres:
+				<input type="text" name="nombresUsuario" placeholder="Nombres" required>
+				Apellidos:
+				<input type="text" name="apellidosUsuario" placeholder="Apellidos" required>
+				<br/>
+				Fecha de nacimiento:
+				<input type="date" name="diaNacimiento" required>
+				<br/>
+				Sexo:
+				<br/>
+				<select class="seleccionar" name="genero" required>
+					<option value="0">Seleccionar</option>
+					<option value="1">Hombre</option>
+					<option value="2">Mujer</option>
+				</select>
+				<br/>
+				Correo:
+				<input type="email" name="email" placeholder="usuario@ejemplo.com" required>
+				<br/>
+				Contraseña:
+				<input type="password" name="clave" placeholder="**********" required>
+				<br/>
+				Confirmar contraseña:
+				<input type="password" name="confirmarclave" placeholder="**********" required>
+				<br/><br/>
+				<input class="registro" type="submit" value="Registrar" >
+				<a href="login.html">Inicia Sesión</a>
+			</form>
+		</div>
+
+
+		<!-- MENÚ MÓVIL -->
+		<nav class="navbar-light bg-light fixed-bottom d-sm-none" id="mobileMenu">
+			<ul class="navbar-nav d-flex flex-row text-center">
+				<a class="col nav-link" href="index.html">
+					<!-- <i class="icon-home m-auto text-primary"></i> -->
+					<i class="fa fa-home fa-2x m-auto" aria-hidden="true"></i>
+				</a>
+				<a class="col nav-link" href="#">
+					<!-- <i class="icon-bubbles m-auto"></i> -->
+					<i class="fa fa-comments-o fa-2x m-auto" aria-hidden="true"></i>
+				</a>
+				<a class="col nav-link" href="#">
+					<!-- <i class="icon-book-open m-auto"></i> -->
+					<i class="fa fa-book fa-2x m-auto" aria-hidden="true"></i>
+				</a>
+				<a class="col nav-link" href="#">
+					<!-- <i class="icon-docs m-auto text-primary"></i> -->
+					<i class="fa fa-newspaper-o fa-2x m-auto" aria-hidden="true"></i>
+				</a>
+				<a class="col nav-link" href="login.html">
+					<!-- <i class="icon-user m-auto"></i> -->
+					<i class="fa fa-user-circle-o fa-2x m-auto text-primary" aria-hidden="true"></i>
+				</a>
+			</ul>
+		</nav>
+	</body>
 </html>
