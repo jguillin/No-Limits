@@ -5,11 +5,28 @@ ul.paginacion {
 }
 ul.paginacion li {display: inline;}
 
+/*bordes azules de los botones*/
 ul.paginacion li a {
     color: dimgrey;
     float: left;
     padding: 8px 16px;
     text-decoration: none;
     transition: background-color .3s;
-    border: 1px solid #3399FF; /*bordes azules*/
+    border: 1px solid #3399FF; 
 }
+ /*Redondea los bordes del primer boton*/
+.paginacion li:first-child a {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+ /*Redondea los bordes del último boton*/
+.paginacion li:last-child a {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+ul.paginacion li a.active {
+    background-color: cadetblue;
+    color: white;
+    border: 1px solid #3366FF;
+}
+ul.paginacion li a:hover:not(.active) {background-color: forestgreen;}
