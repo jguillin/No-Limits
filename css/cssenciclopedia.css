@@ -13,6 +13,7 @@ ul.paginacion li a {
     text-decoration: none;
     transition: background-color .3s;
     border: 1px solid #3399FF; 
+    font-size: 16px;
 }
  /*Redondea los bordes del primer boton*/
 .paginacion li:first-child a {
@@ -29,4 +30,6 @@ ul.paginacion li a.active {
     color: white;
     border: 1px solid #3366FF;
 }
-ul.paginacion li a:hover:not(.active) {background-color: forestgreen;}
+ul.paginacion li a:hover:not(.active) {background-color: cadetblue; color: white;}
+
+div.alinear {text-align: center;}
