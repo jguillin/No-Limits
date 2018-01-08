@@ -4,7 +4,13 @@
 	font-family: sans-serif;
 }
 body{
-	background: url("../img/fondo-I-sesión.jpg");
+	background: url("../img/fondo-I-sesion.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: black;
+    
 	justify-content: center;
 	/* display: flex; */
 	min-height: 10vh;
