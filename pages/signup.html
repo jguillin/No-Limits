@@ -66,10 +66,10 @@
 		<div class="contenedor col-md-10 col-lg-8 col-xl-6 mt-5 mb-5 pt-4 pb-5">
 		<h1 class="titulo-1"> Formulario de registro</h1>
 			<form>
-				<h1 class="titulo"><legend >Crea tu cuenta</legend></h1>
+				<h1 class="titulo">Crea tu cuenta</h1>
 
 				<div class="form-group">
-					<label for="registroNombre">Nombres:</label>
+					<label>Nombres:</label>
 					<input type="text" name="nombresUsuario" id="registroUsuario" placeholder="Nombre" required>
 				</div>
 				<div class="form-group">
@@ -78,14 +78,13 @@
 				</div>
 				<div class="form-group">
 					<label for="registroNacimiento">Fecha de nacimiento:</label>
-					<input type="date" name="diaNacimiento" id="registroNacimiento" required>
+					<input name="diaNacimiento" id="registroNacimiento" required>
 				</div>
 				<div class="form-group">
 					<label for="registroSexo">Sexo:</label>
 					<select class="form-control" name="genero" id="registroSexo" required>
-						<option value="0">Seleccionar</option>
-						<option value="1">Hombre</option>
-						<option value="2">Mujer</option>
+						<option value="male">Hombre</option>
+						<option value="female">Mujer</option>
 					</select>
 				</div>
 				<div class="form-group">
