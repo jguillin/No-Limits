@@ -10,7 +10,7 @@ body{
     background-attachment: fixed;
     background-size: cover;
     background-color: black;
-    
+
 	justify-content: center;
 	/* display: flex; */
 	min-height: 10vh;
@@ -25,9 +25,9 @@ body{
 	color: #336666;
 }
 .formulario{
-	margin: 0 auto;
+	margin: auto;
 	/* width: 80%; */
-	height: 0 auto;
+	height: auto;
 	background-color: #F3F3F3;
     opacity: 0.88;
 	border-radius: 5px;
