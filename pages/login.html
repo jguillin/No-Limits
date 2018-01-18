@@ -2,6 +2,7 @@
 <html lang="es">
 	<head>
 		<title>No Limits - Iniciar sesión</title>
+        <link rel="shortcut icon" type="image/png"  href="../img/logo/icono1.png">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,7 +18,7 @@
 
 		<!-- Custom styles for this template -->
 		<link href="../css/landing-page.min.css" rel="stylesheet">
-
+        <link href="../css/csslogo.css" rel="stylesheet">
 
 
 	</head>
@@ -28,7 +29,7 @@
 
 				<!-- ENCABEZADO -->
 				<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top justify-content-between">
-						<a class="navbar-brand" href="../index.html">No Limits</a>
+					  <a href="index.html"><img src="../img/logo/logo1.png" alt="No Limits" class="logo" ></a>
 
 						<!-- MENU PRINCIPAL -->
 
@@ -73,9 +74,9 @@
 				<div class="row ">
 					<form class="formulario col-10 col-md-6 mx-auto">
 						<h1 class="titulo">Inicio de sesión</h1>
-						<input type="text" name="usuario" placeholder=" &#128100; Usuario" required>
+						<input type="text" name="usuario" placeholder=" &#128100; Usuario" required autofocus >
 						<br/>
-						<input type="password" name="clave" placeholder=" &#128273; Contraseña" required>
+						<input type="password" tabindex="2" name="clave" placeholder=" &#128273; Contraseña" required>
 						<br/><br/>
 						<input class="acceder" type="submit" value="Iniciar sesión">
 						<small id="emailHelp" class="form-text text-muted">¿No tienes cuenta?,

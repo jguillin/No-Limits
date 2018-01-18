@@ -3615,7 +3615,7 @@ tbody.collapse.show {
   -ms-flex-pack: justify;
       justify-content: space-between;
 }
-
+/* Aqui poner imagen*/
 .navbar-brand {
   display: inline-block;
   padding-top: 0.3125rem;
