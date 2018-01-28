@@ -15,11 +15,11 @@
 <?php
 	if(isset($_SESSION['MiSesion'])){
 	echo "<p> Hola usuario:(" . $_SESSION['MiSesion']. ")
-			[<a href='admin.php'>Atras</a>]";
+			[<a href='manageBD.php'>Atras</a>]";
 	echo "(" . $_SESSION['MiSesion']. ")<br/><h2>
 			<a href='insertar.php'>Nuevo Usuario</a></h2>";
 	
-	include_once("DemoCollector.php");
+	include_once("usersCollector.php");
 
 $id =1;
 

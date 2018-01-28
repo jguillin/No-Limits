@@ -25,7 +25,7 @@ echo "id:".$id_demo." actualizando a:".$nombre." </br>";
 
 ?>
 
-<div><a href="index_demo.php">Volver al Inicio</a></div>
+<div><a href="showDataBD.php">Volver al Inicio</a></div>
 </div>
 
 </body>

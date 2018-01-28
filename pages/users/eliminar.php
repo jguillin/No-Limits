@@ -17,15 +17,15 @@ $nombre=$_GET["nombre"];
 
 echo "Edicion en proceso..... </br>";
 
-include_once("DemoCollector.php");
+include_once("usersCollector.php");
 $DemoCollectorObj = new DemoCollector();
 $DemoCollectorObj->deleteDemo($id);
 
-echo "valor id:".htmlspecialchars($id)." se borro " .$nombre." </br>";
+echo "valor id:".$id." se borro " .$nombre." </br>";
 
 ?>
 
-<div><a href="index_demo.php">Volver al Inicio</a></div>
+<div><a href="showDataBD.php">Volver al Inicio</a></div>
 </div>
 
 </body>

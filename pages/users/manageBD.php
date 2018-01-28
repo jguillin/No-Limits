@@ -15,12 +15,12 @@
 <?php
 	if(isset($_SESSION['MiSesion'])){
 	echo "<p> Hola usuario:(" . $_SESSION['MiSesion']. ")
-			[<a href='salir.php'>Salir</a>]";
+			[<a href='signOff.php'>Salir</a>]";
 	
 ?>
 
 	</br></br>
-	<a href='admin-users.php'>Users</a></br>
+	<a href='showDataBD.php'>Users</a></br>
 	<a href='#'>Diseases</a></br>
 	<a href='#'>Communities</a></br>
 	<a href='#'>Articles</a></br>
