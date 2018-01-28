@@ -1,6 +1,6 @@
 <?php
 
-class Demo
+class User
 {
     private $userId;
     private $user;
@@ -24,26 +24,26 @@ class Demo
        $this->rol = $rol;
      }
 
-    
+
      function setUserId($userId){
        $this->userId = $userId;
-     } 
+     }
      function getUserId(){
        return $this->userId;
-     } 
+     }
 
-     
+
      function setUser($user){
        $this->user = $user;
-     } 
+     }
      function getUser(){
        return $this->user;
-     } 
+     }
 
 
      function setPassword($password){
        $this->password = $password;
-     } 
+     }
      function getPassword(){
        return $this->password;
      }
@@ -51,7 +51,7 @@ class Demo
 
      function setName($name){
        $this->name = $name;
-     } 
+     }
      function getName(){
        return $this->name;
      }
@@ -59,7 +59,7 @@ class Demo
 
      function setLastname($lastname){
        $this->lastname = $lastname;
-     } 
+     }
      function getLastname(){
        return $this->lastname;
      }
@@ -67,7 +67,7 @@ class Demo
 
      function setBirthdate($birthdate){
        $this->birthdate = $birthdate;
-     } 
+     }
      function getBirthdate(){
        return $this->birthdate;
      }
@@ -75,7 +75,7 @@ class Demo
 
      function setEmail($email){
        $this->email = $email;
-     } 
+     }
      function getEmail(){
        return $this->email;
      }
@@ -83,7 +83,7 @@ class Demo
 
      function setSex($sex){
        $this->sex = $sex;
-     } 
+     }
      function getSex(){
        return $this->sex;
      }
@@ -91,12 +91,11 @@ class Demo
 
      function setRol($rol){
        $this->rol = $rol;
-     } 
+     }
      function getRol(){
        return $this->rol;
      }
 
 }
 
-?> 
-
+?>
