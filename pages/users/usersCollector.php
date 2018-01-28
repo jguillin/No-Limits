@@ -17,33 +17,33 @@ class DemoCollector extends Collector
     return $arrayDemo;        
   }
 
-
+  //Edita un usuario
   function showDemo($id){
-    $row = self::$db->getRows("SELECT * FROM demo where id_demo= ? ", array("{$id}"));
+    $row = self::$db->getRows("SELECT * FROM users where user_id= ? ", array("{$id}"));
 
-    $ObjDemo = new Demo($row[0]{'id_demo'},$row[0]{'nombre'});
+    $ObjDemo = new Demo($row[0]{'user_id'},$row[0]{'user'},$row[0]{'password'},$row[0]{'name'},$row[0]{'lastname'},$row[0]{'birthdate'},$row[0]{'email'},$row[0]{'sex'},$row[0]{'rol'});
     return $ObjDemo;
 
 }
-/*
+
 //Actualiza un usuario
 function updateDemo($id,$nombre){
-  $insertrow = self::$db->updateRow("UPDATE public.demo SET nombre= ? WHERE id_demo= ?", array("{$nombre}", $id));
+  $insertrow = self::$db->updateRow("UPDATE public.users SET nombre= ? WHERE user_id= ?", array("{$nombre}", $id));
 
 }
-*/
+
 //Elimina un usuario
 function deleteDemo($id){
   $deleterow = self::$db->deleteRow("DELETE FROM public.users WHERE user_id= ?", array("{$id}"));
 
 }
-/*
+
 //Crea un nuevo usuario
 function createDemo($nombre){
-  $insertarrow = self::$db->insertRow("INSERT INTO public.demo (nombre) VALUES (?)", array ("{$nombre}"));
+  $insertarrow = self::$db->insertRow("INSERT INTO public.users (nombre) VALUES (?)", array ("{$nombre}"));
 
 }
-*/
+
 }
 
 ?>
