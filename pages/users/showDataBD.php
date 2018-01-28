@@ -27,9 +27,9 @@ $DemoCollectorObj = new DemoCollector();
 
 foreach ($DemoCollectorObj->showDemos() as $c){
   echo "<div>";
-  echo $c->getIdDemo() . "  && " .$c->getNombre();
-  echo "<a href='editar.php?id=".$c->getIdDemo()."'> Editar </a>";
-  echo "<a href='eliminar.php?id=".$c->getIdDemo()."'>Eliminar</a>";                                     
+  echo $c->getUserId() . "  && " .$c->getUser(). "  && " .$c->getPassword(). "  && " .$c->getName(). "  && " .$c->getLastname(). "  && " .$c->getBirthdate(). "  && " .$c->getEmail(). "  && " .$c->getSex(). "  && " .$c->getRol();
+  echo "<a href='editar.php?id=".$c->getUserId()."'> Editar </a>";
+  echo "<a href='eliminar.php?id=".$c->getUserId()."'>Eliminar</a>";                                     
   echo "</div>"; 
 }
 
