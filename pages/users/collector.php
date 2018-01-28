@@ -5,7 +5,7 @@ include_once('dataBase.php');
 define("DB_HOST", "localhost");
 define("DB_USER", "postgres");
 define("DB_PASS", "usuario");
-define("DB_NAME", "clase1");
+define("DB_NAME", "BD-No-Limits");
 
 
 class Collector extends dataBase
