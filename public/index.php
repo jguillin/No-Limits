@@ -1,3 +1,4 @@
 <?php
-include_once("home.html");
+  include ('../src/View.php');
+  View::render("home");
 ?>

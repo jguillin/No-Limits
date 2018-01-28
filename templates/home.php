@@ -1,27 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+    <?php
 
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-
-        <title>No Limits - Inicio</title>
-        <link rel="shortcut icon" type="image/png"  href="img/logo/icono1.png">
-        <!-- Bootstrap core CSS -->
-        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Custom fonts for this template -->
-        <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="lib/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
-        <!-- Custom styles for this template -->
-        <link href="css/landing-page.min.css" rel="stylesheet">
-        <link href="css/csslogo.css" rel="stylesheet">
-
-    </head>
+      $pageTitle = "No Limits - Inicio";
+      View::render('head');
+    ?>
 
     <body>
         <header class="container-fluid" id="encabezado">
@@ -69,37 +53,10 @@
             </nav>
         </header>
 
-        <!-- MENÚ MÓVIL -->
-        <nav class="navbar-light bg-light fixed-bottom d-block d-sm-none" id="mobileMenu">
-          <ul class="navbar-nav d-flex flex-row text-center">
-            <li class="col nav-item">
-              <a class="nav-link" href="#">
-                <i class="fa fa-home fa-2x m-auto text-primary" aria-hidden="true"></i>
-              </a>
-            </li>
-            <li class="col nav-item">
-            <a class="nav-link" href="pages/post.html">
-              <i class="fa fa-newspaper-o fa-2x m-auto" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li class="col nav-item">
-            <a class="nav-link" href="pages/forum.html">
-              <i class="fa fa-comments-o fa-2x m-auto" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li class="col nav-item">
-            <a class="nav-link" href="pages/enciclopedia.html">
-              <i class="fa fa-book fa-2x m-auto" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li class="col nav-item">
-            <a class="nav-link" href="pages/login.html">
-              <i class="fa fa-user-circle-o fa-2x m-auto" aria-hidden="true"></i>
-            </a>
-          </li>
-        </ul>
-        </nav>
+        <?php
 
+          View::render('mobileMenu');
+        ?>
 
         <!-- Masthead -->
         <header class="masthead text-white text-center mt-5">
