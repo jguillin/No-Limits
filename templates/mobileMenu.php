@@ -8,22 +8,22 @@
       </a>
     </li>
     <li class="col nav-item">
-    <a class="nav-link" href="../templates/post.html">
+    <a class="nav-link" href="/noticias">
       <i class="fa fa-newspaper-o fa-2x m-auto" aria-hidden="true"></i>
     </a>
   </li>
   <li class="col nav-item">
-    <a class="nav-link" href="../templates/forum.html">
+    <a class="nav-link" href="/foro">
       <i class="fa fa-comments-o fa-2x m-auto" aria-hidden="true"></i>
     </a>
   </li>
   <li class="col nav-item">
-    <a class="nav-link" href="../templates/enciclopedia.html">
+    <a class="nav-link" href="/enciclopedia">
       <i class="fa fa-book fa-2x m-auto" aria-hidden="true"></i>
     </a>
   </li>
   <li class="col nav-item">
-    <a class="nav-link" href="../templates/login.html">
+    <a class="nav-link" href="/login">
       <i class="fa fa-user-circle-o fa-2x m-auto" aria-hidden="true"></i>
     </a>
   </li>
