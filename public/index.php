@@ -1,4 +1,7 @@
 <?php
+
+  // session_start();
+
   include ('../src/View.php');
 
 
@@ -8,17 +11,21 @@
       break;
     case '/noticias':
       View::render("noticias");
+      break;
     case '/comunidades':
       View::render("comunidades");
+      break;
     case '/enciclopedia':
       View::render("enciclopedia");
       break;
     case '/login':
         View::render("login_form");
+      break;
     case '/signup':
         View::render("signup_form");
+      break;
     default:
-      echo "ERROR 404";
+        View::render("error");
       break;
   }
 ?>

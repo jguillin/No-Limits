@@ -1,12 +1,11 @@
-<head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Fernando Balladares & Jimmy Guillin">
-    <title><?php echo $pageTitle;?></title>
-    <link rel="shortcut icon" type="image/png"  href="img/logo/icono1.png">
+    <link rel="shortcut icon" type="image/png"  href="/img/logo/icono1.png">
     <!-- Bootstrap core CSS -->
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -16,5 +15,3 @@
     <!-- Custom styles for this template -->
     <link href="css/landing-page.min.css" rel="stylesheet">
     <link href="css/csslogo.css" rel="stylesheet">
-
-</head>

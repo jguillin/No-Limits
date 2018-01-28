@@ -5,8 +5,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>Página no encontrada</title>
-        <meta http-equiv="refresh" content="2; URL=../index.html">
+        <title>ERROR 404 - Página no encontrada</title>
+        <meta http-equiv="refresh" content="2; URL=/">
         <meta name="keywords" content="automatic redirection">
 
     </head>
@@ -16,7 +16,7 @@
       <h3>Página no encontrada</h3>
       Si tu navegador no redirecciona automáticamente,
       haz clic aquí
-      <a href="../index.html">Inicio</a>.
+      <a href="/">Inicio</a>.
     </body>
 
 </html>
