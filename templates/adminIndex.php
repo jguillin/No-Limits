@@ -3,20 +3,20 @@
 ?>
 
 <!doctype html>
-<html lang="en-US">
+<html lang="es">
 <head>
 	<meta charset="utf-8">
-	<title>Administrador</title>
+	<title>Administración</title>
 </head>
 
 <body>
-	
+
 
 <?php
-	if(isset($_SESSION['MiSesion'])){
-	echo "<p> Hola usuario:(" . $_SESSION['MiSesion']. ")
-			[<a href='signOff.php'>Salir</a>]";
-	
+	if(isset($_SESSION['user']) && $_SESSION['rol']=='a'){
+	echo "<p> Hola usuario:(" . $_SESSION['user']. ")
+			[<a href='/logout'>Salir</a>]";
+
 ?>
 
 	</br></br>
@@ -30,13 +30,12 @@
 	<a href='#'>Responses</a></br>
 	<a href='#'>Supporting_organizations</a>
 	<a href='#'>Threads</a></br>
-	 
 
-<?php } else { ?>
 
-<br/>
-error con la sesion
-<?php } ?>
+<?php } else {
+
+        header("Location: /error");
+      } ?>
 
 </body>
 </html>

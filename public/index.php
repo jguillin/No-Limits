@@ -19,12 +19,22 @@
       View::render("enciclopedia");
       break;
     case '/login':
-        View::render("login_form");
+      View::render("login_form");
+      break;
+    case '/login_validation':
+      require_once('../src/login_validation.php');
+      break;
+    case '/logout':
+      require_once('../src/logout.php');
       break;
     case '/signup':
-        View::render("signup_form");
+      View::render("signup_form");
+      break;
+    case '/admin':
+      View::render("adminIndex");
       break;
     default:
+      echo "ERROR";
         View::render("error");
       break;
   }

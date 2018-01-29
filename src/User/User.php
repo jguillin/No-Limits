@@ -3,7 +3,7 @@
 class User
 {
     private $userId;
-    private $user;
+    private $username;
     private $password;
     private $name;
     private $lastname;
@@ -12,9 +12,9 @@ class User
     private $sex;
     private $rol;
 
-     function __construct($userId, $user, $password, $name, $lastname, $birthdate, $email, $sex, $rol) {
+     function __construct($userId, $username, $password, $name, $lastname, $birthdate, $email, $sex, $rol) {
        $this->userId = $userId;
-       $this->user = $user;
+       $this->username = $username;
        $this->password = $password;
        $this->name = $name;
        $this->lastname = $lastname;
@@ -33,11 +33,11 @@ class User
      }
 
 
-     function setUser($user){
-       $this->user = $user;
+     function setUsername($username){
+       $this->username = $username;
      }
-     function getUser(){
-       return $this->user;
+     function getUsername(){
+       return $this->username;
      }
 
 
