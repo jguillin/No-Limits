@@ -7,20 +7,13 @@
 
 <?php
 
-$user = $_POST["user"];
-$password= $_POST["password"];
-$name= $_POST["name"];
-$lastname= $_POST["lastname"];
-$birthday= $_POST["birthday"];
-$email= $_POST["email"];
-$sex= $_POST["sex"];
-$rol= $_POST["rol"];
+$thread = $_POST["thread"];
 
-echo 'Usuario ' .htmlspecialchars($user) . '!';
-include_once("usersCollector.php");
+echo 'Thread ' .htmlspecialchars($thread) . '!';
+include_once("ThreadCollector.php");
 
 $DemoCollectorObj = new DemoCollector();
-$ObjDemo = $DemoCollectorObj->createDemo($user, $password, $name, $lastname, $birthday, $email, $sex, $rol);
+$ObjDemo = $DemoCollectorObj->createDemo($thread);
 
 echo "Los datos se han guardado correctamente</br>";
 

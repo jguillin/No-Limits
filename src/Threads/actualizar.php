@@ -27,7 +27,7 @@ $rol= $_POST["rol"];
 
 echo "Actualizando... </br>";
 
-include_once("usersCollector.php");
+include_once("ThreadCollector.php");
 $DemoCollectorObj = new DemoCollector();
 $DemoCollectorObj->updateDemo($userId, $user, $password, $name, $lastname, $birthday, $email, $sex, $rol);
 
