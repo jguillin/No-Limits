@@ -1,17 +1,17 @@
 <?php
 
-include_once('User.php');
+include_once('ArtComment.php');
 include_once('../src/Collector.php');
 
 class UserCollector extends Collector
 {
 
   function showUsers() {
-    $rows = self::$db->getRows("SELECT * FROM users");
+    $rows = self::$db->getRows("SELECT * FROM article_comments");
 
     $arrayDemo= array();
     foreach ($rows as $c){
-      $aux = new User($c{'user_id'},$c{'username'},$c{'password'},$c{'name'},$c{'lastname'},$c{'birthdate'},$c{'email'},$c{'sex'},$c{'rol'});
+      $aux = new User($c{'comment_id'},$c{'article_id'},$c{'user_id'},$c{'content'},$c{'parentComment_id'},$c{'post_datetime'});
       array_push($arrayDemo, $aux);
     }
     return $arrayDemo;
@@ -19,16 +19,16 @@ class UserCollector extends Collector
 
   //Edita un usuario
   function showUser($id){
-    $row = self::$db->getRows("SELECT * FROM users where user_id= ? ", array("{$id}"));
+    $row = self::$db->getRows("SELECT * FROM article_comments where comment_id= ? ", array("{$id}"));
 
-    $ObjDemo = new User($row[0]{'user_id'},$row[0]{'username'},$row[0]{'password'},$row[0]{'name'},$row[0]{'lastname'},$row[0]{'birthdate'},$row[0]{'email'},$row[0]{'sex'},$row[0]{'rol'});
+    $ObjDemo = new User($row[0]{'comment_id'},$row[0]{'article_id'},$row[0]{'user_id'},$row[0]{'content'},$row[0]{'parentComment_id'},$row[0]{'post_datetime'});
     return $ObjDemo;
 
 }
 
   function loginUser($user, $password){
     try {
-      $row = self::$db->getRows("SELECT * FROM users where username=? AND password=MD5(?)", array("{$user}", "{$password}"));
+      $row = self::$db->getRows("SELECT * FROM article_comments where username=? AND password=MD5(?)", array("{$user}", "{$password}"));
       if (!empty($row)){
         return true;
       }
@@ -41,13 +41,13 @@ class UserCollector extends Collector
 
   //Actualiza un usuario
   function updateUser($id,$nombre){
-    $insertrow = self::$db->updateRow("UPDATE public.users SET nombre= ? WHERE user_id= ?", array("{$nombre}", $id));
+    $insertrow = self::$db->updateRow("UPDATE public.users SET nombre= ? WHERE comment_id= ?", array("{$nombre}", $id));
 
   }
 
   //Elimina un usuario
   function deleteUser($id){
-    $deleterow = self::$db->deleteRow("DELETE FROM public.users WHERE user_id= ?", array("{$id}"));
+    $deleterow = self::$db->deleteRow("DELETE FROM public.users WHERE comment_id= ?", array("{$id}"));
 
   }
 

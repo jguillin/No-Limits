@@ -26,7 +26,7 @@
 		<label>Content</label>
 		<input type="text" name="content" required /></br></br>
 		<label>Last Mod Datetime</label>
-		<input type="text" name="lastmode" autofocus required /></br>
+		<input type="text" name="lastmod" autofocus required /></br>
 		</br></br>
         	<button type="submit">Guardar</button>
         </br></br>

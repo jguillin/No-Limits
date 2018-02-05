@@ -7,20 +7,17 @@
 
 <?php
 
-$user = $_POST["user"];
-$password= $_POST["password"];
-$name= $_POST["name"];
-$lastname= $_POST["lastname"];
-$birthday= $_POST["birthday"];
-$email= $_POST["email"];
-$sex= $_POST["sex"];
-$rol= $_POST["rol"];
+$user = $_POST["articleId"];
+$password= $_POST["userId"];
+$name= $_POST["content"];
+$lastname= $_POST["parentComment"];
+$birthday= $_POST["postdate"];
 
 echo 'Usuario ' .htmlspecialchars($user) . '!';
-include_once("usersCollector.php");
+include_once("ArtCommentCollector.php");
 
 $DemoCollectorObj = new DemoCollector();
-$ObjDemo = $DemoCollectorObj->createDemo($user, $password, $name, $lastname, $birthday, $email, $sex, $rol);
+$ObjDemo = $DemoCollectorObj->createDemo($articleId, $userId, $content, $parentComment, $postdate);
 
 echo "Los datos se han guardado correctamente</br>";
 

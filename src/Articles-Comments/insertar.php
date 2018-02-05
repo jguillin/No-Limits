@@ -15,22 +15,16 @@
 
 <form action="guardarDemo.php" method="post">
 	<fieldset>
-		<label>Usuario</label>
-		<input type="text" name="user" autofocus required /></br>
-		<label>Contraseña</label>
-		<input type="text" name="password" required /></br></br>
-		<label>Nombre</label>
-		<input type="text" name="name" required /></br>
-		<label>Apellido</label>
-		<input type="text" name="lastname" required /></br></br>
-		<label>Fecha de nacimiento</label>
-		<input type="text" name="birthdate" required /></br>
-		<label>Email</label>
-		<input type="text" name="email" required /></br></br>
-		<label>Sex</label>
-		<input type="text" name="sex" required /></br>
-		<label>Rol</label>
-		<input type="text" name="rol" required /></br></br>
+		<label>Article Id</label>
+		<input type="text" name="articleId" autofocus required /></br>
+		<label>User Id</label>
+		<input type="text" name="userId" required /></br></br>
+		<label>Content</label>
+		<input type="text" name="content" required /></br>
+		<label>Parent Comment Id</label>
+		<input type="text" name="parentComment" required /></br></br>
+		<label>Post Datetime</label>
+		<input type="text" name="postdate" required /></br>
 		</br></br>
         	<button type="submit">Guardar</button>
         </br></br>
