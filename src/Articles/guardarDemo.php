@@ -7,20 +7,18 @@
 
 <?php
 
-$user = $_POST["user"];
-$password= $_POST["password"];
-$name= $_POST["name"];
-$lastname= $_POST["lastname"];
-$birthday= $_POST["birthday"];
-$email= $_POST["email"];
-$sex= $_POST["sex"];
-$rol= $_POST["rol"];
+$author = $_POST["author"];
+$postdatetime= $_POST["postdatetime"];
+$title= $_POST["title"];
+$imageurl= $_POST["imageurl"];
+$content= $_POST["content"];
+$lastmod= $_POST["lastmod"];
 
-echo 'Usuario ' .htmlspecialchars($user) . '!';
-include_once("usersCollector.php");
+echo 'Article ' .htmlspecialchars($user) . '!';
+include_once("ArticleCollector.php");
 
 $DemoCollectorObj = new DemoCollector();
-$ObjDemo = $DemoCollectorObj->createDemo($user, $password, $name, $lastname, $birthday, $email, $sex, $rol);
+$ObjDemo = $DemoCollectorObj->createDemo($author, $postdatetime, $title, $imageurl, $content, $lastmod);
 
 echo "Los datos se han guardado correctamente</br>";
 
