@@ -20,7 +20,7 @@
 ?>
 
 	</br></br>
-	<a href='showDataBD.php'>Users</a></br>
+	<a href='/admin/users'>Users</a></br>
 	<a href='#'>Diseases</a></br>
 	<a href='#'>Communities</a></br>
 	<a href='#'>Articles</a></br>

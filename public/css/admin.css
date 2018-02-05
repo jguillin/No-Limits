@@ -1,0 +1,455 @@
+*{
+    margin: 0px;
+    padding: 0px;
+        box-sizing: border-box;
+/*    min-height: 100%;*/
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+/*    font-family: Helvetica, Arial, sans-serif;*/
+    text-align: center;
+}
+
+div{
+/*    box-sizing: border-box;*/
+}
+
+h1 {
+    border-bottom: 3px solid #cc9900;
+    color: #996600;
+    font-size: 30px;
+}
+
+h2{
+    color: #333333;
+    padding: 10px;
+}
+
+button{
+    cursor: pointer;
+    font-family: inherit;
+}
+
+header{
+    text-align: left;
+    padding: 15px;
+    position: fixed;
+    display: inline-block;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    width: 100%;
+    height: 80px;
+    /*background-color: cadetblue;*/
+    background-color: #282c2f;
+    z-index: 3;
+    box-shadow: 0px 5px 10px 0px grey;
+}
+
+
+#nav-toggle{
+    left: 0px;
+    font-size: 25px;
+    padding: 0px 10px 3px 10px;
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#logo{
+    color: white;
+    text-decoration: none;
+}
+
+#logo img{
+    display: inline-block;
+    width: 50px;
+    vertical-align: middle;
+}
+
+#logo span{
+    font-size: 30px;
+    padding: 10px;    
+    vertical-align: middle;
+}
+
+
+#loggedUser{
+    display: none;
+    float: right;
+    vertical-align: middle;
+}
+
+.loggedUserPicture{
+    width: 50px;
+    vertical-align: middle;
+}
+
+.loggedUserName, .loggedUserType{
+    vertical-align: middle;
+    margin: 10px;
+    color: white;
+}
+
+#loggedUser button{
+    vertical-align: middle;
+    font-size: 12pt;
+    padding: 5px 10px;
+}
+
+#menuLogoutBtn{
+    display: none;
+    font-size: 12pt;
+    padding: 5px 10px;
+    margin: 10px;
+}
+
+#loggedUser-menu{
+    display: none;
+    padding: 10px;
+    border-bottom: 2px solid white;
+    /*border-top: 1px solid white;*/
+}
+
+#loggedUser-menu .loggedUserPicture{
+    margin: auto;
+    width: 75px;
+}
+
+#loggedUser-menu .loggedUserName{
+    display: block;
+}
+
+#menuContainer{
+    text-align: center;
+    position: fixed;
+    visibility: hidden;
+    display: block;
+    left: 0px;
+    width: 200px;
+    /*height: auto;*/
+    margin-top: 80px;
+    /*background-color: darkseagreen;*/
+    background-color: #282c2f;
+    box-shadow: 5px 5px 10px 0px grey;
+    z-index: 3;
+    overflow: hidden;
+    padding-right: 17px;
+}
+
+#menuContainer:hover {
+    overflow-y: scroll;
+    padding-right: 0px;
+}
+
+nav{
+    width: 100%;
+    position: relative;
+    border-bottom: 2px solid white;
+}
+
+nav.userMenu{
+    display: none;
+    text-align: left;
+}
+
+ul{ 
+    list-style: none;
+}
+
+li{
+    border-bottom: 1px solid grey;
+    list-style: none;
+    list-style-image: none;
+}
+
+ul li a, ul li span{
+    font-size: 20px;
+    display: block;
+    width: auto;
+    padding: 10px 20px 10px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+ul li a:hover, #nav-toggle:hover{
+    color: #282c2f;
+    background-color: #42c0fb;
+}
+
+
+
+#content{
+    position: absolute;
+    display: flex;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    text-align: center;
+    padding: 20px;
+    margin-top: 80px;
+    overflow: auto;
+    /*background-color: antiquewhite;*/
+    align-items: center;
+}
+
+
+.form-Container{
+    width: 100%;
+    position: relative;
+    text-align: left;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #c9c9c9;
+    border-width: 1px 1px 2px 1px;
+    box-shadow: 0px 1px 0px #d7d7d7;
+    background-color: white;
+    overflow: auto;
+    max-height: 100%;
+}
+
+#loginFormContainer{
+    
+}
+
+#loginForm{
+/*    position: relative;*/
+}
+
+.form label, .form-TextBox{
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    /*border: none;*/
+}
+
+#loginForm input{
+    
+}
+
+.form-button{
+    border: none;
+    padding: 10px 20px;
+    color: #FFF;
+    background-color: #ED6347;
+}
+
+.form-button:hover{
+    background-color: #C12B05;
+}
+
+#loginButton{
+    margin-top: 20px;
+    width: 100%;
+    font-size: 16pt;
+}
+
+#popUpFormContainer button{
+    display: inline-block;
+    margin: 20px 0px 20px 10px;
+    width: 40%;
+    font-size: 16pt;
+    float: right;
+}
+
+#cancelButton{
+    color: #1E1E1E;
+    background-color: #CFCFCF;
+}
+
+#cancelButton:hover{
+    color: white;
+    background-color: #929292;
+}
+
+
+/*------------------------------------------------------------------------*/
+
+.CRUDContainer{
+    margin: auto;
+    
+    /*VERTICAL*/
+    width: 100%;
+}
+
+table{
+    padding: 0px;
+/*    border: 1px solid #d0d0d0;*/
+    border-collapse: collapse;
+    color: #333333;
+    margin: 20px auto 20px auto;
+    text-align: center;
+    
+    /*VERTICAL*/
+    width: 100%;
+    max-width: 100%;
+}
+
+thead{
+    /*VERTICAL*/
+    display: none;
+}
+
+tr{
+    /*VERTICAL*/
+    display: table-row;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+th {
+    border: 1px solid #555555;
+    color: white;
+    padding: 6px;
+    background-color: #555555;
+}
+
+td {
+    /*border: 1px solid #d0d0d0;*/
+    border-collapse: collapse;    
+    padding: 6px;
+    color: #333333;
+    
+    /*VERTICAL*/
+    display: block;
+    text-align: left;
+}
+
+.table-cell-label, .table-cell-content, td img{
+    /*VERTICAL*/
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.table-cell-label{
+    /*VERTICAL*/
+    width: 30%;
+    padding-right: 10px;
+}
+
+.table-cell-content{
+    /*VERTICAL*/
+    max-width: 67%;
+}
+
+
+table tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+table tr:nth-child(even) {
+    background-color: white;
+}
+
+table tr:nth-child(odd):hover, table tr:nth-child(even):hover{
+    background-color: #a3f7bd;
+}
+
+/*------------------------------------------------------------------------*/
+
+
+.CRUD-button{
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 4px grey;
+    /*font-size: 1.3em;*/
+    height: 50px;
+}
+
+.CRUD-button img{
+    width: 30px;
+    height: 30px;
+}
+
+.edit{
+    background-color: #2196f3;
+    color: white;
+}
+
+.edit:hover{
+    background-color: #0064c8;
+}
+
+.delete{
+    background-color: #ED6347;
+}
+
+.delete:hover{
+    background-color: #C12B05;
+}
+
+.insert{
+    background-color: #4cba6f;
+}
+
+.insert:hover{
+    background-color: #32a064;
+}
+
+/*
+footer{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 10px;
+    background-color: gray;
+}
+*/
+
+#popUp{
+    width:100%;
+    height:100%;
+    opacity:.95;
+    top:0;
+    left:0;
+    display:none;
+    position:fixed;
+    background-color:#313131;
+    overflow:auto;
+    z-index: 10;
+    padding: 20px;
+}
+
+@media only screen and (min-width: 481px){
+    .form-Container{
+        width: 440px;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .CRUDContainer{
+        width: auto;
+    }
+    table{
+        width: auto;
+        max-width: none;
+    }
+    thead{
+        display: table-header-group;
+    }
+    td{
+        display: table-cell;
+        text-align: center;
+    }
+    .table-cell-label{
+        display: none;
+    }
+    .table-cell-content{
+        max-width: none;
+    }
+}
+
+
+@media only screen and (min-width: 960px){
+    #menuContainer{
+        box-shadow: none;
+        height: 100%;
+    }
+}

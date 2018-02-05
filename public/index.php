@@ -33,6 +33,9 @@
     case '/admin':
       View::render("adminIndex");
       break;
+    case '/admin/users':
+      require_once('../src/User/showUsers.php');
+      break;
     default:
       echo "ERROR";
         View::render("error");
