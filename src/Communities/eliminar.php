@@ -13,11 +13,11 @@ session_start();
 
 <?php
 $id=$_GET["id"];
-$nombre=$_GET["nombre"];
+$community=$_GET["community"];
 
 echo "Edicion en proceso..... </br>";
 
-include_once("usersCollector.php");
+include_once("CommunityCollector.php");
 $DemoCollectorObj = new DemoCollector();
 $DemoCollectorObj->deleteDemo($id);
 
