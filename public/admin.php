@@ -23,6 +23,10 @@
       case '/admin/users/new': case '/admin/users/new/':
         require_once('../src/User/userFormNew.php');
         break;
+      // case preg_match('~/admin/users/.*~', $name) ? true : false:
+      //   echo $name;
+        // require_once('../src/User/userFormNew.php');
+        // break;
       default:
         // echo "ERROR";
           View::render("error");
