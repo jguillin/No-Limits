@@ -19,11 +19,15 @@
 
   $UserCollectorObj = new UserCollector();
 
-  echo "<br><a class='CRUD-button insert' href='/admin/users/new'>
-              <img src='/img/icons/new_icon.png'>
-            </a><br><br>";
+?>
+  <br>
+  <form action='/admin/users/new' method="POST">
+    <button class='CRUD-button insert' type='submit'>
+      <img src='/img/icons/new_icon.png'>
+    </button>
+  </form><br><br>
 
-  echo "<table>
+  <table>
       <thead>
         <tr>
           <th>userId</th>
@@ -38,7 +42,9 @@
           <th>Acciones</th>
         </tr>
       </thead>
-      <tbody>";
+      <tbody>
+
+<?php
 
   foreach ($UserCollectorObj->showUsers() as $c){
     echo "<tr>";
@@ -54,8 +60,12 @@
     echo "<td>
             <b class='table-cell-label'>Acciones</b>
             <span>
-              <a class='CRUD-button edit' href='/admin/user/". $c->getUserId() ."'><img src='/img/icons/edit_icon.png'></a>
-              <a class='CRUD-button delete' href='/admin/user/". $c->getUserId() ."'><img src='/img/icons/delete_icon.png'></a>
+              <form class='CRUD-button-container' action='/admin/users/". $c->getUserId() ."' method='GET'>
+                <button class='CRUD-button edit' type='submit'><img src='/img/icons/edit_icon.png'></button>
+              </form>
+              <form class='CRUD-button-container' action='/admin/users/". $c->getUserId() ."' method='DELETE'>
+                <button class='CRUD-button delete' type='submit'><img src='/img/icons/delete_icon.png'></button>
+              </form>
           </td>";
 
     echo "</tr>";
@@ -66,6 +76,6 @@
   } else {
     header("Location: /error");
   } ?>
-
+<!-- <a class='CRUD-button edit' href='/admin/user/". $c->getUserId() ."'><img src='/img/icons/edit_icon.png'></a> -->
 </body>
 </html>

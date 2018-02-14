@@ -13,8 +13,11 @@
       case '/admin/':
         View::render("adminIndex");
         break;
-      case '/admin/users':
+      case '/admin/users': case '/admin/users/':
         require_once('../src/User/showUsers.php');
+        break;
+      case '/admin/users/new': case '/admin/users/new/':
+        require_once('../src/User/userFormNew.php');
         break;
       default:
         // echo "ERROR";
