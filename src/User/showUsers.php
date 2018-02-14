@@ -19,7 +19,9 @@
 
   $UserCollectorObj = new UserCollector();
 
-  echo "<br><a href='form_new_user.php'>Crear nuevo Usuario</a><br><br>";
+  echo "<br><a class='CRUD-button insert' href='/admin/users/new'>
+              <img src='/img/icons/new_icon.png'>
+            </a><br><br>";
 
   echo "<table>
       <thead>
@@ -32,7 +34,7 @@
           <th>birthdate</th>
           <th>email</th>
           <th>sex</th>
-          <th>rol</th>
+          <th>role</th>
           <th>Acciones</th>
         </tr>
       </thead>
@@ -40,17 +42,21 @@
 
   foreach ($UserCollectorObj->showUsers() as $c){
     echo "<tr>";
-    echo "<td>". $c->getUserId() ."</td>";
-    echo "<td>". $c->getUsername() ."</td>";
-    echo "<td>". $c->getPassword() ."</td>";
-    echo "<td>". $c->getName() ."</td>";
-    echo "<td>". $c->getLastname() ."</td>";
-    echo "<td>". $c->getBirthdate() ."</td>";
-    echo "<td>". $c->getEmail() ."</td>";
-    echo "<td>". $c->getSex() ."</td>";
-    echo "<td>". $c->getRol() ."</td>";
+    echo "<td><b class='table-cell-label'>userId</b><span class='table-cell-content'>". $c->getUserId() ."</span></td>";
+    echo "<td><b class='table-cell-label'>username</b><span class='table-cell-content'>". $c->getUsername() ."</span></td>";
+    echo "<td><b class='table-cell-label'>password</b><span class='table-cell-content'>". $c->getPassword() ."</span></td>";
+    echo "<td><b class='table-cell-label'>name</b><span class='table-cell-content'>". $c->getName() ."</span></td>";
+    echo "<td><b class='table-cell-label'>lastname</b><span class='table-cell-content'>". $c->getLastname() ."</span></td>";
+    echo "<td><b class='table-cell-label'>birthdate</b><span class='table-cell-content'>". $c->getBirthdate() ."</span></td>";
+    echo "<td><b class='table-cell-label'>email</b><span class='table-cell-content'>". $c->getEmail() ."</span></td>";
+    echo "<td><b class='table-cell-label'>sex</b><span class='table-cell-content'>". $c->getSex() ."</span></td>";
+    echo "<td><b class='table-cell-label'>role</b><span class='table-cell-content'>". $c->getRol() ."</span></td>";
     echo "<td>
-    <a href='../Temperaturas/show_temperaturas.php?ciudadID=". $c->getUserId() ."'>Ver Climas</a></td>";
+            <b class='table-cell-label'>Acciones</b>
+            <span>
+              <a class='CRUD-button edit' href='/admin/user/". $c->getUserId() ."'><img src='/img/icons/edit_icon.png'></a>
+              <a class='CRUD-button delete' href='/admin/user/". $c->getUserId() ."'><img src='/img/icons/delete_icon.png'></a>
+          </td>";
 
     echo "</tr>";
   }

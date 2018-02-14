@@ -72,13 +72,13 @@ header{
 
 #logo span{
     font-size: 30px;
-    padding: 10px;    
+    padding: 10px;
     vertical-align: middle;
 }
 
 
 #loggedUser{
-    display: none;
+/*    display: none;*/
     float: right;
     vertical-align: middle;
 }
@@ -108,7 +108,7 @@ header{
 }
 
 #loggedUser-menu{
-    display: none;
+/*    display: none;*/
     padding: 10px;
     border-bottom: 2px solid white;
     /*border-top: 1px solid white;*/
@@ -152,11 +152,11 @@ nav{
 }
 
 nav.userMenu{
-    display: none;
+/*    display: none;*/
     text-align: left;
 }
 
-ul{ 
+ul{
     list-style: none;
 }
 
@@ -213,7 +213,7 @@ ul li a:hover, #nav-toggle:hover{
 }
 
 #loginFormContainer{
-    
+
 }
 
 #loginForm{
@@ -229,7 +229,7 @@ ul li a:hover, #nav-toggle:hover{
 }
 
 #loginForm input{
-    
+
 }
 
 .form-button{
@@ -272,7 +272,7 @@ ul li a:hover, #nav-toggle:hover{
 
 .CRUDContainer{
     margin: auto;
-    
+
     /*VERTICAL*/
     width: 100%;
 }
@@ -284,7 +284,7 @@ table{
     color: #333333;
     margin: 20px auto 20px auto;
     text-align: center;
-    
+
     /*VERTICAL*/
     width: 100%;
     max-width: 100%;
@@ -310,10 +310,10 @@ th {
 
 td {
     /*border: 1px solid #d0d0d0;*/
-    border-collapse: collapse;    
+    border-collapse: collapse;
     padding: 6px;
     color: #333333;
-    
+
     /*VERTICAL*/
     display: block;
     text-align: left;
@@ -355,12 +355,13 @@ table tr:nth-child(odd):hover, table tr:nth-child(even):hover{
 .CRUD-button{
     border: none;
     color: white;
-    padding: 5px 10px;
+    padding: 5px 5px;
     margin: 5px;
     border-radius: 3px;
     box-shadow: 0px 0px 4px grey;
     /*font-size: 1.3em;*/
-    height: 50px;
+/*    height: 50px;*/
+    display: inline-block;
 }
 
 .CRUD-button img{
@@ -409,7 +410,7 @@ footer{
     opacity:.95;
     top:0;
     left:0;
-    display:none;
+    display:flex;
     position:fixed;
     background-color:#313131;
     overflow:auto;
@@ -417,9 +418,42 @@ footer{
     padding: 20px;
 }
 
+#contenedorAsambleistas{
+    display: inline-block;
+    width: 100%;
+    padding: 20px;
+    margin-top: 80px;
+
+    overflow: auto;
+
+    /*background-color: antiquewhite;*/
+    align-items: center;
+}
+.asambleista{
+    position: relative;
+    display: inline-block;
+    width: 20%;
+    border: black solid 1px;
+    margin-right: 20px;
+}
+#listaAsambleista{
+    font-size: 50px;
+}
+
 @media only screen and (min-width: 481px){
     .form-Container{
         width: 440px;
+    }
+}
+
+
+@media only screen and (min-width: 200px) and (max-width: 481px) {
+    #contenedorAsambleistas{
+        padding-top: 2000px;
+    }
+    .asambleista{
+        display: block;
+        width: 100%;
     }
 }
 
@@ -452,4 +486,64 @@ footer{
         box-shadow: none;
         height: 100%;
     }
+}
+
+
+
+
+.contenedorVotar {
+
+}
+
+.binomios {
+    border-style: solid;
+    border-width: thin;
+   height: 600px;
+    width: 160px;
+    margin-top: 100px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+
+}
+
+
+
+.papeleta {
+    margin-top: 100px;
+}
+
+.rowElementoPartido {
+    height: 30px;
+}
+
+.rowElementoImagenLista {
+    height: 90px;
+}
+
+.rowElementobtnVotar {
+    height: 25px;
+}
+
+.rowElementoPresidente {
+    height: 180px;
+}
+
+
+
+.NombrePresi {
+    height: 35px;
+}
+
+.imgBinomio {
+       padding:1px;
+    border:1px solid #021a40;
+}
+
+.encuestadorInicio {
+    margin-top: 150px;
+}
+
+.contenedorResumen {
+    margin-top: 200px;
 }

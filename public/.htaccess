@@ -1,4 +1,15 @@
 Options -MultiViews
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ index.php [QSA,L] 
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
+
+#<If "(%{REQUEST_URI} -strmatch '^/admin')">
+#    RewriteRule ^/admin admin.php [QSA,L]
+#</If>
+#<Else>
+#    RewriteBase /
+#    RewriteCond %{REQUEST_FILENAME} !-f
+#    RewriteCond %{REQUEST_FILENAME} !-d
+#    RewriteRule ^ index.php [QSA,L]
+#</Else>

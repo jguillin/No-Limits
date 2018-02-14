@@ -3,7 +3,7 @@
     <!-- ENCABEZADO -->
     <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top justify-content-between">
 
-        <a href="/"><img src="img/logo/logo1.png" alt="No Limits" class="logo" ></a>
+        <a href="/"><img src="/img/logo/logo1.png" alt="No Limits" class="logo" ></a>
 
         <!-- MENU PRINCIPAL -->
 

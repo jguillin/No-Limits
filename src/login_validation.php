@@ -21,14 +21,16 @@
 
 
   if($UserCollectorObj->loginUser($user, $password)){
+
       $_SESSION ['user'] = $user;
       // $_SESSION ['password'] = $password;
       $_SESSION ['rol'] = 'a';
       print_r($_SESSION);
       if ($_SESSION ['rol']=='a'){
+        echo "pials";
         header("Location: /admin");
       }else {
-        //usuario normal regresa al home?
+        header("Location: /");
       };
     }else{
       //usuario incorrecto
