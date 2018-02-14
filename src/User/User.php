@@ -10,9 +10,9 @@ class User
     private $birthdate;
     private $email;
     private $sex;
-    private $rol;
+    private $role;
 
-     function __construct($userId, $username, $password, $name, $lastname, $birthdate, $email, $sex, $rol) {
+     function __construct($userId, $username, $password, $name, $lastname, $birthdate, $email, $sex, $role) {
        $this->userId = $userId;
        $this->username = $username;
        $this->password = $password;
@@ -21,7 +21,7 @@ class User
        $this->birthdate = $birthdate;
        $this->email = $email;
        $this->sex = $sex;
-       $this->rol = $rol;
+       $this->role = $role;
      }
 
 
@@ -89,11 +89,11 @@ class User
      }
 
 
-     function setRol($rol){
-       $this->rol = $rol;
+     function setRole($role){
+       $this->role = $role;
      }
-     function getRol(){
-       return $this->rol;
+     function getRole(){
+       return $this->role;
      }
 
 }

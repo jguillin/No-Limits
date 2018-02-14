@@ -14,7 +14,11 @@
         View::render("adminIndex");
         break;
       case '/admin/users': case '/admin/users/':
-        require_once('../src/User/showUsers.php');
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+          require_once('../src/User/showUsers.php');
+        }elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
+          require_once('../src/User/saveUser.php');
+        }
         break;
       case '/admin/users/new': case '/admin/users/new/':
         require_once('../src/User/userFormNew.php');
