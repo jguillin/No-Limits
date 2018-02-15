@@ -18,20 +18,20 @@
   //
 
   // if($_SESSION['MiSesion']=="valor"){
+$response = $UserCollectorObj->loginUser($user, $password);
 
+  if (!empty($response)){
 
-  if($UserCollectorObj->loginUser($user, $password)){
+      $_SESSION ['user'] = $response[username];
+      $_SESSION ['rol'] = $response[role];
 
-      $_SESSION ['user'] = $user;
-      // $_SESSION ['password'] = $password;
-      $_SESSION ['rol'] = 'a';
-      print_r($_SESSION);
+      // print_r($_SESSION);
       if ($_SESSION ['rol']=='a'){
-        echo "pials";
+        // echo "pials";
         header("Location: /admin");
       }else {
         header("Location: /");
-      };
+      }
     }else{
       //usuario incorrecto
       echo "error";

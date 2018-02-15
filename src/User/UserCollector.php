@@ -27,14 +27,18 @@ class UserCollector extends Collector
 }
 
   function loginUser($user, $password){
+    $response = [];
     try {
+
       $row = self::$db->getRows("SELECT * FROM users where username=? AND password=MD5(?)", array("{$user}", "{$password}"));
       if (!empty($row)){
-        return true;
+        $ObjUser = new User($row[0]{'user_id'},$row[0]{'username'},$row[0]{'password'},$row[0]{'name'},$row[0]{'lastname'},$row[0]{'birthdate'},$row[0]{'email'},$row[0]{'sex'},$row[0]{'role'});
+        $response['username'] = $ObjUser->getUsername();
+        $response['role'] = $ObjUser->getRole();
+        return $response;
       }
-      // $ObjDemo = new User($row[0]{'user_id'},$row[0]{'username'},$row[0]{'password'},$row[0]{'name'},$row[0]{'lastname'},$row[0]{'birthdate'},$row[0]{'email'},$row[0]{'sex'},$row[0]{'rol'});
     } catch (\Exception $e) {
-      return false;
+      return $response;
     }
 
   }
