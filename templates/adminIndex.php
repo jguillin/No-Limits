@@ -21,7 +21,7 @@
 
 	</br></br>
 	<a href='/admin/users'>Users</a></br>
-	<a href='#'>Diseases</a></br>
+	<a href='/admin/diseases'>Diseases</a></br>
 	<a href='#'>Communities</a></br>
 	<a href='#'>Articles</a></br>
 	<a href='#'>Article_comments</a></br>

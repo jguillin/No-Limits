@@ -1,22 +1,23 @@
 <?php
 
-include_once('User.php');
+include_once('Diseases.php');
 include_once('../src/Collector.php');
 
-class UserCollector extends Collector
+class DiseaseCollector extends Collector
 {
 
-  function showUsers() {
-    $rows = self::$db->getRows("SELECT * FROM users");
+  function showDiseases() {
+    $rows = self::$db->getRows("SELECT * FROM diseases");
 
     $arrayDemo= array();
     foreach ($rows as $c){
-      $aux = new User($c{'user_id'},$c{'username'},$c{'password'},$c{'name'},$c{'lastname'},$c{'birthdate'},$c{'email'},$c{'sex'},$c{'rol'});
+      $aux = new Disease($c{'disease_id'},$c{'name'},$c{'synonyms'},$c{'description'},$c{'symptoms'},$c{'causes'},$c{'affected_populations'},$c{'related_disordes'},$c{'diagnosis'},$c{'treatment'},$c{'investigational_therapies'},$c{'subdivisions'});
       array_push($arrayDemo, $aux);
     }
     return $arrayDemo;
   }
 
+/*
   //Edita un usuario
   function showUser($id){
     $row = self::$db->getRows("SELECT * FROM users where user_id= ? ", array("{$id}"));
@@ -56,6 +57,7 @@ class UserCollector extends Collector
     $insertarrow = self::$db->insertRow("INSERT INTO public.users (nombre) VALUES (?)", array ("{$nombre}"));
 
   }
+  */
 
 }
 
