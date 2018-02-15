@@ -11,7 +11,7 @@ class ArticleCollector extends Collector
 
     $arrayDemo= array();
     foreach ($rows as $c){
-      $aux = new Article($c{'article_id'},$c{'author_id'},$c{'post_datetime'},$c{'title'},$c{'imageUrl'},$c{'content'},$c{'last_mod_datetime'});
+      $aux = new Article($c{'article_id'},$c{'author_id'},$c{'post_datetime'},$c{'title'},$c{'imageURL'},$c{'content'},$c{'last_mod_datetime'});
       array_push($arrayDemo, $aux);
     }
     return $arrayDemo;

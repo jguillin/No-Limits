@@ -2,7 +2,7 @@
   session_start();
 
   if(isset($_SESSION['user']) && $_SESSION['rol']=='a'){
-	   echo "<p> Hola usuario:(" . $_SESSION['user']. ")[<a href='/logout'>Salir</a>]";
+	   echo "<p> Hola usuario:(" . $_SESSION['user']. ")[<a style='text-decoration: none' href='/logout'>Salir</a>]";
 
 ?>
 
@@ -16,7 +16,7 @@
 
 <body>
 
-	<div><a href="/admin">Regresar a admin</a></div>	
+	<div><a style='text-decoration: none' href="/admin">Regresar a admin</a></div>	
 
 
 
@@ -37,18 +37,13 @@
   <table>
       <thead>
         <tr>
-          <th>DiseaseId</th>
-          <th>Name</th>
-          <th>Synonyms</th>
-          <th>Description</th>
-          <th>Symtomps</th>
-          <th>Causes</th>
-          <th>Affected Populations</th>
-          <th>Related Disorder</th>
-          <th>Diagnosis</th>
-          <th>Treatment</th>
-          <th>Invest Terhapies</th>
-          <th>Subdivisions</th>
+          <th>Article Id</th>
+          <th>Author Id</th>
+          <th>Post Datetime</th>
+          <th>Title</th>
+          <th>Image URL</th>
+          <th>Content</th>
+          <th>Last Mod Datetime</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -56,27 +51,22 @@
 
 <?php
 
-  foreach ($DiseaseCollectorObj->showDiseases() as $c){
+  foreach ($ArticleCollectorObj->showArticles() as $c){
     echo "<tr>";
-    echo "<td><b class='table-cell-label'>DiseaseId</b><span class='table-cell-content'>". $c->getDiseasesId() ."</span></td>";
-    echo "<td><b class='table-cell-label'>Name</b><span class='table-cell-content'>". $c->getName() ."</span></td>";
-    echo "<td><b class='table-cell-label'>Synonyms</b><span class='table-cell-content'>". $c->getSynonyms() ."</span></td>";
-    echo "<td><b class='table-cell-label'>Description</b><span class='table-cell-content'>". $c->getDescription() ."</span></td>";
-    echo "<td><b class='table-cell-label'>Symtomps</b><span class='table-cell-content'>". $c->getSymtomps() ."</span></td>";
-    echo "<td><b class='table-cell-label'>Causes</b><span class='table-cell-content'>". $c->getCauses() ."</span></td>";
-    echo "<td><b class='table-cell-label'>Affected Populations</b><span class='table-cell-content'>". $c->getAffectedPopulation() ."</span></td>";
-    echo "<td><b class='table-cell-label'>Related Disorders</b><span class='table-cell-content'>". $c->getRelatedDisorders() ."</span></td>";
-    echo "<td><b class='table-cell-label'>Diagnosis</b><span class='table-cell-content'>". $c->getDiagnosis() ."</span></td>";
-    echo "<td><b class='table-cell-label'>Treatment</b><span class='table-cell-content'>". $c->getTreatment() ."</span></td>";
-    echo "<td><b class='table-cell-label'>Invest Terhapies</b><span class='table-cell-content'>". $c->getInvestTerhapies() ."</span></td>";
-    echo "<td><b class='table-cell-label'>Subdivisions</b><span class='table-cell-content'>". $c->getSubdivisions() ."</span></td>";
+    echo "<td><b class='table-cell-label'>Article Id</b><span class='table-cell-content'>". $c->getArticleId() ."</span></td>";
+    echo "<td><b class='table-cell-label'>Author Id</b><span class='table-cell-content'>". $c->getAuthorId() ."</span></td>";
+    echo "<td><b class='table-cell-label'>Post Datetime</b><span class='table-cell-content'>". $c->getPostDatetime() ."</span></td>";
+    echo "<td><b class='table-cell-label'>Title</b><span class='table-cell-content'>". $c->getTitle() ."</span></td>";
+    echo "<td><b class='table-cell-label'>Image URL</b><span class='table-cell-content'>". $c->getImageUrl() ."</span></td>";
+    echo "<td><b class='table-cell-label'>Content</b><span class='table-cell-content'>". $c->getContent() ."</span></td>";
+    echo "<td><b class='table-cell-label'>Last Mod Datetime</b><span class='table-cell-content'>". $c->getLastModDatetime() ."</span></td>";
     echo "<td>
             <b class='table-cell-label'>Actions</b>
             <span>
-              <form class='CRUD-button-container' action='/admin/diseases/". $c->getDiseasesId() ."' method='GET'>
+              <form class='CRUD-button-container' action='/admin/articles/". $c->getArticleIdh() ."' method='GET'>
                 <button class='CRUD-button edit' type='submit'><img src='/img/icons/edit_icon.png'></button>
               </form>
-              <form class='CRUD-button-container' action='/admin/diseases/". $c->getDiseasesId() ."' method='DELETE'>
+              <form class='CRUD-button-container' action='/admin/articles/". $c->getArticleId() ."' method='DELETE'>
                 <button class='CRUD-button delete' type='submit'><img src='/img/icons/delete_icon.png'></button>
               </form>
           </td>";

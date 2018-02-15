@@ -22,8 +22,8 @@
 	</br></br>
 	<a style="text-decoration: none" href='/admin/users'>Users</a></br>
 	<a style="text-decoration: none" href='/admin/diseases'>Diseases</a></br>
-	<a style="text-decoration: none" href='/admin/articles'>Communities</a></br>
-	<a style="text-decoration: none" href='#'>Articles</a></br>
+	<a style="text-decoration: none" href='#'>Communities</a></br>
+	<a style="text-decoration: none" href='/admin/articles'>Articles</a></br>
 	<a style="text-decoration: none" href='#'>Article_comments</a></br>
 	<a style="text-decoration: none" href='#'>Diseases_supporting_organizations</a></br>
 	<a style="text-decoration: none" href='#'>Diseases_users</a></br>

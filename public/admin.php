@@ -53,7 +53,7 @@
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
           require_once('../src/Articles/ShowArticle.php');
         }elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
-          require_once('../src/Articles/SaveArticles.php');
+          require_once('../src/Articles/SaveArticle.php');
         }
         break;
       case '/admin/articles/new': case '/admin/articles/new/':
