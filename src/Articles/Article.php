@@ -1,6 +1,6 @@
 <?php
 
-class User
+class Article
 {
     private $articleId;
     private $authorId;

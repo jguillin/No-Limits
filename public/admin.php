@@ -45,6 +45,24 @@
       case '/admin/diseases/new': case '/admin/diseases/new/':
         require_once('../src/Diseases/#');
         break;
+
+
+      /*+++++++++++++++++++ARTICLES++++++++++++++++++*/
+
+      case '/admin/articles': case '/admin/articles/':
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+          require_once('../src/Articles/ShowArticle.php');
+        }elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
+          require_once('../src/Articles/SaveArticles.php');
+        }
+        break;
+      case '/admin/articles/new': case '/admin/articles/new/':
+        require_once('../src/Articles/#');
+        break;
+
+
+      /*+++++++++++++++++++DEFAULT++++++++++++++++++*/
+
       default:
         // echo "ERROR";
           View::render("error");

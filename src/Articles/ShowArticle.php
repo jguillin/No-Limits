@@ -10,7 +10,7 @@
 <html lang="en-US">
 <head>
 	<meta charset="utf-8">
-	<title>Diseases</title>
+	<title>Articles</title>
 	<link rel="StyleSheet" href="/css/admin.css" type="text/css">
 </head>
 
@@ -22,13 +22,13 @@
 
 
 <?php
-  include_once("DiseasesCollector.php");
+  include_once("ArticleCollector.php");
 
-  $DiseaseCollectorObj = new DiseaseCollector();
+  $ArticleCollectorObj = new ArticleCollector();
 
 ?>
   <br>
-  <form action='/admin/diseases/new' method="POST">
+  <form action='/admin/articles/new' method="POST">
     <button class='CRUD-button insert' type='submit'>
       <img src='/img/icons/new_icon.png'>
     </button>

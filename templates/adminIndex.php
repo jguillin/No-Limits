@@ -15,21 +15,21 @@
 <?php
 	if(isset($_SESSION['user']) && $_SESSION['rol']=='a'){
 	echo "<p> Hola usuario:(" . $_SESSION['user']. ")
-			[<a href='/logout'>Salir</a>]";
+			[<a style='text-decoration: none' href='/logout'>Salir</a>]";
 
 ?>
 
 	</br></br>
-	<a href='/admin/users'>Users</a></br>
-	<a href='/admin/diseases'>Diseases</a></br>
-	<a href='#'>Communities</a></br>
-	<a href='#'>Articles</a></br>
-	<a href='#'>Article_comments</a></br>
-	<a href='#'>Diseases_supporting_organizations</a></br>
-	<a href='#'>Diseases_users</a></br>
-	<a href='#'>Responses</a></br>
-	<a href='#'>Supporting_organizations</a>
-	<a href='#'>Threads</a></br>
+	<a style="text-decoration: none" href='/admin/users'>Users</a></br>
+	<a style="text-decoration: none" href='/admin/diseases'>Diseases</a></br>
+	<a style="text-decoration: none" href='/admin/articles'>Communities</a></br>
+	<a style="text-decoration: none" href='#'>Articles</a></br>
+	<a style="text-decoration: none" href='#'>Article_comments</a></br>
+	<a style="text-decoration: none" href='#'>Diseases_supporting_organizations</a></br>
+	<a style="text-decoration: none" href='#'>Diseases_users</a></br>
+	<a style="text-decoration: none" href='#'>Responses</a></br>
+	<a style="text-decoration: none" href='#'>Supporting_organizations</a>
+	<a style="text-decoration: none" href='#'>Threads</a></br>
 
 
 <?php } else {

@@ -3,19 +3,21 @@
 include_once('Article.php');
 include_once('../src/Collector.php');
 
-class UserCollector extends Collector
+class ArticleCollector extends Collector
 {
 
-  function showUsers() {
+  function showArticles() {
     $rows = self::$db->getRows("SELECT * FROM articles");
 
     $arrayDemo= array();
     foreach ($rows as $c){
-      $aux = new User($c{'article_id'},$c{'author_id'},$c{'post_datetime'},$c{'title'},$c{'imageUrl'},$c{'content'},$c{'last_mod_datetime'});
+      $aux = new Article($c{'article_id'},$c{'author_id'},$c{'post_datetime'},$c{'title'},$c{'imageUrl'},$c{'content'},$c{'last_mod_datetime'});
       array_push($arrayDemo, $aux);
     }
     return $arrayDemo;
   }
+
+  /*
 
   //Edita un usuario
   function showUser($id){
@@ -56,6 +58,7 @@ class UserCollector extends Collector
     $insertarrow = self::$db->insertRow("INSERT INTO public.articles (nombre) VALUES (?)", array ("{$nombre}"));
 
   }
+*/
 
 }
 

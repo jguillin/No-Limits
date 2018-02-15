@@ -39,7 +39,7 @@
           <th>email</th>
           <th>sex</th>
           <th>role</th>
-          <th>Acciones</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -58,7 +58,7 @@
     echo "<td><b class='table-cell-label'>sex</b><span class='table-cell-content'>". $c->getSex() ."</span></td>";
     echo "<td><b class='table-cell-label'>role</b><span class='table-cell-content'>". $c->getRole() ."</span></td>";
     echo "<td>
-            <b class='table-cell-label'>Acciones</b>
+            <b class='table-cell-label'>Actions</b>
             <span>
               <form class='CRUD-button-container' action='/admin/users/". $c->getUserId() ."' method='GET'>
                 <button class='CRUD-button edit' type='submit'><img src='/img/icons/edit_icon.png'></button>
