@@ -31,27 +31,11 @@ class Disease
      }
 
 
-     function setUserId($userId){
-       $this->userId = $userId;
+     function setDiseasesId($diseaseId){
+       $this->diseaseId = $diseaseId;
      }
-     function getUserId(){
-       return $this->userId;
-     }
-
-
-     function setUsername($username){
-       $this->username = $username;
-     }
-     function getUsername(){
-       return $this->username;
-     }
-
-
-     function setPassword($password){
-       $this->password = $password;
-     }
-     function getPassword(){
-       return $this->password;
+     function getDiseasesId(){
+       return $this->diseaseId;
      }
 
 
@@ -63,43 +47,83 @@ class Disease
      }
 
 
-     function setLastname($lastname){
-       $this->lastname = $lastname;
+     function setSynonyms($synonyms){
+       $this->synonyms = $synonyms;
      }
-     function getLastname(){
-       return $this->lastname;
-     }
-
-
-     function setBirthdate($birthdate){
-       $this->birthdate = $birthdate;
-     }
-     function getBirthdate(){
-       return $this->birthdate;
+     function getSynonyms(){
+       return $this->synonyms;
      }
 
 
-     function setEmail($email){
-       $this->email = $email;
+     function setDescription($description){
+       $this->description = $description;
      }
-     function getEmail(){
-       return $this->email;
-     }
-
-
-     function setSex($sex){
-       $this->sex = $sex;
-     }
-     function getSex(){
-       return $this->sex;
+     function getDescription(){
+       return $this->description;
      }
 
 
-     function setRol($rol){
-       $this->rol = $rol;
+     function setSymptoms($symptoms){
+       $this->symptoms = $symptoms;
      }
-     function getRol(){
-       return $this->rol;
+     function getSymtomps(){
+       return $this->symptoms;
+     }
+
+
+     function setCauses($causes){
+       $this->causes = $causes;
+     }
+     function getCauses(){
+       return $this->causes;
+     }
+
+
+     function setAffectedPopulation($affectedPopulation){
+       $this->affectedPopulation = $affectedPopulation;
+     }
+     function getAffectedPopulation(){
+       return $this->affectedPopulation;
+     }
+
+
+     function setRelatedDisorders($relatedDisorders){
+       $this->relatedDisorders = $relatedDisorders;
+     }
+     function getRelatedDisorders(){
+       return $this->relatedDisorders;
+     }
+
+
+     function setDiagnosis($diagnosis){
+       $this->diagnosis = $diagnosis;
+     }
+     function getDiagnosis(){
+       return $this->diagnosis;
+     }
+
+
+      function setTreatment($treatment){
+       $this->treatment = $treatment;
+     }
+     function getTreatment(){
+       return $this->treatment;
+     }
+
+
+      function setInvestTerhapies($investTerhapies){
+       $this->investTerhapies = $investTerhapies;
+     }
+     function getInvestTerhapies(){
+       return $this->investTerhapies;
+     }
+
+
+      function setSubdivisions($subdivisions){
+       $this->subdivisions = $subdivisions;
+     }
+     function getSubdivisions(){
+       return $this->subdivisions;
      }
 
 }
