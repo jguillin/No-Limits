@@ -1,27 +1,33 @@
 <?php
 
-class User
+class Disease
 {
-    private $userId;
-    private $username;
-    private $password;
+    private $diseaseId;
     private $name;
-    private $lastname;
-    private $birthdate;
-    private $email;
-    private $sex;
-    private $rol;
+    private $synonyms;
+    private $description;
+    private $symptoms;
+    private $causes;
+    private $affectedPopulation;
+    private $relatedDisorders;
+    private $diagnosis;
+    private $treatment;
+    private $investTerhapies;
+    private $subdivisions;
 
-     function __construct($userId, $username, $password, $name, $lastname, $birthdate, $email, $sex, $rol) {
-       $this->userId = $userId;
-       $this->username = $username;
-       $this->password = $password;
+     function __construct($diseaseId, $name, $synonyms, $description, $symptoms, $causes, $affectedPopulation, $relatedDisorders, $diagnosis, $treatment, $investTerhapies, $subdivisions) {
+       $this->diseaseId = $diseaseId;
        $this->name = $name;
-       $this->lastname = $lastname;
-       $this->birthdate = $birthdate;
-       $this->email = $email;
-       $this->sex = $sex;
-       $this->rol = $rol;
+       $this->synonyms = $synonyms;
+       $this->description = $description;
+       $this->symptoms = $symptoms;
+       $this->causes = $causes;
+       $this->affectedPopulation = $affectedPopulation;
+       $this->relatedDisorders = $relatedDisorders;
+       $this->diagnosis = $diagnosis;
+       $this->treatment = $treatment;
+       $this->investTerhapies = $investTerhapies;
+       $this->subdivisions = $subdivisions;
      }
 
 
