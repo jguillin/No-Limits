@@ -27,19 +27,19 @@
 
 				<div class="form-group">
 					<label>Nombres:</label>
-					<input type="text" name="nombresUsuario" id="registroUsuario" placeholder="Nombre" required>
+					<input type="text" name="nombresUsuario" id="registroUsuario" placeholder="Nombre" required style="padding-left: 10px; padding-right: 10px;">
 				</div>
 				<div class="form-group">
 					<label for="registroApellido">Apellido:</label>
-					<input type="text" name="apellidosUsuario" id="registroApellido" placeholder="Apellido" required>
+					<input type="text" name="apellidosUsuario" id="registroApellido" placeholder="Apellido" required style="padding-left: 10px; padding-right: 10px;">
 				</div>
 				<div class="form-group">
 					<label for="registroNacimiento">Fecha de nacimiento:</label>
-					<input name="diaNacimiento" id="registroNacimiento" required>
+					<input name="diaNacimiento" id="registroNacimiento" placeholder="año-mes-día" required style="padding-left: 10px; padding-right: 10px;">
 				</div>
 				<div class="form-group">
 					<label for="registroSexo">Sexo:</label>
-					<select class="form-control" name="genero" id="registroSexo" required>
+					<select class="form-control" name="genero" id="registroSexo" required style="padding-left: 10px; padding-right: 10px;">
 						<option value="">-</option>
 						<option value="male">Hombre</option>
 						<option value="female">Mujer</option>
@@ -47,19 +47,19 @@
 				</div>
 				<div class="form-group">
 					<label>Correo:</label>
-					<input type="email" name="email" placeholder="usuario@ejemplo.com" required>
+					<input type="email" name="email" placeholder="usuario@ejemplo.com" required style="padding-left: 10px; padding-right: 10px;">
 				</div>
 				<div class="form-group">
 					<label>Usuario:</label>
-					<input type="text" name="usuario" placeholder="usuario" required>
+					<input type="text" name="usuario" placeholder="usuario" required style="padding-left: 10px; padding-right: 10px;">
 				</div>
 				<div class="form-group">
 					<label>Contraseña:</label>
-					<input type="password" name="clave" placeholder="**********" required>
+					<input type="password" name="clave" placeholder="**********" required style="padding-left: 10px; padding-right: 10px;">
 				</div>
 				<div class="form-group">
 					<label>Confirmar contraseña:</label>
-					<input type="password" name="confirmarclave" placeholder="**********" required>
+					<input type="password" name="confirmarclave" placeholder="**********" required style="padding-left: 10px; padding-right: 10px;">
 				</div>
 
 				<input class="registro" type="submit" value="Registrar">

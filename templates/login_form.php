@@ -23,9 +23,9 @@
 				<div class="row ">
 					<form class="formulario col-10 col-md-6 mx-auto" action="/login_validation" method="POST">
 						<h1 class="titulo">Inicio de sesión</h1>
-						<input type="text" name="usuario" placeholder=" &#128100; Usuario" required autofocus >
+						<input type="text" name="usuario" placeholder=" &#128100; Usuario" required autofocus style="padding-left: 10px; padding-right: 10px;">
 						<br/>
-						<input type="password" name="clave" placeholder=" &#128273; Contraseña" required>
+						<input type="password" name="clave" placeholder=" &#128273; Contraseña" required style="padding-left: 10px; padding-right: 10px;">
 						<br/><br/>
 						<input class="acceder" type="submit" value="Iniciar sesión">
 						<small id="emailHelp" class="form-text text-muted">¿No tienes cuenta?,
