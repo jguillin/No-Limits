@@ -1,18 +1,15 @@
 <?php
   session_start();
 
-  if(isset($_SESSION['user']) && $_SESSION['rol']=='a'){
-	   echo "<p> Hola usuario:(" . $_SESSION['user']. ")[<a style='text-decoration: none' href='/logout'>Salir</a>]";
+  if(isset($_SESSION['username']) && $_SESSION['role']=='a'){
+     echo "<p> Hola usuario:(" . $_SESSION['username']. ")[<a href='/src/logout.php'>Salir</a>]";
 
 ?>
 
-<!doctype html>
-<html lang="en-US">
-<head>
-	<meta charset="utf-8">
-	<title>Articles</title>
-	<link rel="StyleSheet" href="/css/admin.css" type="text/css">
-</head>
+<html>
+  <head>
+    <link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
+  </head>
 
 <body>
 
@@ -30,7 +27,7 @@
   <br>
   <form action='/admin/articles/new' method="POST">
     <button class='CRUD-button insert' type='submit'>
-      <img src='/img/icons/new_icon.png'>
+      <img src='/assets/img/icons/new_icon.png'>
     </button>
   </form><br><br>
 
@@ -64,10 +61,10 @@
             <b class='table-cell-label'>Actions</b>
             <span>
               <form class='CRUD-button-container' action='/admin/articles/". $c->getArticleIdh() ."' method='GET'>
-                <button class='CRUD-button edit' type='submit'><img src='/img/icons/edit_icon.png'></button>
+                <button class='CRUD-button edit' type='submit'><img src='/assets/img/icons/edit_icon.png'></button>
               </form>
               <form class='CRUD-button-container' action='/admin/articles/". $c->getArticleId() ."' method='DELETE'>
-                <button class='CRUD-button delete' type='submit'><img src='/img/icons/delete_icon.png'></button>
+                <button class='CRUD-button delete' type='submit'><img src='/assets/img/icons/delete_icon.png'></button>
               </form>
           </td>";
 
