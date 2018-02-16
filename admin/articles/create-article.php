@@ -1,30 +1,41 @@
-<html>
-<head>
-</head>
-<body>
+<?php
+  session_start();
+?>
 
-<div id="main">
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+  	<link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
+  	<title>Crear Artículo</title>
+  </head>
+  <body>
+    <?php include_once('../../pages/adminMenu.php'); ?>
+    <section id="content">
 
 <?php
 
-$author = $_POST["author"];
-$postdatetime= $_POST["postdatetime"];
-$title= $_POST["title"];
-$imageurl= $_POST["imageurl"];
-$content= $_POST["content"];
-$lastmod= $_POST["lastmod"];
+  $authorId = $_POST["authorId"];
+  $postdatetime= $_POST["postDateTime"];
+  $title= $_POST["title"];
+  $imageurl= $_POST["imageURL"];
+  $content= $_POST["content"];
+  $lastmod= $_POST["lastModDateTime"];
 
-echo 'Article ' .htmlspecialchars($user) . '!';
+
 include_once("ArticleCollector.php");
 
-$DemoCollectorObj = new DemoCollector();
-$ObjDemo = $DemoCollectorObj->createDemo($author, $postdatetime, $title, $imageurl, $content, $lastmod);
+$ArticleCollectorObj = new ArticleCollector();
 
-echo "Los datos se han guardado correctamente</br>";
+if ($ArticleCollectorObj->createArticle($authorId, $postdatetime, $title, $imageurl, $content, $lastmod)){
+  echo "El Artículo ". $title ." se ha creado correctamente</br>";
+  }else {
+  echo "ERROR al crear artículo</br>";
+  }
+
 
 ?>
 
-<div><a href="showDataBD.php">Volver al Inicio</a></div>
-</div>
+<div><a href="/admin/articles">Volver a Artículos</a></div>
+</section>
 </body>
 </html>

@@ -1,14 +1,12 @@
 <?php
   session_start();
-
-  if(isset($_SESSION['username']) && $_SESSION['role']=='a'){
-
-
 ?>
 
 <html>
   <head>
+    <meta charset="utf-8">
     <link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
+    <title>Usuarios</title>
   </head>
 <body>
 
@@ -76,9 +74,7 @@
 
     echo "</tbody></table>";
 
-    } else {
-      header("Location: /error");
-    } ?>
+   ?>
 
   </section>
 </body>

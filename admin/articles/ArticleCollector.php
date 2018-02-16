@@ -17,48 +17,62 @@ class ArticleCollector extends Collector
     return $arrayDemo;
   }
 
-  /*
-
   //Edita un usuario
-  function showUser($id){
-    $row = self::$db->getRows("SELECT * FROM articles where article_id= ? ", array("{$id}"));
-
-    $ObjDemo = new User($row[0]{'article_id'},$row[0]{'author_id'},$row[0]{'post_datetime'},$row[0]{'title'},$row[0]{'imageUrl'},$row[0]{'content'},$row[0]{'last_mod_datetime'});
-    return $ObjDemo;
+  function showArticle($id){
+    $ObjArticle = (object)[];
+    $response = ['found'=>false];
+    try {
+      $row = self::$db->getRows("SELECT * FROM articles where article_id= ? ", array("{$id}"));
+      if (!empty($row)){
+        $ObjArticle = new Article($row[0]{'article_id'},$row[0]{'author_id'},$row[0]{'post_datetime'},$row[0]{'title'},$row[0]{'imageURL'},$row[0]{'content'},$row[0]{'last_mod_datetime'});
+        $response['found'] = true;
+        $response['article'] = $ObjArticle;
+      }
+      return $response;
+    } catch (\Exception $e) {
+      echo $e;
+    }
 
 }
 
-  function loginUser($user, $password){
+
+
+  //Actualiza un usuario
+  function updateArticle($articleId, $authorId, $postdatetime, $title, $imageurl, $content, $lastmod){
     try {
-      $row = self::$db->getRows("SELECT * FROM articles where username=? AND password=MD5(?)", array("{$user}", "{$password}"));
-      if (!empty($row)){
-        return true;
-      }
-      // $ObjDemo = new User($row[0]{'user_id'},$row[0]{'username'},$row[0]{'password'},$row[0]{'name'},$row[0]{'lastname'},$row[0]{'birthdate'},$row[0]{'email'},$row[0]{'sex'},$row[0]{'rol'});
+      $insertrow = self::$db->updateRow("UPDATE articles SET author_id=?,post_datetime=?,title=?,\"imageURL\"=?,content=?,last_mod_datetime=? WHERE article_id= ?", array("{$authorId}","{$postdatetime}","{$title}","{$imageurl}","{$content}","{$lastmod}","{$articleId}"));
+      return true;
     } catch (\Exception $e) {
+      echo $e;
       return false;
     }
 
   }
 
-  //Actualiza un usuario
-  function updateUser($id,$nombre){
-    $insertrow = self::$db->updateRow("UPDATE public.articles SET nombre= ? WHERE user_id= ?", array("{$nombre}", $id));
-
-  }
-
   //Elimina un usuario
-  function deleteUser($id){
-    $deleterow = self::$db->deleteRow("DELETE FROM public.articles WHERE user_id= ?", array("{$id}"));
+  function deleteArticle($articleId){
+    try {
+      $deleterow = self::$db->deleteRow("DELETE FROM articles WHERE article_id = ?", array("{$articleId}"));
+      return true;
+    } catch (\Exception $e) {
+      echo $e;
+      return false;
+    }
+
 
   }
 
   //Crea un nuevo usuario
-  function createUser($nombre){
-    $insertarrow = self::$db->insertRow("INSERT INTO public.articles (nombre) VALUES (?)", array ("{$nombre}"));
+  function createArticle($authorId, $postdatetime, $title, $imageurl, $content, $lastmod){
+    try {
+      $insertarrow = self::$db->insertRow("INSERT INTO articles (author_id,post_datetime,title,\"imageURL\",content,last_mod_datetime) VALUES (?,?,?,?,?,?)", array ("{$authorId}","{$postdatetime}","{$title}","{$imageurl}","{$content}","{$lastmod}"));
+      return true;
+    } catch (\Exception $e) {
+      echo $e;
+      return false;
+    }
 
   }
-*/
 
 }
 
