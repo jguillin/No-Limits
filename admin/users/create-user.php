@@ -1,15 +1,16 @@
 <?php
   session_start();
-
 ?>
-<html>
+
+<html lang="es">
   <head>
+    <meta charset="utf-8">
+  	<link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
+  	<title>Crear Usuario</title>
   </head>
   <body>
-
     <?php include_once('../../pages/adminMenu.php'); ?>
-
-  <section id="content">
+    <section id="content">
 
 <?php
 

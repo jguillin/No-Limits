@@ -1,3 +1,11 @@
+<?php
+  if(isset($_SESSION['username']) && $_SESSION['role']=='a'){
+  }else {
+          header("Location: /pages/error.php");
+        }
+?>
+
+
 <div id="menuContainer">
   <nav id="menuAdminCRUD" class="userMenu">
     <ul>

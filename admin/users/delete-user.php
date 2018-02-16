@@ -1,19 +1,17 @@
 <?php
-session_start();
+	session_start();
 ?>
 
-<html>
-<head>
-	<meta charset="utf-8">
-	<link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
-	<title>Eliminar Usuario</title>
-</head>
-<body>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
+		<title>Eliminar Usuario</title>
+	</head>
+	<body>
+		<?php include_once('../../pages/adminMenu.php'); ?>
+		<section id="content">
 
-	<?php include_once('../../pages/adminMenu.php'); ?>
-
-	<section id="content">
-	
 <?php
 $id=$_GET["userId"];
 

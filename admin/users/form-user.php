@@ -6,10 +6,7 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8">
-	<title><?php echo $title; ?></title>
   <link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
-</head>
-<body>
 
 <?php
   include_once('../../pages/adminMenu.php');
@@ -33,8 +30,7 @@
     if (!$response['found']){
       //Usuario no encontrado
       $showForm = false;
-      echo "<h2>USUARIO NO ENCONTRADO</h2><br>";
-      echo "<a id='cancelButton' class='form-button' href='/admin/users'>Volver</a>";
+
     }else {
       //Usuario encontrado
       $ObjUser = $response['user'];
@@ -48,6 +44,11 @@
 if ($showForm){
 
 ?>
+
+<title><?php echo $title; ?></title>
+
+</head>
+<body>
 <section id="content">
 
   <div class="form-Container">
@@ -107,8 +108,18 @@ if ($showForm){
     </form>
   </div>
 
-</section>
-</body>
-</html>
+<?php }else{ ?>
+          <title>USUARIO NO ENCONTRADO</title>
 
-<?php } ?>
+          </head>
+          <body>
+            <section id="content">
+              <h2>USUARIO NO ENCONTRADO</h2><br>
+              <a id='cancelButton' class='form-button' href='/admin/users'>Volver</a>
+        <?php
+        }
+      ?>
+
+    </section>
+    </body>
+    </html>
