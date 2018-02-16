@@ -7,7 +7,7 @@ class ArticleCollector extends Collector
 {
 
   function showArticles() {
-    $rows = self::$db->getRows("SELECT * FROM articles");
+    $rows = self::$db->getRows("SELECT * FROM articles ORDER BY article_id");
 
     $arrayDemo= array();
     foreach ($rows as $c){

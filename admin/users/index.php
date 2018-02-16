@@ -65,6 +65,7 @@
                   <a class='CRUD-button delete' href='/admin/users/delete-user.php?userId=". $c->getUserId() ."'>
                     <img src='/assets/img/icons/delete_icon.png'>
                   </a>
+              </span>
             </td>";
 
       echo "</tr>";

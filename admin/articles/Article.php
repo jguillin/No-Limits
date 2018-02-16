@@ -10,7 +10,7 @@ class Article
     private $content;
     private $lastModDatetime;
 
-     function __construct($articleId, $authorId, $, $postDatetime, $title, $imageUrl, $content, $lastModDatetime) {
+     function __construct($articleId, $authorId, $postDatetime, $title, $imageUrl, $content, $lastModDatetime) {
        $this->articleId = $articleId;
        $this->authorId = $authorId;
        $this->postDatetime = $postDatetime;
