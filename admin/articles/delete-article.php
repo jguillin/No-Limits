@@ -1,32 +1,35 @@
 <?php
-session_start();
+	session_start();
 ?>
 
-<html lang="en-US">
-<head>
-	<meta charset="utf-8">
-	<title>Eliminar</title>
-</head>
-<body>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
+		<title>Eliminar Artículos</title>
+	</head>
+	<body>
+		<?php include_once('../../pages/adminMenu.php'); ?>
+		<section id="content">
 
-<div id="main">
+		<?php
+		$id=$_GET["articleId"];
 
-<?php
-$id=$_GET["id"];
-$nombre=$_GET["nombre"];
 
-echo "Edicion en proceso..... </br>";
+		include_once("ArticleCollector.php");
+		$ArticleCollectorObj = new ArticleCollector();
 
-include_once("usersCollector.php");
-$DemoCollectorObj = new DemoCollector();
-$DemoCollectorObj->deleteDemo($id);
 
-echo "valor id:".$id." se borro " .$nombre." </br>";
+		if ($ArticleCollectorObj->deleteArticle($id)){
+		echo "<h2>Artículo con la ID: ".$id." se borró</h2></br>";
+		}else {
+		echo "<h2>ERROR AL ELIMINAR EL ARTÍCULO</h2></br>";
+		}
 
-?>
+		?>
 
-<div><a href="showDataBD.php">Volver al Inicio</a></div>
-</div>
+		<div><a id='cancelButton' class='form-button' href="/admin/articles/">Volver a Artículos</a></div>
+		</section>
 
-</body>
-</html>
+		</body>
+		</html>
