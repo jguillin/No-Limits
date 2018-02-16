@@ -1,6 +1,6 @@
 <?php
 
-class User
+class Thread
 {
     private $id;
     private $communitiesId;
@@ -22,7 +22,7 @@ class User
      function setCommunitiesId($communitiesId){
        $this->communitiesId = $communitiesId;
      }
-     function getUsername(){
+     function getCommunitiesId(){
        return $this->communitiesId;
      }
     

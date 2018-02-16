@@ -1,7 +1,7 @@
 <?php
 
 include_once('Diseases.php');
-include_once('../src/Collector.php');
+include_once(dirname(__DIR__).'/Collector.php');
 
 class DiseaseCollector extends Collector
 {

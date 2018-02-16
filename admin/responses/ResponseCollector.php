@@ -1,17 +1,18 @@
 <?php
 
-include_once('User.php');
-include_once('../src/Collector.php');
+include_once('Response.php');
+include_once(dirname(__DIR__).'/Collector.php');
 
-class UserCollector extends Collector
+
+class ResponseCollector extends Collector
 {
 
-  function showUsers() {
-    $rows = self::$db->getRows("SELECT * FROM users");
+  function showResponses() {
+    $rows = self::$db->getRows("SELECT * FROM responses");
 
     $arrayDemo= array();
     foreach ($rows as $c){
-      $aux = new User($c{'user_id'},$c{'username'},$c{'password'},$c{'name'},$c{'lastname'},$c{'birthdate'},$c{'email'},$c{'sex'},$c{'rol'});
+      $aux = new Response($c{'id'},$c{'threads_id'});
       array_push($arrayDemo, $aux);
     }
     return $arrayDemo;

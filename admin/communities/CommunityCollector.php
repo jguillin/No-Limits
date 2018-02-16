@@ -1,17 +1,17 @@
 <?php
 
 include_once('Community.php');
-include_once('../src/Collector.php');
+include_once(dirname(__DIR__).'/Collector.php');
 
-class UserCollector extends Collector
+class CommunityCollector extends Collector
 {
 
-  function showUsers() {
+  function showCommunities() {
     $rows = self::$db->getRows("SELECT * FROM communities");
 
     $arrayDemo= array();
     foreach ($rows as $c){
-      $aux = new User($c{'community_id'},$c{'name'});
+      $aux = new Community($c{'community_id'},$c{'name'});
       array_push($arrayDemo, $aux);
     }
     return $arrayDemo;

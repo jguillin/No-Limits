@@ -1,6 +1,6 @@
 <?php
 
-class User
+class Community
 {
     private $communityId;
     private $name;
@@ -22,7 +22,7 @@ class User
      function setName($name){
        $this->name = $name;
      }
-     function getResponsesId(){
+     function getName(){
        return $this->name;
      }
     

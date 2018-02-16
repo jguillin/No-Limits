@@ -1,17 +1,17 @@
 <?php
 
-include_once('User.php');
-include_once('../src/Collector.php');
+include_once('DiseaseOrg.php');
+include_once(dirname(__DIR__).'/Collector.php');
 
-class UserCollector extends Collector
+class DiseaseOrgCollector extends Collector
 {
 
-  function showUsers() {
-    $rows = self::$db->getRows("SELECT * FROM users");
+  function showDiseasesOrg() {
+    $rows = self::$db->getRows("SELECT * FROM diseases_supporting_organizations");
 
     $arrayDemo= array();
     foreach ($rows as $c){
-      $aux = new User($c{'user_id'},$c{'username'},$c{'password'},$c{'name'},$c{'lastname'},$c{'birthdate'},$c{'email'},$c{'sex'},$c{'rol'});
+      $aux = new DiseaseOrg($c{'disease_id'},$c{'so_id'});
       array_push($arrayDemo, $aux);
     }
     return $arrayDemo;

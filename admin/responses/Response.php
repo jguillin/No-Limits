@@ -1,6 +1,6 @@
 <?php
 
-class User
+class Response
 {
     private $id;
     private $responsesId;
