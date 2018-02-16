@@ -67,7 +67,7 @@ class DiseaseCollector extends Collector
   //Crea un nuevo usuario
   function createDisease($diseaseId,$name,$synonym,$description,$symptom,$causes,$population,$disorder,$diagnosis,$treatment,$terhapy,$subdivision){
     try {
-      $insertarrow = self::$db->insertRow("INSERT INTO diseases (username,\"password\",\"name\",lastname,birthdate,email,sex,role) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)", array ("{$name}","{$synonym}","{$description}","{$symptom}","{$causes}","{$population}","{$disorder}","{$diagnosis}","{$treatment}","{$terhapy}","{$subdivision}"));
+      $insertarrow = self::$db->insertRow("INSERT INTO diseases (name,\"synonyms\",\"description\",symptoms,causes,affected_populations,related_disorders,diagnosis,treatment,investigational_therapies,subdivisions) VALUES (?,?,?,?,?,?,?,?,?,?,?)", array ("{$name}","{$synonym}","{$description}","{$symptom}","{$causes}","{$population}","{$disorder}","{$diagnosis}","{$treatment}","{$terhapy}","{$subdivision}"));
       return true;
     } catch (\Exception $e) {
       echo $e;
