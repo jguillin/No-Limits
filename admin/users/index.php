@@ -1,16 +1,19 @@
 <?php
   session_start();
+
+  if(isset($_SESSION['username']) && $_SESSION['role']=='a'){
+
+
 ?>
 
-<html lang="es">
+<html>
   <head>
-    <meta charset="utf-8">
     <link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
-    <title>Usuarios</title>
   </head>
-  <body>
+<body>
 
 <?php
+
   include_once('../../pages/adminMenu.php');
 
   include_once("UserCollector.php");
@@ -72,7 +75,10 @@
     }
 
     echo "</tbody></table>";
-    ?>
+
+    } else {
+      header("Location: /error");
+    } ?>
 
   </section>
 </body>
