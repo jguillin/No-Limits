@@ -13,22 +13,22 @@
 
 <?php
   include_once('../../pages/adminMenu.php');
-  include_once("User.php");
-  $id = $_GET["userId"];
+  include_once("DiseaseOrg.php");
+  $id = $_GET["diseaseId"];
   $showForm = true;
 
   if (empty($id)){
     //ID Vacía
-    $ObjUser = new User("","","","","","","","","");
-    $title = 'Nuevo Usuario';
+    $ObjUser = new ("","");
+    $title = 'Nuevo Enfermedades apoyada por organizaciones';
     $action = '/admin/users/create-user.php';
 
   }else {
 
     //ID seteada
-    include_once("UserCollector.php");
-    $UserCollectorObj = new UserCollector();
-    $response = $UserCollectorObj->showUser($id);
+    include_once("DiseaseOrgCollector.php");
+    $DiseaseOrgCollectorObj = new DiseaseOrgCollector();
+    $response = $DiseaseOrgCollectorObj->showUser($id);
 
     if (!$response['found']){
       //Usuario no encontrado
