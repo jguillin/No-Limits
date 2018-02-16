@@ -34,12 +34,12 @@ session_start();
 	if ($DiseaseCollectorObj->updateDisease($diseaseId, $name, $synonym, $description, $symtomp, $causes, $population, $disorder, $diagnosis, $treatment, $terhapy, $subdivision)){
 		echo "<h2>Enfermedad con la ID: ".$diseaseId." se actualizó</h2></br>";
 	}else {
-		echo "<h2>ERROR AL ACTUALIZAR EL USUARIO</h2></br>";
+		echo "<h2>ERROR AL ACTUALIZAR LA ENFERMEDAD</h2></br>";
 	}
 
 ?>
 
-<div><a id='cancelButton' class='form-button' href='/admin/users'>Volver</a></div>
+<div><a id='cancelButton' class='form-button' href='/admin/diseases'>Volver</a></div>
 </section>
 
 </body>

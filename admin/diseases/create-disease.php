@@ -13,29 +13,33 @@
 
 <?php
 
-  $username = $_POST["username"];
-  $password= $_POST["password"];
-  $name= $_POST["name"];
-  $lastname= $_POST["lastname"];
-  $birthdate= $_POST["birthdate"];
-  $email= $_POST["email"];
-  $sex= $_POST["sex"];
-  $role= $_POST["role"];
+  $diseaseId= $_POST["diseaseId"];
+  $name = $_POST["name"];
+  $synonym= $_POST["synonym"];
+  $description= $_POST["description"];
+  $symtomp= $_POST["symtomp"];
+  $causes= $_POST["causes"];
+  $population= $_POST["population"];
+  $disorder= $_POST["disorder"];
+  $diagnosis= $_POST["diagnosis"];
+  $treatment= $_POST["treatment"];
+  $terhapy= $_POST["terhapy"];
+  $subdivision= $_POST["subdivision"];
 
 
-include_once("UserCollector.php");
+include_once("DiseasesCollector.php");
 
-$UserCollectorObj = new UserCollector();
+$DiseaseCollectorObj = new DiseaseCollector();
 
-if ($UserCollectorObj->createUser($username, $password, $name, $lastname, $birthdate, $email, $sex, $role)){
-  echo "El usuario ". $username ." se ha creado correctamente</br>";
+if ($DiseaseCollectorObj->createUser($diseaseId, $name, $synonym, $description, $symtomp, $causes, $population, $disorder, $diagnosis, $treatment, $terhapy, $subdivision)){
+  echo "La enfermedad ". $name ." se ha creado correctamente</br>";
 }else {
-  echo "ERROR al crear usuario</br>";
+  echo "ERROR al crear enfermedad</br>";
 }
 
 ?>
 
-<div><a href="/admin/users">Volver a Usuarios</a></div>
+<div><a href="/admin/diseases">Volver a Enfermedades</a></div>
 </section>
 </body>
 </html>

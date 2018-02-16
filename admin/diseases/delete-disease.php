@@ -30,7 +30,7 @@ if ($DiseaseCollectorObj->deleteDisease($id)){
 
 ?>
 
-<div><a id='cancelButton' class='form-button' href="/admin/diseases/">Volver a Usuarios</a></div>
+<div><a id='cancelButton' class='form-button' href="/admin/diseases">Volver a Enfermedades</a></div>
 </section>
 
 </body>

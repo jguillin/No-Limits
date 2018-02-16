@@ -2,7 +2,7 @@
   session_start();
 
   if(isset($_SESSION['username']) && $_SESSION['role']=='a'){
-     echo "<p> Hola usuario:(" . $_SESSION['username']. ")[<a href='/src/logout.php'>Salir</a>]";
+
 
 ?>
 
@@ -10,28 +10,26 @@
   <head>
     <link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
   </head>
-
 <body>
 
-	<div><a href="/admin">Regresar a admin</a></div>	
-
-
-
-
 <?php
+
+  include_once('../../pages/adminMenu.php');
+
   include_once("DiseasesCollector.php");
 
   $DiseaseCollectorObj = new DiseaseCollector();
 
 ?>
-  <br>
-  <form action='/admin/diseases/new' method="POST">
-    <button class='CRUD-button insert' href='/admin/diseases/form-disease.php?diseaseId='>
-      <img src='/assets/img/icons/new_icon.png'>
-    </button>
-  </form><br><br>
+  <section id="content">
+    <h1>Enfermedades</h1>
+    <br>
+      <a class='CRUD-button insert' href='/admin/diseases/form-disease.php?diseaseId='>
+        <img src='/assets/img/icons/new_icon.png'>
+      </a>
+    <br><br>
 
-  <table>
+    <table>
       <thead>
         <tr>
           <th>Disease Id</th>
@@ -73,7 +71,7 @@
                   <a class='CRUD-button edit' href='/admin/diseases/form-disease.php?diseaseId=". $c->getDiseasesId() ."'>
                     <img src='/assets/img/icons/edit_icon.png'>
                   </a>
-                  <a class='CRUD-button delete' href='/admin/users/delete-disease.php?diseaseId=". $c->getDiseasesId() ."'>
+                  <a class='CRUD-button delete' href='/admin/diseases/delete-disease.php?diseaseId=". $c->getDiseasesId() ."'>
                     <img src='/assets/img/icons/delete_icon.png'>
                   </a>
             </td>";
