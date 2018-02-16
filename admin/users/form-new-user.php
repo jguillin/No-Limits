@@ -15,38 +15,35 @@
 
 
 <form class='form-Container' action="/admin/users/create-user.php" method="POST">
-	<fieldset>
-		<label class="form-label">Usuario</label>
-		<input class='form-TextBox' type="text" name="username" autofocus required /></br>
-		<label class="form-label">Contraseña</label>
-		<input class='form-TextBox' type="password" name="password" required /></br></br>
-		<label class="form-label">Nombre</label>
-		<input class='form-TextBox' type="text" name="name" required /></br>
-		<label class="form-label">Apellido</label>
-		<input class='form-TextBox' type="text" name="lastname" required /></br></br>
-		<label class="form-label">Fecha de nacimiento</label>
-		<input class='form-TextBox' type="text" name="birthdate" required /></br>
-		<label class="form-label">Email</label>
-		<input class='form-TextBox' type="text" name="email" required /></br></br>
-		<label class="form-label">Sexo</label>
+
+		<label>Usuario</label>
+		<input class='form-TextBox' type="text" name="username" autofocus required />
+		<label>Contraseña</label>
+		<input class='form-TextBox' type="password" name="password" required />
+		<label>Nombre</label>
+		<input class='form-TextBox' type="text" name="name" />
+		<label>Apellido</label>
+		<input class='form-TextBox' type="text" name="lastname" />
+		<label>Fecha de nacimiento</label>
+		<input class='form-TextBox' type="date" name="birthdate" />
+		<label>Email</label>
+		<input class='form-TextBox' type="email" placeholder="example@aol.com" name="email" />
+		<label>Sexo</label>
     <select name="sex">
       <option value="m">Masculino</option>
       <option value="f">Femenino</option>
       <option value="o">Otro</option>
     </select>
-		<!-- <input class='form-TextBox' type="text" name="sex" required /></br> -->
-		<label class="form-label">Rol</label>
+		<label>Rol</label>
     <select name="role">
       <option value="a">Administrador</option>
       <option value="u">Usuario</option>
     </select>
-		<!-- <input class='form-TextBox' type="text" name="rol" required /></br></br> -->
-		</br></br>
-        	<button class='form-button' type="submit">Guardar</button>
-        </br></br>
-        	 <a href='/admin/users'>Cancelar</a>
+		</br>
+    <button class='form-button' type="submit">Guardar</button>
 
-    </fieldset>
+    <a href='/admin/users'>Cancelar</a>
+
 </form>
 
 

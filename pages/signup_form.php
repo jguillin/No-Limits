@@ -21,44 +21,45 @@
 
 		<div class="contenedor col-md-10 col-lg-8 col-xl-6 mt-5 mb-5 pt-4 pb-5">
 		<h1 class="titulo-1"> Formulario de registro</h1>
-			<form>
+			<form action="/src/create-user.php" method="POST">
 				<h1 class="titulo">Crea tu cuenta</h1>
 
+        <div class="form-group">
+          <label>Usuario:</label>
+          <input type="text" name="username" placeholder="usuario" required style="padding-left: 10px; padding-right: 10px;">
+        </div>
+        <div class="form-group">
+          <label>Contraseña:</label>
+          <input type="password" name="password1" placeholder="**********" required style="padding-left: 10px; padding-right: 10px;">
+        </div>
+        <div class="form-group">
+          <label>Confirmar contraseña:</label>
+          <input type="password" name="password2" placeholder="**********" required style="padding-left: 10px; padding-right: 10px;">
+        </div>
+
 				<div class="form-group">
-					<label>Nombres:</label>
-					<input type="text" name="nombresUsuario" id="registroUsuario" placeholder="Nombre" required style="padding-left: 10px; padding-right: 10px;">
+					<label>Nombre:</label>
+					<input type="text" name="name" id="registroUsuario" placeholder="Nombre" style="padding-left: 10px; padding-right: 10px;">
 				</div>
 				<div class="form-group">
 					<label for="registroApellido">Apellido:</label>
-					<input type="text" name="apellidosUsuario" id="registroApellido" placeholder="Apellido" required style="padding-left: 10px; padding-right: 10px;">
+					<input type="text" name="lastname" id="registroApellido" placeholder="Apellido" style="padding-left: 10px; padding-right: 10px;">
 				</div>
 				<div class="form-group">
 					<label for="registroNacimiento">Fecha de nacimiento:</label>
-					<input name="diaNacimiento" id="registroNacimiento" placeholder="año-mes-día" required style="padding-left: 10px; padding-right: 10px;">
+					<input type="date" name="birthdate" id="registroNacimiento" placeholder="año-mes-día" style="padding-left: 10px; padding-right: 10px;">
+				</div>
+        <div class="form-group">
+					<label>Correo:</label>
+					<input type="email" name="email" placeholder="usuario@ejemplo.com" style="padding-left: 10px; padding-right: 10px;">
 				</div>
 				<div class="form-group">
 					<label for="registroSexo">Sexo:</label>
-					<select class="form-control" name="genero" id="registroSexo" required style="padding-left: 10px; padding-right: 10px;">
-						<option value="">-</option>
-						<option value="male">Hombre</option>
-						<option value="female">Mujer</option>
+					<select class="form-control" name="sex" id="registroSexo" style="padding-left: 10px; padding-right: 10px;">
+						<option value="m">Masculino</option>
+						<option value="f">Femenino</option>
+						<option value="o">Otro</option>
 					</select>
-				</div>
-				<div class="form-group">
-					<label>Correo:</label>
-					<input type="email" name="email" placeholder="usuario@ejemplo.com" required style="padding-left: 10px; padding-right: 10px;">
-				</div>
-				<div class="form-group">
-					<label>Usuario:</label>
-					<input type="text" name="usuario" placeholder="usuario" required style="padding-left: 10px; padding-right: 10px;">
-				</div>
-				<div class="form-group">
-					<label>Contraseña:</label>
-					<input type="password" name="clave" placeholder="**********" required style="padding-left: 10px; padding-right: 10px;">
-				</div>
-				<div class="form-group">
-					<label>Confirmar contraseña:</label>
-					<input type="password" name="confirmarclave" placeholder="**********" required style="padding-left: 10px; padding-right: 10px;">
 				</div>
 
 				<input class="registro" type="submit" value="Registrar">
