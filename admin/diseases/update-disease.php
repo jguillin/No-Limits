@@ -15,28 +15,31 @@ session_start();
 
 <?php
 
-	$userId= $_POST["userId"];
-	$username = $_POST["username"];
-	$password= $_POST["password"];
-	$name= $_POST["name"];
-	$lastname= $_POST["lastname"];
-	$birthdate= $_POST["birthdate"];
-	$email= $_POST["email"];
-	$sex= $_POST["sex"];
-	$role= $_POST["role"];
+	$diseaseId= $_POST["diseaseId"];
+	$name = $_POST["name"];
+	$synonym= $_POST["synonym"];
+	$description= $_POST["description"];
+	$symtomp= $_POST["symtomp"];
+	$causes= $_POST["causes"];
+	$population= $_POST["population"];
+	$disorder= $_POST["disorder"];
+	$diagnosis= $_POST["diagnosis"];
+	$treatment= $_POST["treatment"];
+	$terhapy= $_POST["terhapy"];
+	$subdivision= $_POST["subdivision"];
 
 
-	include_once("UserCollector.php");
-	$UserCollectorObj = new UserCollector();
-	if ($UserCollectorObj->updateUser($userId, $username, $password, $name, $lastname, $birthdate, $email, $sex, $role)){
-		echo "<h2>Usuario con la ID: ".$userId." se actualizó</h2></br>";
+	include_once("DiseasesCollector.php");
+	$DiseaseCollectorObj = new DiseaseCollector();
+	if ($DiseaseCollectorObj->updateDisease($diseaseId, $name, $synonym, $description, $symtomp, $causes, $population, $disorder, $diagnosis, $treatment, $terhapy, $subdivision)){
+		echo "<h2>Enfermedad con la ID: ".$diseaseId." se actualizó</h2></br>";
 	}else {
-		echo "<h2>ERROR AL ACTUALIZAR EL USUARIO</h2></br>";
+		echo "<h2>ERROR AL ACTUALIZAR LA ENFERMEDAD</h2></br>";
 	}
 
 ?>
 
-<div><a id='cancelButton' class='form-button' href='/admin/users'>Volver</a></div>
+<div><a id='cancelButton' class='form-button' href='/admin/diseases'>Volver</a></div>
 </section>
 
 </body>
