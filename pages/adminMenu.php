@@ -1,7 +1,7 @@
 <?php
   if(isset($_SESSION['username']) && $_SESSION['role']=='a'){
   }else {
-          header("Location: /pages/error.php");
+          header("Location: /pages/login_form.php");
         }
 ?>
 

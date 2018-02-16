@@ -55,7 +55,7 @@
     echo "<td>
             <b class='table-cell-label'>Actions</b>
             <span>
-                <a class='CRUD-button edit' href='/admin/users/form-article.php?articleId=". $c->getArticleId() ."'>
+                <a class='CRUD-button edit' href='/admin/articles/form-article.php?articleId=". $c->getArticleId() ."'>
                   <img src='/assets/img/icons/edit_icon.png'>
                 </a>
                 <a class='CRUD-button delete' href='/admin/articles/delete-article.php?articleId=". $c->getArticleId() ."'>
