@@ -57,12 +57,12 @@ if ($showForm){
           if ($title === 'Editar Enfermedad'){
             ?>
             <label>Disease Id</label>
-        		<input class='form-TextBox' type="text" name="userId" readonly value="<?php echo $ObjUser->getUserId(); ?>"/>
+        		<input class='form-TextBox' type="text" name="userId" readonly value="<?php echo $ObjDisease->getDiseaseId(); ?>"/>
             <?php
           }
           ?>
     		<label>So Id</label>
-    		<input class='form-TextBox' type="text" name="soId" autofocus required value="<?php echo $ObjUser->getUsername(); ?>"/>
+    		<input class='form-TextBox' type="text" name="soId" autofocus required value="<?php echo $ObjUser->get(); ?>"/>
     		
           ?>
         </select>

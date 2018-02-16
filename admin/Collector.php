@@ -11,10 +11,10 @@ define("DB_PASS", "6d4638c7274c4e92f361b9d7854651256413f88a6a21dcd76781c02fb8809
 define("DB_NAME", "die4odlfjih80");
 
 //LOCAL DATABASE
-  // define("DB_HOST", "localhost");
-  // define("DB_USER", "postgres");
-  // define("DB_PASS", "usuario");
-  // define("DB_NAME", "Bdatos");
+//   define("DB_HOST", "localhost");
+//   define("DB_USER", "postgres");
+//   define("DB_PASS", "usuario");
+//   define("DB_NAME", "Bdatos");
 
 
 class Collector extends dataBase

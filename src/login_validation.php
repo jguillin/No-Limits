@@ -3,7 +3,6 @@
 
   include_once('../admin/users/UserCollector.php');
   include_once('../admin/users/User.php');
-  include_once('../../pages/adminMenu.php');
 
   $user = $_POST['username'];
   $password = $_POST['password'];
@@ -28,8 +27,8 @@
       //usuario incorrecto
       echo "<h2>USUARIO INCORRECTO</h2><br>";
       session_destroy();
-      echo "<div><a id='cancelButton' class='form-button' href='/pages/login_form.php'>Volver a Formulario</a></div>";
-      //echo "<a href = '/pages/login_form.php'>Volver</a>";
+      //echo "<div><a id='cancelButton' class='form-button' href='/pages/login_form.php'>Volver a Formulario</a></div>";
+      echo "<a href = '/pages/login_form.php'>Volver</a>";
   }
 
 
