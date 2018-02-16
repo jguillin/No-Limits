@@ -14,7 +14,8 @@
       <li><a href='/admin/articles'>Articles</a></li>
       <li><a href='/admin/articles-comments'>Article_comments</a></li>
       <li><a href='/admin/diseases'>Diseases</a></li>
-      <li><a href='/admin/diseases-supporting-organizations'>Diseases_supporting_organizations</a></li>
+      <li><a href='/admin/diseases-supporting-organizations'>Diseases Supporting Organizations</a></li>
+      <li><a href='/admin/supporting-organizations'>Supporting Organizations</a></li>
       
 
       <li><a href='/admin'>Volver a ADMIN</a></li>

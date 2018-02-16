@@ -1,6 +1,6 @@
 <?php
-
-class SupportingOrg
+ 
+class Sorg
 {
     private $soId;
     private $name;
@@ -9,7 +9,7 @@ class SupportingOrg
     private $website;
     private $email;
 
-     function __construct($soId, $name, $address, $phone, $website, $email,) {
+     function __construct($soId, $name, $address, $phone, $website, $email) {
        $this->soId = $soId;
        $this->name = $name;
        $this->address = $address;
