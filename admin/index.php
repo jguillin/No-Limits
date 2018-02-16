@@ -7,6 +7,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Administración</title>
+  <link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
 </head>
 
 <body>
@@ -14,23 +15,34 @@
 
 <?php
 	if(isset($_SESSION['username']) && $_SESSION['role']=='a'){
-	echo "<p> Hola usuario:(" . $_SESSION['username']. ")
-			[<a style='text-decoration: none' href='/src/logout.php'>Salir</a>]";
+	// echo "<p> Hola usuario:(" . $_SESSION['username']. ")
+	// 		[<a style='text-decoration: none' href='/src/logout.php'>Salir</a>]";
 
 ?>
 
-	</br></br>
-	<a style="text-decoration: none" href='/admin/users'>Users</a></br>
-	<a style="text-decoration: none" href='/admin/diseases'>Diseases</a></br>
-	<a style="text-decoration: none" href='#'>Communities</a></br>
-	<a style="text-decoration: none" href='/admin/articles'>Articles</a></br>
-	<a style="text-decoration: none" href='#'>Article_comments</a></br>
-	<a style="text-decoration: none" href='#'>Diseases_supporting_organizations</a></br>
-	<a style="text-decoration: none" href='#'>Diseases_users</a></br>
-	<a style="text-decoration: none" href='#'>Responses</a></br>
-	<a style="text-decoration: none" href='#'>Supporting_organizations</a>
-	<a style="text-decoration: none" href='#'>Threads</a></br>
 
+  <div id="menuContainer">
+    <nav id="menuAdminCRUD" class="userMenu">
+      <ul>
+        <li><span><?php echo "USERNAME: " . $_SESSION['username']. " (admin)"; ?></span></li>
+        <li><a href='/admin/users'>Users</a></li>
+      	<li><a href='/admin/articles'>Articles</a></li>
+      	<li><a href='/admin/article-comments'>Article_comments</a></li>
+        <li><a href='/admin/diseases'>Diseases</a></li>
+      	<li><a href='/admin/diseases-supporting-organizations'>Diseases_supporting_organizations</a></li>
+      	<li><a href='/admin/diseases-users'>Diseases_users</a></li>
+      	<li><a href='/admin/supporting-organizations'>Supporting_organizations</a></li>
+        <li><a href='/admin/communities'>Communities</a></li>
+      	<li><a href='/admin/threads'>Threads</a></li>
+        <li><a href='/admin/responses'>Responses</a></li>
+
+        <li><a href='/src/logout.php'>Salir</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <section id="content">
+  </section>
 
 <?php } else {
 

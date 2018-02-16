@@ -7,7 +7,7 @@
   </head>
   <body>
 
-  <div id="main">
+    <section id="content">
 
 <?php
 
@@ -36,6 +36,6 @@ if ($UserCollectorObj->createUser($username, $password, $name, $lastname, $birth
 ?>
 
 <div><a href="/admin/users">Volver a Usuarios</a></div>
-</div>
+</section>
 </body>
 </html>

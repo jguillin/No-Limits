@@ -10,7 +10,8 @@ session_start();
 </head>
 <body>
 
-<div id="main">
+	<section id="content">
+	
 
 <?php
 $id=$_GET["userId"];
@@ -29,7 +30,7 @@ if ($UserCollectorObj->deleteUser($id)){
 ?>
 
 <div><a id='cancelButton' class='form-button' href="/admin/users/">Volver a Usuarios</a></div>
-</div>
+</section>
 
 </body>
 </html>

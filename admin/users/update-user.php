@@ -10,12 +10,10 @@ session_start();
 </head>
 <body>
 
-<div id="main">
+	<section id="content">
+
 
 <?php
-
-	//Almacenando los datos de editar.php en variables
-	print_r($_POST);
 
 	$userId= $_POST["userId"];
 	$username = $_POST["username"];
@@ -27,7 +25,6 @@ session_start();
 	$sex= $_POST["sex"];
 	$role= $_POST["role"];
 
-	echo "Actualizando... </br>";
 
 	include_once("UserCollector.php");
 	$UserCollectorObj = new UserCollector();
@@ -40,7 +37,7 @@ session_start();
 ?>
 
 <div><a id='cancelButton' class='form-button' href='/admin/users'>Volver</a></div>
-</div>
+</section>
 
 </body>
 </html>
