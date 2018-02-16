@@ -15,7 +15,7 @@
 <?php
 
 
-$soId = $_POST["soId"];
+$soId = $_GET["soId"];
   
 
 include_once("SorgCollector.php");
