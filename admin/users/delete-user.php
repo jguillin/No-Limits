@@ -20,7 +20,7 @@ include_once("UserCollector.php");
 $UserCollectorObj = new UserCollector();
 
 
-if ($UserCollectorObj->deleteUser($id)){
+if ($UserCollectorObj->deleteSorg($id)){
 	echo "<h2>Usuario con la ID: ".$id." se borró</h2></br>";
 }else {
 	echo "<h2>ERROR AL ELIMINAR EL USUARIO</h2></br>";

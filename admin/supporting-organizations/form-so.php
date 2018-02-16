@@ -65,7 +65,7 @@ if ($showForm){
     		<label>Name</label>
     		<input class='form-TextBox' type="text" name="name" autofocus required value="<?php echo $ObjSorg->getName(); ?>"/>
     		<label>Address</label>
-    		<input class='form-TextBox' type="password" name="address" required value="<?php echo $ObjSorg->getAddress(); ?>"/>
+    		<input class='form-TextBox' type="text" name="address" required value="<?php echo $ObjSorg->getAddress(); ?>"/>
     		<label>Phone</label>
     		<input class='form-TextBox' type="text" name="phone" value="<?php echo $ObjSorg->getPhone(); ?>"/>
     		<label>Website</label>
