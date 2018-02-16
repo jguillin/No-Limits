@@ -15,22 +15,22 @@ session_start();
 	<section id="content">
 	
 <?php
-$id=$_GET["userId"];
+$id=$_GET["diseaseId"];
 
 
-include_once("UserCollector.php");
-$UserCollectorObj = new UserCollector();
+include_once("DiseasesCollector.php");
+$DiseaseCollectorObj = new DiseaseCollector();
 
 
-if ($UserCollectorObj->deleteUser($id)){
-	echo "<h2>Usuario con la ID: ".$id." se borró</h2></br>";
+if ($DiseaseCollectorObj->deleteUser($id)){
+	echo "<h2>Enfermedad con la ID: ".$id." se borró existosamente</h2></br>";
 }else {
-	echo "<h2>ERROR AL ELIMINAR EL USUARIO</h2></br>";
+	echo "<h2>ERROR AL ELIMINAR LA ENFERMEDAD</h2></br>";
 }
 
 ?>
 
-<div><a id='cancelButton' class='form-button' href="/admin/users/">Volver a Usuarios</a></div>
+<div><a id='cancelButton' class='form-button' href="/admin/diseases/">Volver a Usuarios</a></div>
 </section>
 
 </body>

@@ -33,7 +33,7 @@
     if (!$response['found']){
       //Usuario no encontrado
       $showForm = false;
-      echo "<h2>ENFERMEDAD NO ENCONTRADO</h2><br>";
+      echo "<h2>ENFERMEDAD NO ENCONTRADA</h2><br>";
       echo "<a id='cancelButton' class='form-button' href='/admin/diseases'>Volver</a>";
     }else {
       //Usuario encontrado
@@ -57,32 +57,32 @@ if ($showForm){
           if ($title === 'Editar Enfermedad'){
             ?>
             <label>Enfermedad Id</label>
-        		<input class='form-TextBox' type="text" name="userId" readonly value="<?php echo $ObjDisease->getDiseasesId(); ?>"/>
+        		<input class='form-TextBox' type="text" name="diseaseId" readonly value="<?php echo $ObjDisease->getDiseasesId(); ?>"/>
             <?php
           }
           ?>
     		<label>Nombre</label>
     		<input class='form-TextBox' type="text" name="name" autofocus required value="<?php echo $ObjDisease->getName(); ?>"/>
     		<label>Sinónimos</label>
-    		<input class='form-TextBox' type="text" name="name" value="<?php echo $ObjDisease->getSynonyms(); ?>"/>
+    		<input class='form-TextBox' type="text" name="synonym" value="<?php echo $ObjDisease->getSynonyms(); ?>"/>
     		<label>Descripción</label>
-    		<input class='form-TextBox' type="text" name="lastname" value="<?php echo $ObjDisease->getDescription(); ?>"/>
+    		<input class='form-TextBox' type="text" name="description" value="<?php echo $ObjDisease->getDescription(); ?>"/>
     		<label>Síntomas</label>
-    		<input class='form-TextBox' type="text" name="birthdate" value="<?php echo $ObjDisease->getSymtomps(); ?>"/>
+    		<input class='form-TextBox' type="text" name="symtomp" value="<?php echo $ObjDisease->getSymtomps(); ?>"/>
     		<label>Causas</label>
-    		<input class='form-TextBox' type="text" name="email" value="<?php echo $ObjDisease->getCauses(); ?>"/>
+    		<input class='form-TextBox' type="text" name="causes" value="<?php echo $ObjDisease->getCauses(); ?>"/>
     		<label>Poblaciones Afectadas</label>
-        <input class='form-TextBox' type="text" name="email" value="<?php echo $ObjDisease->getAffectedPopulation(); ?>"/>
+        <input class='form-TextBox' type="text" name="population" value="<?php echo $ObjDisease->getAffectedPopulation(); ?>"/>
         <label>Trastornos Relacionados</label>
-        <input class='form-TextBox' type="text" name="email" value="<?php echo $ObjDisease->getRelatedDisorders(); ?>"/>
+        <input class='form-TextBox' type="text" name="disorder" value="<?php echo $ObjDisease->getRelatedDisorders(); ?>"/>
         <label>Diagnóstico</label>
-        <input class='form-TextBox' type="text" name="email" value="<?php echo $ObjDisease->getDiagnosis(); ?>"/>
+        <input class='form-TextBox' type="text" name="diagnosis" value="<?php echo $ObjDisease->getDiagnosis(); ?>"/>
         <label>Tratamiento</label>
-        <input class='form-TextBox' type="text" name="email" value="<?php echo $ObjDisease->getTreatment(); ?>"/>
+        <input class='form-TextBox' type="text" name="treatment" value="<?php echo $ObjDisease->getTreatment(); ?>"/>
         <label>Terapias en investigación</label>
-        <input class='form-TextBox' type="text" name="email" value="<?php echo $ObjDisease->getInvestTerhapies(); ?>"/>
+        <input class='form-TextBox' type="text" name="terhapy" value="<?php echo $ObjDisease->getInvestTerhapies(); ?>"/>
         <label>Subdivisiones</label>
-        <input class='form-TextBox' type="text" name="email" value="<?php echo $ObjDisease->getSubdivisions(); ?>"/>
+        <input class='form-TextBox' type="text" name="subdivision" value="<?php echo $ObjDisease->getSubdivisions(); ?>"/>
     		</br>
         <button class='form-button' type="text">Guardar</button>
 
