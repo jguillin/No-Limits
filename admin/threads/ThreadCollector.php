@@ -1,7 +1,8 @@
 <?php
 
 include_once('Thread.php');
-include_once('../src/Collector.php');
+include_once(dirname(__DIR__).'/Collector.php');
+
 
 class UserCollector extends Collector
 {
