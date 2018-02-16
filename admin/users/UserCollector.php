@@ -51,7 +51,14 @@ class UserCollector extends Collector
 
   //Elimina un usuario
   function deleteUser($userId){
-    $deleterow = self::$db->deleteRow("DELETE FROM users WHERE user_id = ?", array("{$userId}"));
+    try {
+      $deleterow = self::$db->deleteRow("DELETE FROM users WHERE user_id = ?", array("{$userId}"));
+      return true;
+    } catch (\Exception $e) {
+      echo $e;
+      return false;
+    }
+
 
   }
 

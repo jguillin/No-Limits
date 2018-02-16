@@ -2,30 +2,32 @@
 session_start();
 ?>
 
-<html lang="en-US">
+<html>
 <head>
 	<meta charset="utf-8">
-	<title>Eliminar</title>
+	<title>Eliminar Usuario</title>
 </head>
 <body>
 
 <div id="main">
 
 <?php
-$id=$_GET["id"];
-$nombre=$_GET["nombre"];
+$id=$_GET["userId"];
 
-echo "Edicion en proceso..... </br>";
 
-include_once("usersCollector.php");
-$DemoCollectorObj = new DemoCollector();
-$DemoCollectorObj->deleteDemo($id);
+include_once("UserCollector.php");
+$UserCollectorObj = new UserCollector();
 
-echo "valor id:".$id." se borro " .$nombre." </br>";
+
+if ($UserCollectorObj->deleteUser($id)){
+	echo "Usuario con la ID: ".$id." se borró</br>";
+}else {
+	echo "ERROR AL ELIMINAR EL USUARIO</br>";
+}
 
 ?>
 
-<div><a href="showDataBD.php">Volver al Inicio</a></div>
+<div><a href="/admin/users/">Volver a Usuarios</a></div>
 </div>
 
 </body>
