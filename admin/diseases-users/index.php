@@ -1,9 +1,5 @@
 <?php
   session_start();
-
-  if(isset($_SESSION['username']) && $_SESSION['role']=='a'){
-
-
 ?>
 
 <html>
@@ -61,9 +57,7 @@
 
   echo "</tbody></table>";
 
-  } else {
-    header("Location: /error");
-  } ?>
+   ?>
 
 </body>
 </html>

@@ -15,29 +15,23 @@ session_start();
 
 <?php
 
-	$userId= $_POST["userId"];
-	$username = $_POST["username"];
-	$password= $_POST["password"];
-	$name= $_POST["name"];
-	$lastname= $_POST["lastname"];
-	$birthdate= $_POST["birthdate"];
-	$email= $_POST["email"];
-	$sex= $_POST["sex"];
-	$role= $_POST["role"];
+	$diseaseId = $_POST["diseaseId"];
+  	$soId= $_POST["soId"];
 
 
-	include_once("UserCollector.php");
-	$UserCollectorObj = new UserCollector();
-	if ($UserCollectorObj->updateUser($userId, $username, $password, $name, $lastname, $birthdate, $email, $sex, $role)){
-		echo "<h2>Usuario con la ID: ".$userId." se actualizó</h2></br>";
-	}else {
-		echo "<h2>ERROR AL ACTUALIZAR EL USUARIO</h2></br>";
-	}
+	include_once("DiseaseOrgCollector.php");
+
+	$DiseaseOrgCollectorObj = new DiseaseOrgCollector();
+
+if ($DiseaseOrgCollectorObj->updateDiseaseOrg($diseaseId, $soId)){
+  echo "La Organización ". $soId ." se ha actualizado correctamente</br>";
+}else {
+  echo "ERROR al actualizar Organización</br>";
+}
 
 ?>
 
-<div><a id='cancelButton' class='form-button' href='/admin/users'>Volver</a></div>
+<div><a  id="cancelButton" class='form-button' href="/admin/diseases-supporting-organizations">Volver</a></div>
 </section>
-
 </body>
 </html>

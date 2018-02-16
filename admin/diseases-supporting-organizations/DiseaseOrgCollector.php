@@ -1,6 +1,6 @@
 <?php
 
-include_once('DiseasesOrg.php');
+include_once('DiseaseOrg.php');
 include_once(dirname(__DIR__).'/Collector.php');
 
 class DiseaseOrgCollector extends Collector
@@ -8,10 +8,9 @@ class DiseaseOrgCollector extends Collector
 
   function showDiseasesOrg() {
     $rows = self::$db->getRows("SELECT * FROM diseases_supporting_organizations");
-
     $arrayDemo= array();
     foreach ($rows as $c){
-      $aux = new DiseaseOrg($c{'disease_id'},$c{'so_Id'});
+      $aux = new DiseaseOrg($c{'disease_id'},$c{'so_id'});
       array_push($arrayDemo, $aux);
     }
     return $arrayDemo;
@@ -41,7 +40,7 @@ class DiseaseOrgCollector extends Collector
   //Actualiza un usuario
   function updateDiseaseOrg($diseaseId,$soId){
     try {
-      $insertrow = self::$db->updateRow("UPDATE diseases_supporting_organizations SET so_Id=? WHERE disease_id= ?", array("{$soId}"));
+      $insertrow = self::$db->updateRow("UPDATE diseases_supporting_organizations SET so_Id=? WHERE disease_id= ?", array("{$soId}","{$diseaseId}"));
       return true;
     } catch (\Exception $e) {
       echo $e;
@@ -67,7 +66,7 @@ class DiseaseOrgCollector extends Collector
   //Crea un nuevo usuario
   function createDiseaseOrg($diseaseId,$soId){
     try {
-      $insertarrow = self::$db->insertRow("INSERT INTO diseases_supporting_organizations (soId,) VALUES (?)", array ("{$soId}"));
+      $insertarrow = self::$db->insertRow("INSERT INTO diseases_supporting_organizations (disease_id, so_id) VALUES (?)", array ("{$diseaseId}", "{$soId}"));
       return true;
     } catch (\Exception $e) {
       echo $e;

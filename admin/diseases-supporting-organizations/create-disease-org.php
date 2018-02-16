@@ -4,6 +4,7 @@
 ?>
 <html>
   <head>
+    <link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
   </head>
   <body>
 
@@ -13,29 +14,24 @@
 
 <?php
 
-  $username = $_POST["username"];
-  $password= $_POST["password"];
-  $name= $_POST["name"];
-  $lastname= $_POST["lastname"];
-  $birthdate= $_POST["birthdate"];
-  $email= $_POST["email"];
-  $sex= $_POST["sex"];
-  $role= $_POST["role"];
+  $diseaseId = 1;
+  $soId= $_POST["soId"];
+ 
 
 
-include_once("UserCollector.php");
+include_once("DiseaseOrgCollector.php");
 
-$UserCollectorObj = new UserCollector();
+$DiseaseOrgCollectorObj = new DiseaseOrgCollector();
 
-if ($UserCollectorObj->createUser($username, $password, $name, $lastname, $birthdate, $email, $sex, $role)){
-  echo "El usuario ". $username ." se ha creado correctamente</br>";
+if ($DiseaseOrgCollectorObj->createDiseaseOrg($diseaseId, $soId)){
+  echo "La Organización ". $soId ." se ha creado correctamente</br>";
 }else {
-  echo "ERROR al crear usuario</br>";
+  echo "ERROR al crear Organización</br>";
 }
 
 ?>
 
-<div><a href="/admin/users">Volver a Usuarios</a></div>
+<div><a  id="cancelButton" class='form-button' href="/admin/diseases-supporting-organizations">Volver</a></div>
 </section>
 </body>
 </html>
