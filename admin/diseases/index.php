@@ -26,7 +26,7 @@
 ?>
   <br>
   <form action='/admin/diseases/new' method="POST">
-    <button class='CRUD-button insert' type='submit'>
+    <button class='CRUD-button insert' href='/admin/diseases/form-disease.php?diseaseId='>
       <img src='/assets/img/icons/new_icon.png'>
     </button>
   </form><br><br>
@@ -68,15 +68,15 @@
     echo "<td><b class='table-cell-label'>Invest Terhapies</b><span class='table-cell-content'>". $c->getInvestTerhapies() ."</span></td>";
     echo "<td><b class='table-cell-label'>Subdivisions</b><span class='table-cell-content'>". $c->getSubdivisions() ."</span></td>";
     echo "<td>
-            <b class='table-cell-label'>Actions</b>
-            <span>
-              <form class='CRUD-button-container' action='/admin/#". $c->getDiseasesId() ."' method='GET'>
-                <button class='CRUD-button edit' type='submit'><img src='/assets/img/icons/edit_icon.png'></button>
-              </form>
-              <form class='CRUD-button-container' action='/admin/#". $c->getDiseasesId() ."' method='DELETE'>
-                <button class='CRUD-button delete' type='submit'><img src='/assets/img/icons/delete_icon.png'></button>
-              </form>
-          </td>";
+              <b class='table-cell-label'>Actions</b>
+              <span>
+                  <a class='CRUD-button edit' href='/admin/diseases/form-disease.php?diseaseId=". $c->getDiseasesId() ."'>
+                    <img src='/assets/img/icons/edit_icon.png'>
+                  </a>
+                  <a class='CRUD-button delete' href='/admin/users/delete-disease.php?diseaseId=". $c->getDiseasesId() ."'>
+                    <img src='/assets/img/icons/delete_icon.png'>
+                  </a>
+            </td>";
 
     echo "</tr>";
   }

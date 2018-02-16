@@ -17,15 +17,25 @@ class DiseaseCollector extends Collector
     return $arrayDemo;
   }
 
-/*
-  //Edita un usuario
-  function showUser($id){
-    $row = self::$db->getRows("SELECT * FROM users where user_id= ? ", array("{$id}"));
 
-    $ObjDemo = new User($row[0]{'user_id'},$row[0]{'username'},$row[0]{'password'},$row[0]{'name'},$row[0]{'lastname'},$row[0]{'birthdate'},$row[0]{'email'},$row[0]{'sex'},$row[0]{'rol'});
-    return $ObjDemo;
+  //Edita un usuario
+ function showDisease($id){
+    $ObjDisease = (object)[];
+    $response = ['found'=>false];
+    try {
+      $row = self::$db->getRows("SELECT * FROM diseases where disease_id= ? ", array("{$id}"));
+      if (!empty($row)){
+        $ObjDisease = new Disease($row[0]{'disease_id'},$row[0]{'name'},$row[0]{'synonyms'},$row[0]{'description'},$row[0]{'symptoms'},$row[0]{'causes'},$row[0]{'affected_populations'},$row[0]{'related_disorders'},$row[0]{'diagnosis'},$row[0]{'treatment'},$row[0]{'investigational_therapies'},$row[0]{'subdivisions'});
+        $response['found'] = true;
+        $response['user'] = $ObjDisease;
+      }
+      return $response;
+    } catch (\Exception $e) {
+      echo $e;
+    }
 
 }
+
 
   function loginUser($user, $password){
     try {
@@ -57,7 +67,7 @@ class DiseaseCollector extends Collector
     $insertarrow = self::$db->insertRow("INSERT INTO public.users (nombre) VALUES (?)", array ("{$nombre}"));
 
   }
-  */
+  
 
 }
 
