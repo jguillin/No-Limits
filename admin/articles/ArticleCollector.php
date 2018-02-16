@@ -32,10 +32,7 @@ class ArticleCollector extends Collector
     } catch (\Exception $e) {
       echo $e;
     }
-
 }
-
-
 
   //Actualiza un usuario
   function updateArticle($articleId, $authorId, $postdatetime, $title, $imageurl, $content, $lastmod){
@@ -65,7 +62,7 @@ class ArticleCollector extends Collector
   //Crea un nuevo usuario
   function createArticle($authorId, $postdatetime, $title, $imageurl, $content, $lastmod){
     try {
-      $insertarrow = self::$db->insertRow("INSERT INTO articles (author_id,post_datetime,title,\"imageURL\",content,last_mod_datetime) VALUES (?,?,?,?,?,?)", array ("{$authorId}","{$postdatetime}","{$title}","{$imageurl}","{$content}","{$lastmod}"));
+      $insertarrow = self::$db->insertRow("INSERT INTO articles (author_id, post_datetime, title, \"imageURL\", \"content\", last_mod_datetime) VALUES (?,?,?,?,?,?)", array ("{$authorId}","{$postdatetime}","{$title}","{$imageurl}","{$content}","{$lastmod}"));
       return true;
     } catch (\Exception $e) {
       echo $e;

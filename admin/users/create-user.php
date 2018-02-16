@@ -29,14 +29,14 @@ include_once("UserCollector.php");
 $UserCollectorObj = new UserCollector();
 
 if ($UserCollectorObj->createUser($username, $password, $name, $lastname, $birthdate, $email, $sex, $role)){
-  echo "El usuario ". $username ." se ha creado correctamente</br>";
+  echo "<h2>El usuario ". $username ." se ha creado correctamente</h2></br>";
 }else {
-  echo "ERROR al crear usuario</br>";
+  echo "<h2>ERROR al crear usuario</h2></br>";
 }
 
 ?>
 
-<div><a href="/admin/users">Volver a Usuarios</a></div>
+<div><a id='cancelButton' class='form-button' href="/admin/users">Volver a Usuarios</a></div>
 </section>
 </body>
 </html>

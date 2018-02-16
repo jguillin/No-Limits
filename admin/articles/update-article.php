@@ -2,7 +2,7 @@
 session_start();
 ?>
 
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8">
 		<link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">

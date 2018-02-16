@@ -2,11 +2,11 @@
 session_start();
 ?>
 
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8">
 		<link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
-		<title>Actualizar datos</title>
+		<title>Actualizar Comentarios</title>
 	</head>
 	<body>
 		<?php include_once('../../pages/adminMenu.php'); ?>
@@ -14,26 +14,25 @@ session_start();
 
 		<?php
 
+	$commentId = $_POST["commentId"];
 	$articleId = $_POST["articleId"];
-	$authorId = $_POST["authorId"];
-	$postdatetime= $_POST["postDateTime"];
-	$title= $_POST["title"];
-	$imageurl= $_POST["imageURL"];
+	$userId= $_POST["userId"];
 	$content= $_POST["content"];
-	$lastmod= $_POST["lastModDateTime"];
+	$parentCommentId= $_POST["parentCommentId"];
+	$postDateTime= $_POST["postDateTime"];
 
 
-	include_once("ArticleCollector.php");
-	$ArticleCollectorObj = new ArticleCollector();
-	if($ArticleCollectorObj->updateArticle($articleId, $authorId, $postdatetime, $title, $imageurl, $content, $lastmod)){
-		echo "<h2>Artículo con la ID: ".$articleId." se actualizó</h2></br>";
+	include_once("ArtCommentCollector.php");
+	$ArtCommentCollectorObj = new ArtCommentCollector();
+	if($ArtCommentCollectorObj->updateArtComment($commentId,$articleId, $userId, $content, $parentCommentId, $postDateTime)){
+		echo "<h2>El comentario con la ID: ".$commentId." se actualizó</h2></br>";
 	}else {
-		echo "<h2>ERROR AL ACTUALIZAR EL Artículo</h2></br>";
+		echo "<h2>ERROR AL ACTUALIZAR EL COMENTARIO</h2></br>";
 	}
 
 	?>
 
-	<div><a id='cancelButton' class='form-button' href='/admin/articles'>Volver</a></div>
+	<div><a id='cancelButton' class='form-button' href='/admin/articles-comments'>Volver</a></div>
 	</section>
 
 	</body>

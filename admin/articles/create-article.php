@@ -27,15 +27,15 @@ include_once("ArticleCollector.php");
 $ArticleCollectorObj = new ArticleCollector();
 
 if ($ArticleCollectorObj->createArticle($authorId, $postdatetime, $title, $imageurl, $content, $lastmod)){
-  echo "El Artículo ". $title ." se ha creado correctamente</br>";
+  echo "<h2>El Artículo ". $title ." se ha creado correctamente</h2></br>";
   }else {
-  echo "ERROR al crear artículo</br>";
+  echo "<h2>ERROR al crear artículo</h2></br>";
   }
 
 
 ?>
 
-<div><a href="/admin/articles">Volver a Artículos</a></div>
+<div><a id='cancelButton' class='form-button' href="/admin/articles">Volver a Artículos</a></div>
 </section>
 </body>
 </html>

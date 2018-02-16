@@ -1,6 +1,6 @@
 <?php
 
-class Comment
+class ArtComment
 {
     private $commentId;
     private $articleId;

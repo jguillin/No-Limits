@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
   	<link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
-  	<title>Crear Artículo</title>
+  	<title>Crear Comentarios</title>
   </head>
   <body>
     <?php include_once('../../pages/adminMenu.php'); ?>
@@ -14,28 +14,27 @@
 
 <?php
 
-  $authorId = $_POST["authorId"];
-  $postdatetime= $_POST["postDateTime"];
-  $title= $_POST["title"];
-  $imageurl= $_POST["imageURL"];
+  $articleId = $_POST["articleId"];
+  $userId= $_POST["userId"];
   $content= $_POST["content"];
-  $lastmod= $_POST["lastModDateTime"];
+  $parentCommentId= $_POST["parentCommentId"];
+  $postDateTime= $_POST["postDateTime"];
 
 
-include_once("ArticleCollector.php");
+include_once("ArtCommentCollector.php");
 
-$ArticleCollectorObj = new ArticleCollector();
+$ArtCommentCollectorObj = new ArtCommentCollector();
 
-if ($ArticleCollectorObj->createArticle($authorId, $postdatetime, $title, $imageurl, $content, $lastmod)){
-  echo "El Artículo ". $title ." se ha creado correctamente</br>";
+if ($ArtCommentCollectorObj->createArtComment($articleId, $userId, $content, $parentCommentId, $postDateTime)){
+  echo "<h2>El Comentario se ha creado correctamente</h2></br>";
   }else {
-  echo "ERROR al crear artículo</br>";
+  echo "<h2>ERROR al crear Comentario</h2></br>";
   }
 
 
 ?>
 
-<div><a href="/admin/articles">Volver a Artículos</a></div>
+<div><a id='cancelButton' class='form-button' href="/admin/articles-comments">Volver a Comentarios</a></div>
 </section>
 </body>
 </html>

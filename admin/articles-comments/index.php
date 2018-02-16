@@ -1,35 +1,30 @@
 <?php
   session_start();
-
-  if(isset($_SESSION['username']) && $_SESSION['role']=='a'){
-     echo "<p> Hola usuario:(" . $_SESSION['username']. ")[<a href='/src/logout.php'>Salir</a>]";
-
 ?>
 
-<html>
+<html lang="es">
   <head>
+    <meta charset="utf-8">
     <link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
+    <title>Comentarios</title>
   </head>
-
-<body>
-
-	<div><a href="/admin">Regresar a admin</a></div>	
-
-
-
+  <body>
 
 <?php
+  include_once('../../pages/adminMenu.php');
+
   include_once("ArtCommentCollector.php");
 
-  $CommentCollectorObj = new CommentCollector();
+  $ArtCommentCollectorObj = new ArtCommentCollector();
 
 ?>
-  <br>
-  <form action='/admin/diseases/new' method="POST">
-    <button class='CRUD-button insert' type='submit'>
-      <img src='/assets/img/icons/new_icon.png'>
-    </button>
-  </form><br><br>
+  <section id="content">
+    <h1>Artículos</h1>
+    <br>
+      <a class='CRUD-button insert' href='/admin/articles-comments/form-article-comments.php?commentId='>
+        <img src='/assets/img/icons/new_icon.png'>
+      </a>
+    <br><br>
 
   <table>
       <thead>
@@ -38,8 +33,8 @@
           <th>Article Id</th>
           <th>User Id</th>
           <th>Content</th>
-          <th>Parent Content Id</th>
-          <th>Post Datetime</th>
+          <th>Parent Comment Id</th>
+          <th>Post DateTime</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -47,23 +42,24 @@
 
 <?php
 
-  foreach ($commentCollectorObj->showComments() as $c){
+  foreach ($ArtCommentCollectorObj->showArtComments() as $c){
     echo "<tr>";
-    echo "<td><b class='table-cell-label'>Disease Id</b><span class='table-cell-content'>". $c->getCommentId() ."</span></td>";
-    echo "<td><b class='table-cell-label'>Name</b><span class='table-cell-content'>". $c->getArticleId() ."</span></td>";
-    echo "<td><b class='table-cell-label'>Synonyms</b><span class='table-cell-content'>". $c->getUserId() ."</span></td>";
-    echo "<td><b class='table-cell-label'>Description</b><span class='table-cell-content'>". $c->getContent() ."</span></td>";
-    echo "<td><b class='table-cell-label'>Symtomps</b><span class='table-cell-content'>". $c->getParentCommentId() ."</span></td>";
-    echo "<td><b class='table-cell-label'>Causes</b><span class='table-cell-content'>". $c->getPostDatetime() ."</span></td>";
+    echo "<td><b class='table-cell-label'>Comment Id</b><span class='table-cell-content'>". $c->getCommentId() ."</span></td>";
+    echo "<td><b class='table-cell-label'>Article Id</b><span class='table-cell-content'>". $c->getArticleId() ."</span></td>";
+    echo "<td><b class='table-cell-label'>User Id</b><span class='table-cell-content'>". $c->getUserId() ."</span></td>";
+    echo "<td><b class='table-cell-label'>Content</b><span class='table-cell-content'>". $c->getContent() ."</span></td>";
+    echo "<td><b class='table-cell-label'>Parent Comment Id</b><span class='table-cell-content'>". $c->getParentCommentId() ."</span></td>";
+    echo "<td><b class='table-cell-label'>Post DateTime</b><span class='table-cell-content'>". $c->getPostDatetime() ."</span></td>";
     echo "<td>
             <b class='table-cell-label'>Actions</b>
             <span>
-              <form class='CRUD-button-container' action='/admin/diseases/". $c->getCommentId() ."' method='GET'>
-                <button class='CRUD-button edit' type='submit'><img src='/assets/img/icons/edit_icon.png'></button>
-              </form>
-              <form class='CRUD-button-container' action='/admin/diseases/". $c->getCommentId() ."' method='DELETE'>
-                <button class='CRUD-button delete' type='submit'><img src='/assets/img/icons/delete_icon.png'></button>
-              </form>
+                <a class='CRUD-button edit' href='/admin/articles-comments/form-article-comments.php?commentId=". $c->getCommentId() ."'>
+                  <img src='/assets/img/icons/edit_icon.png'>
+                </a>
+                <a class='CRUD-button delete' href='/admin/articles-comments/delete-article-comments.php?commentId=". $c->getCommentId() ."'>
+                  <img src='/assets/img/icons/delete_icon.png'>
+                </a>
+            </span>
           </td>";
 
     echo "</tr>";
@@ -71,9 +67,7 @@
 
   echo "</tbody></table>";
 
-  } else {
-    header("Location: /error");
-  } ?>
-
+  ?>
+</section>
 </body>
 </html>

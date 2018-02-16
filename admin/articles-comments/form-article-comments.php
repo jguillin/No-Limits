@@ -7,27 +7,26 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8">
-	<title>Insertar</title>
   <link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
 
   <?php
     include_once('../../pages/adminMenu.php');
-    include_once("Article.php");
-    $id = $_GET["articleId"];
+    include_once("ArtComment.php");
+    $id = $_GET["commentId"];
     $showForm = true;
 
     if (empty($id)){
       //ID Vacía
-      $ObjArticle = new Article("","","","","","","");
-      $title = 'Nuevo Artículo';
-      $action = '/admin/articles/create-article.php';
+      $ObjArtComment = new ArtComment("","","","","","");
+      $title = 'Nuevo Comentario';
+      $action = '/admin/articles-comments/create-article-comments.php';
 
     }else {
 
       //ID seteada
-      include_once("ArticleCollector.php");
-      $ArticleCollectorObj = new ArticleCollector();
-      $response = $ArticleCollectorObj->showArticle($id);
+      include_once("ArtCommentCollector.php");
+      $ArtCommentCollectorObj = new ArtCommentCollector();
+      $response = $ArtCommentCollectorObj->showArtComment($id);
 
       if (!$response['found']){
         //Artículo no encontrado
@@ -35,9 +34,9 @@
 
       }else {
         //Artículo encontrado
-        $ObjArticle = $response['article'];
-        $title = 'Editar Artículo';
-        $action = '/admin/articles/update-article.php';
+        $ObjArtComment = $response['comment'];
+        $title = 'Editar Comentario';
+        $action = '/admin/articles-comments/update-article-comments.php';
       }
 
     }
@@ -57,51 +56,49 @@
       <form class='form' action="<?php echo $action; ?>" method="POST">
           <h1><?php echo $title; ?></h1>
           <?php
-            if ($title === 'Editar Artículo'){
+            if ($title === 'Editar Comentario'){
               ?>
-              <label>Article ID</label>
-          		<input class='form-TextBox' type="text" name="articleId" readonly value="<?php echo $ObjArticle->getArticleId(); ?>"/>
+              <label>Comentario ID</label>
+          		<input class='form-TextBox' type="text" name="commentId" readonly value="<?php echo $ObjArtComment->getCommentId(); ?>"/>
               <?php
             }
             ?>
-      		<label>Author ID</label>
-      		<input class='form-TextBox' type="text" name="authorId" autofocus required value="<?php echo $ObjArticle->getAuthorId(); ?>"/>
-      		<label>Fecha del Post</label>
+      		<label>Article ID</label>
+      		<input class='form-TextBox' type="text" name="articleId" autofocus required value="<?php echo $ObjArtComment->getArticleId(); ?>"/>
+      		<label>Usuario ID</label>
+      		<input class='form-TextBox' type="text" name="userId" value="<?php echo $ObjArtComment->getUserId(); ?>"/>
+      		<label>Contenido</label>
+      		<textarea class='form-TextBox' name="content" ><?php echo $ObjArtComment->getContent(); ?></textarea>
+      		<label>Comentario Superior ID</label>
+      		<input class='form-TextBox' type="text" name="parentCommentId" value="<?php echo $ObjArtComment->getParentCommentId(); ?>"/>
+          <label>Fecha-Hora del Post</label>
           <?php
-            if ($title === 'Editar Artículo'){
+            if ($title === 'Editar Comentario'){
               ?>
-      		      <input class='form-TextBox' type="datetime" name="postDateTime" value="<?php echo $ObjArticle->getPostDatetime(); ?>" readonly/>
+      		      <input class='form-TextBox' type="datetime" name="postDateTime" value="<?php echo $ObjArtComment->getPostDatetime(); ?>" readonly/>
               <?php
               }else {?>
                 <input class='form-TextBox' type="datetime" name="postDateTime" value="<?php echo date('Y-m-d H:i:s'); ?>"readonly/>
               <?php
               }
           ?>
-      		<label>Título</label>
-      		<input class='form-TextBox' type="text" name="title" value="<?php echo $ObjArticle->getTitle(); ?>"/>
-      		<label>URL de la imagen</label>
-      		<input class='form-TextBox' type="text" name="imageURL" value="<?php echo $ObjArticle->getImageUrl(); ?>"/>
-      		<label>Contenido</label>
-      		<textarea class='form-TextBox' name="content" /><?php echo $ObjArticle->getContent(); ?></textarea>
-      		<label>Fecha de última modificación</label>
-          <input class='form-TextBox' type="datetime" name="lastModDateTime" value="<?php echo date('Y-m-d H:i:s'); ?>"readonly/>
 
       		</br>
           <button class='form-button' type="submit">Guardar</button>
 
-          <a id="cancelButton" class='form-button' href='/admin/articles'>Cancelar</a>
+          <a id="cancelButton" class='form-button' href='/admin/articles-comments'>Cancelar</a>
 
       </form>
     </div>
 
   <?php }else{ ?>
-            <title>ARTÍCULO NO ENCONTRADO</title>
+            <title>COMENTARIO NO ENCONTRADO</title>
 
             </head>
             <body>
               <section id="content">
-                <h2>ARTÍCULO NO ENCONTRADO</h2><br>
-                <a id='cancelButton' class='form-button' href='/admin/articles'>Volver</a>
+                <h2>COMENTARIO NO ENCONTRADO</h2><br>
+                <a id='cancelButton' class='form-button' href='/admin/articles-comments'>Volver</a>
           <?php
           }
         ?>

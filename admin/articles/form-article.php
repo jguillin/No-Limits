@@ -7,7 +7,6 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8">
-	<title>Insertar</title>
   <link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
 
   <?php
