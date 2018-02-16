@@ -24,7 +24,7 @@
 <?php
   include_once("ArtCommentCollector.php");
 
-  $DiseaseCollectorObj = new DiseaseCollector();
+  $CommentCollectorObj = new CommentCollector();
 
 ?>
   <br>
@@ -50,7 +50,7 @@
 
 <?php
 
-  foreach ($DiseaseCollectorObj->showDiseases() as $c){
+  foreach ($commentCollectorObj->showComments() as $c){
     echo "<tr>";
     echo "<td><b class='table-cell-label'>Disease Id</b><span class='table-cell-content'>". $c->getCommentId() ."</span></td>";
     echo "<td><b class='table-cell-label'>Name</b><span class='table-cell-content'>". $c->getArticleId() ."</span></td>";
