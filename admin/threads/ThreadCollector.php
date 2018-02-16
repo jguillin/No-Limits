@@ -4,15 +4,15 @@ include_once('Thread.php');
 include_once(dirname(__DIR__).'/Collector.php');
 
 
-class UserCollector extends Collector
+class ThreadCollector extends Collector
 {
 
-  function showUsers() {
+  function showThreads() {
     $rows = self::$db->getRows("SELECT * FROM threads");
 
     $arrayDemo= array();
     foreach ($rows as $c){
-      $aux = new User($c{'id'},$c{'communities_id'});
+      $aux = new Thread($c{'id'},$c{'communities_id'});
       array_push($arrayDemo, $aux);
     }
     return $arrayDemo;
