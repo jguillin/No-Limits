@@ -12,6 +12,7 @@
 <body>
 
 <?php
+  include_once('../../pages/adminMenu.php');
   include_once("User.php");
   $id = $_GET["userId"];
   $showForm = true;

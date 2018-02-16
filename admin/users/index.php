@@ -2,7 +2,7 @@
   session_start();
 
   if(isset($_SESSION['username']) && $_SESSION['role']=='a'){
-	   echo "<p> Hola usuario:(" . $_SESSION['username']. ")[<a href='/src/logout.php'>Salir</a>]";
+
 
 ?>
 
@@ -12,16 +12,17 @@
   </head>
 <body>
 
-<div><a href="/admin">Regresar a admin</a></div>
-
 <?php
+
+  include_once('../../pages/adminMenu.php');
+
   include_once("UserCollector.php");
 
   $UserCollectorObj = new UserCollector();
 
 ?>
   <section id="content">
-
+    <h1>Usuarios</h1>
     <br>
       <a class='CRUD-button insert' href='/admin/users/form-user.php?userId='>
         <img src='/assets/img/icons/new_icon.png'>
@@ -77,7 +78,7 @@
     } else {
       header("Location: /error");
     } ?>
-    
+
   </section>
 </body>
 </html>

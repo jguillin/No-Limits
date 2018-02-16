@@ -15,45 +15,11 @@
 
 <?php
 	if(isset($_SESSION['username']) && $_SESSION['role']=='a'){
-	// echo "<p> Hola usuario:(" . $_SESSION['username']. ")
-	// 		[<a style='text-decoration: none' href='/src/logout.php'>Salir</a>]";
 
+    include_once('../pages/adminMenu.php');
 ?>
 
-<<<<<<< HEAD
-=======
-	</br></br>
-	<a style="text-decoration: none" href='/admin/users'>Users</a></br>
-	<a style="text-decoration: none" href='/admin/diseases'>Diseases</a></br>
-	<a style="text-decoration: none" href='/admin/communities'>Communities</a></br>
-	<a style="text-decoration: none" href='/admin/articles'>Articles</a></br>
-	<a style="text-decoration: none" href='/admin/articles-comments'>Article_comments</a></br>
-	<a style="text-decoration: none" href='/admin/diseases-supporting-organizations'>Diseases_supporting_organizations</a></br>
-	<a style="text-decoration: none" href='/admin/diseases-users'>Diseases_users</a></br>
-	<a style="text-decoration: none" href='/admin/responses'>Responses</a></br>
-	<a style="text-decoration: none" href='/admin/supporting-organizations'>Supporting_organizations</a></br>
-	<a style="text-decoration: none" href='/admin/threads'>Threads</a></br>
->>>>>>> c49aa56841f8b52921f377cf6ec6696e04ea0e83
 
-  <div id="menuContainer">
-    <nav id="menuAdminCRUD" class="userMenu">
-      <ul>
-        <li><span><?php echo "USERNAME: " . $_SESSION['username']. " (admin)"; ?></span></li>
-        <li><a href='/admin/users'>Users</a></li>
-      	<li><a href='/admin/articles'>Articles</a></li>
-      	<li><a href='/admin/article-comments'>Article_comments</a></li>
-        <li><a href='/admin/diseases'>Diseases</a></li>
-      	<li><a href='/admin/diseases-supporting-organizations'>Diseases_supporting_organizations</a></li>
-      	<li><a href='/admin/diseases-users'>Diseases_users</a></li>
-      	<li><a href='/admin/supporting-organizations'>Supporting_organizations</a></li>
-        <li><a href='/admin/communities'>Communities</a></li>
-      	<li><a href='/admin/threads'>Threads</a></li>
-        <li><a href='/admin/responses'>Responses</a></li>
-
-        <li><a href='/src/logout.php'>Salir</a></li>
-      </ul>
-    </nav>
-  </div>
 
   <section id="content">
   </section>

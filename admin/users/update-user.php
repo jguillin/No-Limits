@@ -9,7 +9,7 @@ session_start();
 	<title>Actualizar datos</title>
 </head>
 <body>
-
+	<?php include_once('../../pages/adminMenu.php'); ?>
 	<section id="content">
 
 

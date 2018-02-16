@@ -10,9 +10,10 @@ session_start();
 </head>
 <body>
 
+	<?php include_once('../../pages/adminMenu.php'); ?>
+
 	<section id="content">
 	
-
 <?php
 $id=$_GET["userId"];
 

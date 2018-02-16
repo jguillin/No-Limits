@@ -7,22 +7,22 @@
   </head>
   <body>
 
-    <section id="content">
+    <?php include_once('../../pages/adminMenu.php'); ?>
+
+  <section id="content">
 
 <?php
 
-$username = $_POST["username"];
-$password= $_POST["password"];
-$name= $_POST["name"];
-$lastname= $_POST["lastname"];
-$birthdate= $_POST["birthdate"];
-$email= $_POST["email"];
-$sex= $_POST["sex"];
-$role= $_POST["role"];
+  $username = $_POST["username"];
+  $password= $_POST["password"];
+  $name= $_POST["name"];
+  $lastname= $_POST["lastname"];
+  $birthdate= $_POST["birthdate"];
+  $email= $_POST["email"];
+  $sex= $_POST["sex"];
+  $role= $_POST["role"];
 
-print_r($_POST);
 
-// echo 'Usuario ' .htmlspecialchars($username) . '!';
 include_once("UserCollector.php");
 
 $UserCollectorObj = new UserCollector();
