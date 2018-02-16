@@ -7,16 +7,9 @@
   $user = $_POST['username'];
   $password = $_POST['password'];
 
-    $UserCollectorObj = new UserCollector();
-  // $ObjUser = $UserCollectorObj->loginUser($user, $password);
-  //
-  // print_r($ObjUser);
+  $UserCollectorObj = new UserCollector();
 
-  //
-  //
-
-  // if($_SESSION['MiSesion']=="valor"){
-$response = $UserCollectorObj->loginUser($user, $password);
+  $response = $UserCollectorObj->loginUser($user, $password);
 
   if (!empty($response)){
 
@@ -32,7 +25,7 @@ $response = $UserCollectorObj->loginUser($user, $password);
       }
     }else{
       //usuario incorrecto
-      echo "USUARIO INCORRECTO";
+      echo "<h2>USUARIO INCORRECTO</h2><br>";
       session_destroy();
       echo "<a href = '/pages/login_form.php'>Volver</a>";
   }

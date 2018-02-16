@@ -5,6 +5,7 @@ session_start();
 <html>
 <head>
 	<meta charset="utf-8">
+	<link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
 	<title>Eliminar Usuario</title>
 </head>
 <body>
@@ -20,14 +21,14 @@ $UserCollectorObj = new UserCollector();
 
 
 if ($UserCollectorObj->deleteUser($id)){
-	echo "Usuario con la ID: ".$id." se borró</br>";
+	echo "<h2>Usuario con la ID: ".$id." se borró</h2></br>";
 }else {
-	echo "ERROR AL ELIMINAR EL USUARIO</br>";
+	echo "<h2>ERROR AL ELIMINAR EL USUARIO</h2></br>";
 }
 
 ?>
 
-<div><a href="/admin/users/">Volver a Usuarios</a></div>
+<div><a id='cancelButton' class='form-button' href="/admin/users/">Volver a Usuarios</a></div>
 </div>
 
 </body>

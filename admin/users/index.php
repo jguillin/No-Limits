@@ -21,7 +21,7 @@
 
 ?>
   <br>
-    <a class='CRUD-button insert' href='/admin/users/form-new-user.php'>
+    <a class='CRUD-button insert' href='/admin/users/form-user.php?userId='>
       <img src='/assets/img/icons/new_icon.png'>
     </a>
   <br><br>
@@ -59,7 +59,7 @@
     echo "<td>
             <b class='table-cell-label'>Actions</b>
             <span>
-                <a class='CRUD-button edit' href='/admin/users/form-edit-user.php?userId=". $c->getUserId() ."'>
+                <a class='CRUD-button edit' href='/admin/users/form-user.php?userId=". $c->getUserId() ."'>
                   <img src='/assets/img/icons/edit_icon.png'>
                 </a>
                 <a class='CRUD-button delete' href='/admin/users/delete-user.php?userId=". $c->getUserId() ."'>

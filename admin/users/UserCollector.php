@@ -7,7 +7,7 @@ class UserCollector extends Collector
 {
 
   function showUsers() {
-    $rows = self::$db->getRows("SELECT * FROM users");
+    $rows = self::$db->getRows("SELECT * FROM users ORDER BY user_id");
 
     $arrayDemo= array();
     foreach ($rows as $c){
@@ -19,10 +19,19 @@ class UserCollector extends Collector
 
   //Edita un usuario
   function showUser($id){
-    $row = self::$db->getRows("SELECT * FROM users where user_id= ? ", array("{$id}"));
-
-    $ObjDemo = new User($row[0]{'user_id'},$row[0]{'username'},$row[0]{'password'},$row[0]{'name'},$row[0]{'lastname'},$row[0]{'birthdate'},$row[0]{'email'},$row[0]{'sex'},$row[0]{'role'});
-    return $ObjDemo;
+    $ObjUser = (object)[];
+    $response = ['found'=>false];
+    try {
+      $row = self::$db->getRows("SELECT * FROM users where user_id= ? ", array("{$id}"));
+      if (!empty($row)){
+        $ObjUser = new User($row[0]{'user_id'},$row[0]{'username'},$row[0]{'password'},$row[0]{'name'},$row[0]{'lastname'},$row[0]{'birthdate'},$row[0]{'email'},$row[0]{'sex'},$row[0]{'role'});
+        $response['found'] = true;
+        $response['user'] = $ObjUser;
+      }
+      return $response;
+    } catch (\Exception $e) {
+      echo $e;
+    }
 
 }
 
@@ -37,6 +46,7 @@ class UserCollector extends Collector
         $response['role'] = $ObjUser->getRole();
         return $response;
       }
+      return $response;
     } catch (\Exception $e) {
       return $response;
     }
@@ -44,8 +54,14 @@ class UserCollector extends Collector
   }
 
   //Actualiza un usuario
-  function updateUser($id,$nombre){
-    $insertrow = self::$db->updateRow("UPDATE users SET nombre= ? WHERE user_id= ?", array("{$nombre}", $id));
+  function updateUser($userId,$username,$password,$name,$lastname,$birthdate,$email,$sex,$role){
+    try {
+      $insertrow = self::$db->updateRow("UPDATE users SET username=?,\"password\"=?,\"name\"=?,lastname=?,birthdate=?,email=?,sex=?,role=? WHERE user_id= ?", array("{$username}","{$password}","{$name}","{$lastname}","{$birthdate}","{$email}","{$sex}","{$role}","{$userId}"));
+      return true;
+    } catch (\Exception $e) {
+      echo $e;
+      return false;
+    }
 
   }
 
