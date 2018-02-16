@@ -40,7 +40,7 @@ if ($DiseaseCollectorObj->createDisease($diseaseId, $name, $synonym, $descriptio
 
 ?>
 
-<div><a href="/admin/diseases">Volver a Enfermedades</a></div>
+<div><a id='cancelButton' class='form-button' href="/admin/diseases">Volver a Enfermedades</a></div>
 </section>
 </body>
 </html>
