@@ -31,7 +31,7 @@ session_start();
 
 	include_once("DiseasesCollector.php");
 	$DiseaseCollectorObj = new DiseaseCollector();
-	if ($DiseaseCollectorObj->updateUser($diseaseId, $name, $synonym, $description, $symtomp, $causes, $population, $disorder, $diagnosis, $treatment, $terhapy, $subdivision)){
+	if ($DiseaseCollectorObj->updateDisease($diseaseId, $name, $synonym, $description, $symtomp, $causes, $population, $disorder, $diagnosis, $treatment, $terhapy, $subdivision)){
 		echo "<h2>Enfermedad con la ID: ".$diseaseId." se actualizó</h2></br>";
 	}else {
 		echo "<h2>ERROR AL ACTUALIZAR EL USUARIO</h2></br>";

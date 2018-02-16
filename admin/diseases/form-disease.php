@@ -19,7 +19,7 @@
 
   if (empty($id)){
     //ID Vacía
-    $ObjDisease = new User("","","","","","","","","");
+    $ObjDisease = new Disease("","","","","","","","","","","","");
     $title = 'Nueva Enfermedad';
     $action = '/admin/diseases/create-disease.php';
 

@@ -22,7 +22,7 @@ include_once("DiseasesCollector.php");
 $DiseaseCollectorObj = new DiseaseCollector();
 
 
-if ($DiseaseCollectorObj->deleteUser($id)){
+if ($DiseaseCollectorObj->deleteDisease($id)){
 	echo "<h2>Enfermedad con la ID: ".$id." se borró existosamente</h2></br>";
 }else {
 	echo "<h2>ERROR AL ELIMINAR LA ENFERMEDAD</h2></br>";

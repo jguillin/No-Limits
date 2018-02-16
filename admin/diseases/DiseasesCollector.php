@@ -50,21 +50,42 @@ class DiseaseCollector extends Collector
 
   }
 
+
   //Actualiza un usuario
-  function updateUser($id,$nombre){
-    $insertrow = self::$db->updateRow("UPDATE public.users SET nombre= ? WHERE user_id= ?", array("{$nombre}", $id));
+  function updateDisease($userId,$username,$password,$name,$lastname,$birthdate,$email,$sex,$role){
+    try {
+      $insertrow = self::$db->updateRow("UPDATE diseases SET username=?,\"password\"=?,\"name\"=?,lastname=?,birthdate=?,email=?,sex=?,role=? WHERE user_id= ?", array("{$username}","{$password}","{$name}","{$lastname}","{$birthdate}","{$email}","{$sex}","{$role}","{$userId}"));
+      return true;
+    } catch (\Exception $e) {
+      echo $e;
+      return false;
+    }
 
   }
 
-  //Elimina un usuario
-  function deleteUser($id){
-    $deleterow = self::$db->deleteRow("DELETE FROM public.users WHERE user_id= ?", array("{$id}"));
+
+    //Elimina un usuario
+  function deleteDisease($diseaseId){
+    try {
+      $deleterow = self::$db->deleteRow("DELETE FROM diseases WHERE disease_id = ?", array("{$diseaseId}"));
+      return true;
+    } catch (\Exception $e) {
+      echo $e;
+      return false;
+    }
+
 
   }
 
   //Crea un nuevo usuario
-  function createUser($nombre){
-    $insertarrow = self::$db->insertRow("INSERT INTO public.users (nombre) VALUES (?)", array ("{$nombre}"));
+  function createDisease($username,$password,$name,$lastname,$birthdate,$email,$sex,$role){
+    try {
+      $insertarrow = self::$db->insertRow("INSERT INTO users (username,\"password\",\"name\",lastname,birthdate,email,sex,role) VALUES (?,md5(?),?,?,?,?,?,?)", array ("{$username}","{$password}","{$name}","{$lastname}","{$birthdate}","{$email}","{$sex}","{$role}"));
+      return true;
+    } catch (\Exception $e) {
+      echo $e;
+      return false;
+    }
 
   }
   
