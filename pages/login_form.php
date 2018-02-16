@@ -21,7 +21,7 @@
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row ">
-					<form class="formulario col-10 col-md-6 mx-auto" action="/admin/login_validation.php" method="POST">
+					<form class="formulario col-10 col-md-6 mx-auto" action="/src/login_validation.php" method="POST">
 						<h1 class="titulo">Inicio de sesión</h1>
 						<input type="text" name="username" placeholder=" &#128100; Usuario" required autofocus style="padding-left: 10px; padding-right: 10px;">
 						<br/>

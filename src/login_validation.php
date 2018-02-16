@@ -1,8 +1,8 @@
 <?php
   session_start();
 
-  include_once('users/UserCollector.php');
-  include_once('users/User.php');
+  include_once('../admin/users/UserCollector.php');
+  include_once('../admin/users/User.php');
 
   $user = $_POST['username'];
   $password = $_POST['password'];
