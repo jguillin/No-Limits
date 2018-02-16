@@ -49,7 +49,7 @@
   foreach ($DiseaseUserCollectorObj->showDiseasesUser() as $c){
     echo "<tr>";
     echo "<td><b class='table-cell-label'>Disease Id</b><span class='table-cell-content'>". $c->getUserId() ."</span></td>";
-    echo "<td><b class='table-cell-label'>Name</b><span class='table-cell-content'>". $c->getDiseaseId() ."</span></td>";
+    echo "<td><b class='table-cell-label'>So Id</b><span class='table-cell-content'>". $c->getDiseaseId() ."</span></td>";
     echo "<td>
             <b class='table-cell-label'>Actions</b>
             <span>
