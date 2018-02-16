@@ -22,14 +22,14 @@
 	</br></br>
 	<a style="text-decoration: none" href='/admin/users'>Users</a></br>
 	<a style="text-decoration: none" href='/admin/diseases'>Diseases</a></br>
-	<a style="text-decoration: none" href='#'>Communities</a></br>
+	<a style="text-decoration: none" href='/admin/communities'>Communities</a></br>
 	<a style="text-decoration: none" href='/admin/articles'>Articles</a></br>
-	<a style="text-decoration: none" href='#'>Article_comments</a></br>
-	<a style="text-decoration: none" href='#'>Diseases_supporting_organizations</a></br>
-	<a style="text-decoration: none" href='#'>Diseases_users</a></br>
-	<a style="text-decoration: none" href='#'>Responses</a></br>
-	<a style="text-decoration: none" href='#'>Supporting_organizations</a>
-	<a style="text-decoration: none" href='#'>Threads</a></br>
+	<a style="text-decoration: none" href='/admin/articles-comments'>Article_comments</a></br>
+	<a style="text-decoration: none" href='/admin/diseases-supporting-organizations'>Diseases_supporting_organizations</a></br>
+	<a style="text-decoration: none" href='/admin/diseases-users'>Diseases_users</a></br>
+	<a style="text-decoration: none" href='/admin/responses'>Responses</a></br>
+	<a style="text-decoration: none" href='/admin/supporting-organizations'>Supporting_organizations</a></br>
+	<a style="text-decoration: none" href='/admin/threads'>Threads</a></br>
 
 
 <?php } else {
