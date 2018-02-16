@@ -33,7 +33,7 @@ include_once("DiseasesCollector.php");
 $DiseaseCollectorObj = new DiseaseCollector();
 
 if ($DiseaseCollectorObj->createDisease($diseaseId, $name, $synonym, $description, $symtomp, $causes, $population, $disorder, $diagnosis, $treatment, $terhapy, $subdivision)){
-  echo "<h2>La ebfermedad ". $name ." se ha creado correctamente</h2></br>";
+  echo "<h2>La eNfermedad ". $name ." se ha creado correctamente</h2></br>";
 }else {
   echo "<h2>ERROR al crear enfermedad</h2></br>";
 }
