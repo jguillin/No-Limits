@@ -1,19 +1,19 @@
 <?php
 
 include_once('ArtComment.php');
-include_once('../src/Collector.php');
+include_once(dirname(__DIR__).'/Collector.php');
 
-class UserCollector extends Collector
+class CommentCollector extends Collector
 {
 
-  function showUsers() {
+  function showComments() {
     $rows = self::$db->getRows("SELECT * FROM article_comments");
 
     $arrayDemo= array();
     foreach ($rows as $c){
-      $aux = new User($c{'comment_id'},$c{'article_id'},$c{'user_id'},$c{'content'},$c{'parentComment_id'},$c{'post_datetime'});
+      $aux = new Comment($c{'comment_id'},$c{'article_id'},$c{'user_id'},$c{'content'},$c{'parentComment_id'},$c{'post_datetime'});
       array_push($arrayDemo, $aux);
-    }
+    } 
     return $arrayDemo;
   }
 
