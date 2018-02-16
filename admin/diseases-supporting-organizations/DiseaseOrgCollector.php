@@ -1,17 +1,17 @@
 <?php
 
-include_once('Diseases.php');
+include_once('DiseasesOrg.php');
 include_once(dirname(__DIR__).'/Collector.php');
 
-class DiseaseCollector extends Collector
+class DiseaseOrgCollector extends Collector
 {
 
-  function showDiseases() {
-    $rows = self::$db->getRows("SELECT * FROM diseases");
+  function showDiseasesOrg() {
+    $rows = self::$db->getRows("SELECT * FROM diseases_supporting_organizations");
 
     $arrayDemo= array();
     foreach ($rows as $c){
-      $aux = new Disease($c{'disease_id'},$c{'name'},$c{'synonyms'},$c{'description'},$c{'symptoms'},$c{'causes'},$c{'affected_populations'},$c{'related_disorders'},$c{'diagnosis'},$c{'treatment'},$c{'investigational_therapies'},$c{'subdivisions'});
+      $aux = new DiseaseOrg($c{'disease_id'},$c{'so_Id'});
       array_push($arrayDemo, $aux);
     }
     return $arrayDemo;
@@ -19,8 +19,8 @@ class DiseaseCollector extends Collector
 
 
   //Edita un usuario
- function showDisease($id){
-    $ObjDisease = (object)[];
+ function showDiseaseOrg($id){
+    $ObjDiseaseOrg = (object)[];
     $response = ['found'=>false];
     try {
       $row = self::$db->getRows("SELECT * FROM diseases where disease_id= ? ", array("{$id}"));
@@ -39,7 +39,7 @@ class DiseaseCollector extends Collector
 
 
   //Actualiza un usuario
-  function updateDisease($diseaseId,$name,$synonym,$description,$symptom,$causes,$population,$disorder,$diagnosis,$treatment,$terhapy,$subdivision){
+  function updateDisease($diseaseId,$soId){
     try {
       $insertrow = self::$db->updateRow("UPDATE diseases SET name=?,\"synonyms\"=?,\"description\"=?,symptoms=?,causes=?,affected_populations=?,related_disorders=?,diagnosis=?,treatment=?,investigational_therapies=?,subdivisions=? WHERE disease_id= ?", array("{$name}","{$synonym}","{$description}","{$symptom}","{$causes}","{$population}","{$disorder}","{$diagnosis}","{$treatment}","{$terhapy}","{$subdivision}"));
       return true;
