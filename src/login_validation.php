@@ -2,8 +2,8 @@
 
   session_start();
 
-  include_once('User/UserCollector.php');
-  include_once('User/User.php');
+  include_once('admin/users/UserCollector.php');
+  include_once('admin/users/User.php');
 
 
   $user = $_POST['usuario'];
