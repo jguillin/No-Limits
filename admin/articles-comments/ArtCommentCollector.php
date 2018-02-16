@@ -7,13 +7,13 @@ class CommentCollector extends Collector
 {
 
   function showComments() {
-    $rows = self::$db->getRows("SELECT * FROM article_comments");
+    $rows = self::$db->getRows("SELECT * FROM article_comments ORDER BY comment_id");
 
     $arrayDemo= array();
     foreach ($rows as $c){
       $aux = new Comment($c{'comment_id'},$c{'article_id'},$c{'user_id'},$c{'content'},$c{'parentComment_id'},$c{'post_datetime'});
       array_push($arrayDemo, $aux);
-    } 
+    }
     return $arrayDemo;
   }
 
