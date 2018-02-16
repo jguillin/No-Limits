@@ -1,13 +1,11 @@
 <?php
-
   session_start();
 
-  include_once('admin/users/UserCollector.php');
-  include_once('admin/users/User.php');
+  include_once('users/UserCollector.php');
+  include_once('users/User.php');
 
-
-  $user = $_POST['usuario'];
-  $password = $_POST['clave'];
+  $user = $_POST['username'];
+  $password = $_POST['password'];
 
     $UserCollectorObj = new UserCollector();
   // $ObjUser = $UserCollectorObj->loginUser($user, $password);
@@ -22,11 +20,11 @@ $response = $UserCollectorObj->loginUser($user, $password);
 
   if (!empty($response)){
 
-      $_SESSION ['user'] = $response[username];
-      $_SESSION ['rol'] = $response[role];
+      $_SESSION ['username'] = $response[username];
+      $_SESSION ['role'] = $response[role];
 
       // print_r($_SESSION);
-      if ($_SESSION ['rol']=='a'){
+      if ($_SESSION ['role']=='a'){
         // echo "pials";
         header("Location: /admin");
       }else {
@@ -34,9 +32,9 @@ $response = $UserCollectorObj->loginUser($user, $password);
       }
     }else{
       //usuario incorrecto
-      echo "error";
+      echo "USUARIO INCORRECTO";
       session_destroy();
-      echo "<a href = '/login'>Volver</a>";
+      echo "<a href = '/pages/login_form.php'>Volver</a>";
   }
 
 

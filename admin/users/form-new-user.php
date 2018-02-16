@@ -7,14 +7,14 @@
 <head>
 	<meta charset="utf-8">
 	<title>Insertar Usuario</title>
-  <link rel="StyleSheet" href="/css/admin.css" type="text/css">
+  <link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
 </head>
 <body>
 
 <h1>Nuevo usuario</h1>
 
 
-<form class='form-Container' action="/admin/users" method="POST">
+<form class='form-Container' action="/admin/users/create-user.php" method="POST">
 	<fieldset>
 		<label class="form-label">Usuario</label>
 		<input class='form-TextBox' type="text" name="username" autofocus required /></br>
@@ -44,7 +44,7 @@
 		</br></br>
         	<button class='form-button' type="submit">Guardar</button>
         </br></br>
-        	 <a href='/admin/users/'>Cancelar</a>
+        	 <a href='/admin/users'>Cancelar</a>
 
     </fieldset>
 </form>

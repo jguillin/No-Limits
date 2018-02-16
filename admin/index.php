@@ -13,8 +13,8 @@
 
 
 <?php
-	if(isset($_SESSION['user']) && $_SESSION['rol']=='a'){
-	echo "<p> Hola usuario:(" . $_SESSION['user']. ")
+	if(isset($_SESSION['username']) && $_SESSION['role']=='a'){
+	echo "<p> Hola usuario:(" . $_SESSION['username']. ")
 			[<a style='text-decoration: none' href='/src/logout.php'>Salir</a>]";
 
 ?>
