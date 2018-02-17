@@ -182,7 +182,9 @@ ul li a:hover, #nav-toggle:hover{
     background-color: #42c0fb;
 }
 
-
+ul li a i {
+  margin-right: 10px;
+}
 
 #content{
     position: relative;
