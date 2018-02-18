@@ -1,9 +1,8 @@
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="Fernando Balladares & Jimmy Guillin">
-    <link rel="shortcut icon" type="image/png"  href="/assets/img/logo/icono1.png">
     <!-- Bootstrap core CSS -->
     <link href="/assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -19,3 +18,13 @@
     <!-- Bootstrap core JavaScript -->
     <script src="/assets/lib/jquery/jquery.min.js"></script>
     <script src="/assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Favicon, Windows tiles, apple icons, browser settings -->
+    <link rel="apple-touch-icon" href="/assets/img/icons/apple-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/img/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#007bff">
+    <meta name="msapplication-TileImage" content="/assets/img/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#007bff">

@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <title>ERROR 404 - Página no encontrada</title>
-        <meta http-equiv="refresh" content="2; URL=/">
+        <!-- <meta http-equiv="refresh" content="2; URL=/"> -->
         <meta name="keywords" content="automatic redirection">
 
     </head>
