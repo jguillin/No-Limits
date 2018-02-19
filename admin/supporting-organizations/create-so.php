@@ -17,7 +17,7 @@
     $SorgCollectorObj = new SorgCollector();
 
     if ($SorgCollectorObj->createSorg($name, $address, $phone, $website, $email)){
-      $title "La organización ". $name ." se ha creado correctamente";
+      $title = "La organización ". $name ." se ha creado correctamente";
     }
   }
 

@@ -15,7 +15,7 @@
 		$SorgCollectorObj = new SorgCollector();
 
 		if ($SorgCollectorObj->updateSorg($soId, $name, $address, $phone, $website, $email)){
-		  $title "La organización ". $name ." se ha editado correctamente";
+		  $title = "La organización ". $name ." se ha editado correctamente";
 		}
 	}
 ?>
