@@ -2,8 +2,15 @@
   session_start();
 
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="es">
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="Fernando Balladares & Jimmy Guillin">
+
+    <link rel="styleSheet" href="/assets/css/admin.css" type="text/css">
   </head>
   <body>
 
@@ -30,9 +37,9 @@ $UserCollectorObj = new UserCollector();
 
 if ($password1 === $password2){
   if ($UserCollectorObj->createUser($username, $password1, $name, $lastname, $birthdate, $email, $sex, $role)){
-    echo "El usuario ". $username ." se ha creado correctamente</br>";
+    echo "<h2>El usuario ". $username ." se ha creado correctamente</h2></br>";
   }else {
-    echo "ERROR al crear usuario</br>";
+    echo "<h2>ERROR al crear usuario</h2></br>";
   }
 }else {
   echo "<h2>Las contraseñas no coinciden</h2><br>";
@@ -40,7 +47,7 @@ if ($password1 === $password2){
 
 ?>
 
-<div><a href="/pages/signup_form.php">Volver a Registro</a></div>
+<div><a id='cancelButton' class='form-button' href="/admin/users">Volver</a></div>
 </div>
 </body>
 </html>
