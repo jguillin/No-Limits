@@ -27,6 +27,7 @@
                 <th>email</th>
                 <th>sex</th>
                 <th>role</th>
+                <th>Diseases</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -44,6 +45,13 @@
           echo "<td><b class='table-cell-label'>email</b><span class='table-cell-content'>". $c->getEmail() ."</span></td>";
           echo "<td><b class='table-cell-label'>sex</b><span class='table-cell-content'>". $c->getSex() ."</span></td>";
           echo "<td><b class='table-cell-label'>role</b><span class='table-cell-content'>". $c->getRole() ."</span></td>";
+          echo "<td>
+                  <b class='table-cell-label'>Diseases</b>
+                  <span class='table-cell-content'>
+                    <a href='/admin/diseases-users/index.php?userId=". $c->getUserId() ."'>Ver Enfermedades</a>
+                  </span>
+                </td>";
+
           echo "<td>
                   <b class='table-cell-label'>Actions</b>
                   <span>

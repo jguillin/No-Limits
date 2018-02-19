@@ -14,6 +14,7 @@
 
       <li><a href='/admin'><i class="fa fa-home fa-2x"></i><span class="menuTableName">Volver a ADMIN</span></a></li>
       <li><a href='/src/logout.php'><i class="fa fa-sign-out fa-2x"></i><span class="menuTableName">Salir</span></a></li>
+
     </ul>
   </nav>
 </div>

@@ -1,20 +1,20 @@
 <?php
 
-include_once('Diseases.php');
+include_once('DiseaseUser.php');
 include_once(dirname(__DIR__).'/Collector.php');
 
-class DiseaseCollector extends Collector
+class DiseaseUserCollector extends Collector
 {
 
-  function showDiseases() {
-    $rows = self::$db->getRows("SELECT * FROM diseases");
+  function showDiseasesUsers($userId) {
+    $rows = self::$db->getRows("SELECT * FROM diseases_users WHERE user_uid=?", array("{$userId}"));
 
-    $arrayDemo= array();
+    $arrayDU= array();
     foreach ($rows as $c){
-      $aux = new Disease($c{'disease_id'},$c{'name'},$c{'synonyms'},$c{'description'},$c{'symptoms'},$c{'causes'},$c{'affected_populations'},$c{'related_disorders'},$c{'diagnosis'},$c{'treatment'},$c{'investigational_therapies'},$c{'subdivisions'});
-      array_push($arrayDemo, $aux);
+      $aux = new DiseaseUser($c{'user_uid'},$c{'disease_id'});
+      array_push($arrayDU, $aux);
     }
-    return $arrayDemo;
+    return $arrayDU;
   }
 
 
@@ -75,7 +75,7 @@ class DiseaseCollector extends Collector
     }
 
   }
-  
+
 
 }
 
