@@ -1,37 +1,31 @@
 <?php
-session_start();
-?>
+	include_once('../../pages/adminHead.php');
+	$title = "ERROR al Actualizar Enfermedad-Organización";
 
-<html lang="es">
-<head>
-	<meta charset="utf-8">
-	<link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
-	<title>Actualizar datos</title>
-</head>
-<body>
-	<?php include_once('../../pages/adminMenu.php'); ?>
-	<section id="content">
+	if (!empty($_POST)){
+
+			$diseaseId = $_POST["diseaseId"];
+		  	$soId= $_POST["soId"];
 
 
-<?php
+			include_once("DiseaseOrgCollector.php");
 
-	$diseaseId = $_POST["diseaseId"];
-  	$soId= $_POST["soId"];
+			$DiseaseOrgCollectorObj = new DiseaseOrgCollector();
 
-
-	include_once("DiseaseOrgCollector.php");
-
-	$DiseaseOrgCollectorObj = new DiseaseOrgCollector();
-
-if ($DiseaseOrgCollectorObj->updateDiseaseOrg($diseaseId, $soId)){
-  echo "<h2>La organización con ID ". $soId ." se ha actualizado correctamente a la enfermedad con ID ". $diseaseId ."</h2></br>";
-}else {
-  echo "<h2>ERROR al actualizar la enfermedad y su organización de soporte</h2></br>";
-}
+		if ($DiseaseOrgCollectorObj->updateDiseaseOrg($diseaseId, $soId)){
+		  $title = "La organización con ID ". $soId ." se ha actualizado correctamente a la enfermedad con ID ". $diseaseId;
+		}
+	}
 
 ?>
 
-<div><a  id="cancelButton" class='form-button' href="/admin/diseases-supporting-organizations">Volver</a></div>
-</section>
-</body>
+   <title><?php echo $title; ?></title>
+  </head>
+  <body>
+    <section id="content">
+      <h2><?php echo $title; ?></h2></br>
+      <div><a id='cancelButton' class='form-button' href="/admin/diseases-supporting-organizations">Volver</a></div>
+    </section>
+  <?php include_once('../../pages/adminMenu.php'); ?>
+  </body>
 </html>

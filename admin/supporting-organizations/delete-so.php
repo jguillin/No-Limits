@@ -1,36 +1,28 @@
 <?php
-	session_start();
-?>
+	include_once('../../pages/adminHead.php');
+	$title = "ERROR al Eliminar organización";
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8">
-		<link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
-		<title>Eliminar Usuario</title>
-	</head>
+	if (isset($_GET["diseaseId"]) && is_numeric($_GET["diseaseId"])){
+		$soId = $_GET["soId"];
+		  
+
+		include_once("SorgCollector.php");
+
+		$SorgCollectorObj = new SorgCollector();
+
+		if ($SorgCollectorObj->deleteSorg($soId)){
+		  $title =  "La organización se ha eliminado correctamente";
+		}
+	}
+
+?>
+		<title><?php echo $title; ?></title>
+		</head>
 	<body>
-		<?php include_once('../../pages/adminMenu.php'); ?>
 		<section id="content">
-
-<?php
-
-
-$soId = $_GET["soId"];
-  
-
-include_once("SorgCollector.php");
-
-$SorgCollectorObj = new SorgCollector();
-
-if ($SorgCollectorObj->deleteSorg($soId)){
-  echo "<h2>La organización se ha eliminado correctamente</h2></br>";
-}else {
-  echo "<h2>ERROR al eliminar la organización</h2></br>";
-}
-
-?>
-
-<div><a id='cancelButton' class='form-button' href="/admin/supporting-organizations">Volver</a></div>
-</section>
-</body>
+			<h2><?php echo $title; ?></h2></br>
+			<div><a id='cancelButton' class='form-button' href="/admin/supporting-organizations">Volver</a></div>
+		</section>
+		<?php include_once('../../pages/adminMenu.php'); ?>
+	</body>
 </html>

@@ -1,50 +1,30 @@
 <?php
-  session_start();
-?>
-
-<!doctype html>
-<html lang="es">
-<head>
-	<meta charset="utf-8">
-	<title><?php echo $title; ?></title>
-  <link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
-</head>
-<body>
-
-<?php
-  include_once('../../pages/adminMenu.php');
+  include_once('../../pages/adminHead.php');
   include_once("DiseaseOrg.php");
-  $id = $_GET["diseaseId"];
+  $ObjDiseaseOrg = new DiseaseOrg("","");
+  $title = 'Nueva organización que apoya la enfermedad';
+  $action = '/admin/diseases-supporting-organizations/create-disease-org.php';
   $showForm = true;
 
-  if (empty($id)){
-    //ID Vacía
-    $ObjDiseaseOrg = new DiseaseOrg("","");
-    $title = 'Nueva organización que apoya la enfermedad';
-    $action = '/admin/diseases-supporting-organizations/create-disease-org.php';
-
-  }else {
-
+  if (isset($_GET["diseaseId"]) && is_numeric($_GET["diseaseId"])){
     //ID seteada
+    $id = $_GET["diseaseId"];
     include_once("DiseaseOrgCollector.php");
     $DiseaseOrgCollectorObj = new DiseaseOrgCollector();
     $response = $DiseaseOrgCollectorObj->showDiseaseOrg($id);
-
-    if (!$response['found']){
-      //Usuario no encontrado
-      $showForm = false;
-      echo "<h2>Organización No Encontrada</h2><br>";
-      echo "<a id='cancelButton' class='form-button' href='/admin/diseases-supporting-organizations'>Volver</a>";
-    }else {
+    if ($response['found']){
       //Usuario encontrado
       $ObjDiseaseOrg = $response['user'];
       $title = 'Editar Organización';
       $action = '/admin/diseases-supporting-organizations/update-disease-org.php';
+    }else{
+      //Usuario no encontrado
+      $showForm = false;
+      $title = 'ERROR - enfermedad-organización no Encontrada';
     }
-
   }
 
-
+  
 if ($showForm){
 
 ?>
@@ -71,9 +51,18 @@ if ($showForm){
 
     </form>
   </div>
+<?php }else{ ?>
 
-</section>
-</body>
-</html>
+        <title><?php echo $title; ?></title>
+      </head>
+      <body>
+        <section id="content">
+          <h2><?php echo $title; ?></h2><br>
+          <div><a id='cancelButton' class='form-button' href="/admin/diseases-supporting-organizations">Volver</a></div>
 
-<?php } ?>
+    <?php } ?>
+
+        </section>
+      <?php include_once('../../pages/adminMenu.php'); ?>
+      </body>
+    </html>

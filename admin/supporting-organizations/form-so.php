@@ -1,44 +1,30 @@
 <?php
-  session_start();
-?>
-
-<!doctype html>
-<html lang="es">
-<head>
-	<meta charset="utf-8">
-  <link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
-
-<?php
-  include_once('../../pages/adminMenu.php');
+  include_once('../../pages/adminHead.php');
   include_once("Sorg.php");
-  $id = $_GET["soId"];
+  $ObjSorg = new Sorg("","","","","","");
+  $title = 'Crear Nueva Organización';
+  $action = '/admin/supporting-organizations/create-so.php';
   $showForm = true;
 
-  if (empty($id)){
-    //ID Vacía
-    $ObjSorg = new Sorg("","","","","","");
-    $title = 'Crear Nueva Organización';
-    $action = '/admin/supporting-organizations/create-so.php';
-
-  }else {
-
+  if (isset($_GET["soId"]) && is_numeric($_GET["soId"])){ 
     //ID seteada
+    $id = $_GET["soId"];
     include_once("SorgCollector.php");
     $SorgCollectorObj = new SorgCollector();
     $response = $SorgCollectorObj->showSorg($id);
-
-    if (!$response['found']){
-      //Usuario no encontrado
-      $showForm = false;
-
-    }else {
+    if ($response['found']){
       //Usuario encontrado
       $ObjSorg = $response['sorg'];
       $title = 'Editar Organización';
       $action = '/admin/supporting-organizations/update-so.php';
+    }else {
+      //Usuario no encontrado
+      $showForm = false;
+      $title = 'ERROR - Organización no Encontrada';
     }
+  } 
 
-  }
+
 
 
 if ($showForm){
@@ -82,17 +68,17 @@ if ($showForm){
   </div>
 
 <?php }else{ ?>
-          <title>supporting-organizations NO ENCONTRADO</title>
 
-          </head>
-          <body>
-            <section id="content">
-              <h2>supporting-organizations NO ENCONTRADO</h2><br>
-              <a id='cancelButton' class='form-button' href='/admin/supporting-organizations'>Volver</a>
-        <?php
-        }
-      ?>
+        <title><?php echo $title; ?></title>
+      </head>
+      <body>
+        <section id="content">
+          <h2><?php echo $title; ?></h2><br>
+          <div><a id='cancelButton' class='form-button' href="/admin/supporting-organizations">Volver</a></div>
 
-    </section>
-    </body>
+    <?php } ?>
+
+        </section>
+      <?php include_once('../../pages/adminMenu.php'); ?>
+      </body>
     </html>
