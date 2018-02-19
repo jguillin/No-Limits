@@ -2,7 +2,7 @@
 	include_once('../../pages/adminHead.php');
 	$title = "ERROR al Eliminar organización";
 
-	if (isset($_GET["diseaseId"]) && is_numeric($_GET["diseaseId"])){
+	if (isset($_GET["soId"]) && is_numeric($_GET["soId"])){
 		$soId = $_GET["soId"];
 		  
 
