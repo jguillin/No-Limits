@@ -18,7 +18,7 @@ class DiseaseCollector extends Collector
   }
 
 
-  //Edita un usuario
+  //Edita una enfermedad
  function showDisease($id){
     $ObjDisease = (object)[];
     $response = ['found'=>false];
@@ -27,7 +27,7 @@ class DiseaseCollector extends Collector
       if (!empty($row)){
         $ObjDisease = new Disease($row[0]{'disease_id'},$row[0]{'name'},$row[0]{'synonyms'},$row[0]{'description'},$row[0]{'symptoms'},$row[0]{'causes'},$row[0]{'affected_populations'},$row[0]{'related_disorders'},$row[0]{'diagnosis'},$row[0]{'treatment'},$row[0]{'investigational_therapies'},$row[0]{'subdivisions'});
         $response['found'] = true;
-        $response['user'] = $ObjDisease;
+        $response['disease'] = $ObjDisease;
       }
       return $response;
     } catch (\Exception $e) {
@@ -37,8 +37,7 @@ class DiseaseCollector extends Collector
 }
 
 
-
-  //Actualiza un usuario
+  //Actualiza una enfermedad
   function updateDisease($diseaseId,$name,$synonym,$description,$symptom,$causes,$population,$disorder,$diagnosis,$treatment,$terhapy,$subdivision){
     try {
       $insertrow = self::$db->updateRow("UPDATE diseases SET name=?,\"synonyms\"=?,\"description\"=?,symptoms=?,causes=?,affected_populations=?,related_disorders=?,diagnosis=?,treatment=?,investigational_therapies=?,subdivisions=? WHERE disease_id= ?", array("{$name}","{$synonym}","{$description}","{$symptom}","{$causes}","{$population}","{$disorder}","{$diagnosis}","{$treatment}","{$terhapy}","{$subdivision}","{$diseaseId}"));
@@ -51,7 +50,7 @@ class DiseaseCollector extends Collector
   }
 
 
-    //Elimina un usuario
+    //Elimina una enfermedad
   function deleteDisease($diseaseId){
     try {
       $deleterow = self::$db->deleteRow("DELETE FROM diseases WHERE disease_id = ?", array("{$diseaseId}"));
@@ -64,7 +63,7 @@ class DiseaseCollector extends Collector
 
   }
 
-  //Crea un nuevo usuario
+  //Crea una nueva enfermedad
   function createDisease($name,$synonym,$description,$symptom,$causes,$population,$disorder,$diagnosis,$treatment,$terhapy,$subdivision){
     try {
       $insertarrow = self::$db->insertRow("INSERT INTO diseases (name,\"synonyms\",\"description\",symptoms,causes,affected_populations,related_disorders,diagnosis,treatment,investigational_therapies,subdivisions) VALUES (?,?,?,?,?,?,?,?,?,?,?)", array ("{$name}","{$synonym}","{$description}","{$symptom}","{$causes}","{$population}","{$disorder}","{$diagnosis}","{$treatment}","{$terhapy}","{$subdivision}"));
@@ -75,7 +74,7 @@ class DiseaseCollector extends Collector
     }
 
   }
-  
+
 
 }
 
