@@ -27,9 +27,9 @@ include_once("SorgCollector.php");
 $SorgCollectorObj = new SorgCollector();
 
 if ($SorgCollectorObj->createSorg($name, $address, $phone, $website, $email)){
-  echo "<h2>El supporting-organizations se ha creado correctamente</h2></br>";
+  echo "<h2>La organización ". $name ." se ha creado correctamente</h2></br>";
 }else {
-  echo "<h2>ERROR al crear supporting-organizations</h2></br>";
+  echo "<h2>ERROR al crear organización</h2></br>";
 }
 
 ?>

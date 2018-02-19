@@ -23,9 +23,10 @@ include_once("SorgCollector.php");
 $SorgCollectorObj = new SorgCollector();
 
 if ($SorgCollectorObj->deleteSorg($soId)){
-  echo "<h2>El supporting-organizations se ha eliminado correctamente</h2></br>";
+  echo "<h2>La organización ". $name ." se ha eliminado correctamente</h2></br>";
 }else {
   echo "<h2>ERROR al eliminar supporting-organizations</h2></br>";
+  echo "<h2>ERROR al eliminar la organización ". $name."</h2></br>";
 }
 
 ?>

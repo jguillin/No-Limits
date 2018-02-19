@@ -27,9 +27,9 @@ include_once("SorgCollector.php");
 $SorgCollectorObj = new SorgCollector();
 
 if ($SorgCollectorObj->updateSorg($soId, $name, $address, $phone, $website, $email)){
-  echo "<h2>El supporting-organizations se ha editado correctamente</h2></br>";
+  echo "<h2>La organización ". $name ." se ha editado correctamente</h2></br>";
 }else {
-  echo "<h2>ERROR al editar supporting-organizations</h2></br>";
+  echo "<h2>ERROR al editar la organización ". $name ."</h2></br>";
 }
 
 ?>
