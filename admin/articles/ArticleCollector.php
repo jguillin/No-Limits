@@ -17,7 +17,7 @@ class ArticleCollector extends Collector
     return $arrayDemo;
   }
 
-  //Edita un usuario
+  //Edita un artículo
   function showArticle($id){
     $ObjArticle = (object)[];
     $response = ['found'=>false];
@@ -34,7 +34,7 @@ class ArticleCollector extends Collector
     }
 }
 
-  //Actualiza un usuario
+  //Actualiza un artículo
   function updateArticle($articleId, $authorId, $postdatetime, $title, $imageurl, $content, $lastmod){
     try {
       $insertrow = self::$db->updateRow("UPDATE articles SET author_id=?,post_datetime=?,title=?,\"imageURL\"=?,content=?,last_mod_datetime=? WHERE article_id= ?", array("{$authorId}","{$postdatetime}","{$title}","{$imageurl}","{$content}","{$lastmod}","{$articleId}"));
@@ -46,7 +46,7 @@ class ArticleCollector extends Collector
 
   }
 
-  //Elimina un usuario
+  //Elimina un artículo
   function deleteArticle($articleId){
     try {
       $deleterow = self::$db->deleteRow("DELETE FROM articles WHERE article_id = ?", array("{$articleId}"));
@@ -56,10 +56,9 @@ class ArticleCollector extends Collector
       return false;
     }
 
-
   }
 
-  //Crea un nuevo usuario
+  //Crea un nuevo artículo
   function createArticle($authorId, $postdatetime, $title, $imageurl, $content, $lastmod){
     try {
       $insertarrow = self::$db->insertRow("INSERT INTO articles (author_id, post_datetime, title, \"imageURL\", \"content\", last_mod_datetime) VALUES (?,?,?,?,?,?)", array ("{$authorId}","{$postdatetime}","{$title}","{$imageurl}","{$content}","{$lastmod}"));

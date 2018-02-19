@@ -2,22 +2,22 @@
   include_once('../../pages/adminHead.php');
   $title = "ERROR al Crear Usuario";
 
-if (!empty($_POST)){
-  $username = $_POST["username"];
-  $password= $_POST["password"];
-  $name= $_POST["name"];
-  $lastname= $_POST["lastname"];
-  $birthdate= $_POST["birthdate"];
-  $email= $_POST["email"];
-  $sex= $_POST["sex"];
-  $role= $_POST["role"];
+  if (!empty($_POST)){
+    $username = $_POST["username"];
+    $password= $_POST["password"];
+    $name= $_POST["name"];
+    $lastname= $_POST["lastname"];
+    $birthdate= $_POST["birthdate"];
+    $email= $_POST["email"];
+    $sex= $_POST["sex"];
+    $role= $_POST["role"];
 
-  include_once("UserCollector.php");
-  $UserCollectorObj = new UserCollector();
-  if ($UserCollectorObj->createUser($username, $password, $name, $lastname, $birthdate, $email, $sex, $role)){
-    $title = "Usuario ". $username ." creado correctamente";
+    include_once("UserCollector.php");
+    $UserCollectorObj = new UserCollector();
+    if ($UserCollectorObj->createUser($username, $password, $name, $lastname, $birthdate, $email, $sex, $role)){
+      $title = "Usuario ". $username ." creado correctamente";
+    }
   }
-}
 ?>
 
     <title><?php echo $title; ?></title>

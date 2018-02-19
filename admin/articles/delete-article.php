@@ -1,35 +1,25 @@
 <?php
-	session_start();
-?>
+	include_once('../../pages/adminHead.php');
+	$title = "ERROR al Eliminar Artículo";
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8">
-		<link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
-		<title>Eliminar Artículos</title>
-	</head>
-	<body>
-		<?php include_once('../../pages/adminMenu.php'); ?>
-		<section id="content">
-
-		<?php
+	if (isset($_GET["articleId"]) && is_numeric($_GET["articleId"])){
 		$id=$_GET["articleId"];
-
-
 		include_once("ArticleCollector.php");
 		$ArticleCollectorObj = new ArticleCollector();
-
-
 		if ($ArticleCollectorObj->deleteArticle($id)){
-		echo "<h2>Artículo con la ID: ".$id." se borró</h2></br>";
-		}else {
-		echo "<h2>ERROR AL ELIMINAR EL ARTÍCULO</h2></br>";
+			$title = "Artículo con la ID: ".$id." se borró correctamente";
 		}
+	}
 
-		?>
+?>
 
-		<div><a id='cancelButton' class='form-button' href="/admin/articles/">Volver a Artículos</a></div>
+		<title><?php echo $title; ?></title>
+		</head>
+	<body>
+		<section id="content">
+			<h2><?php echo $title; ?></h2></br>
+			<div><a id='cancelButton' class='form-button' href="/admin/articles">Volver</a></div>
 		</section>
-
-		</body>
-		</html>
+		<?php include_once('../../pages/adminMenu.php'); ?>
+	</body>
+</html>

@@ -6,23 +6,23 @@
   $action = '/admin/users/create-user.php';
   $showForm = true;
 
-if (isset($_GET["userId"]) && is_numeric($_GET["userId"])){
-  //ID seteada
-  $id = $_GET["userId"];
-  include_once("UserCollector.php");
-  $UserCollectorObj = new UserCollector();
-  $response = $UserCollectorObj->showUser($id);
-  if ($response['found']){
-    //Usuario encontrado
-    $ObjUser = $response['user'];
-    $title = 'Editar Usuario';
-    $action = '/admin/users/update-user.php';
-  }else {
-    //Usuario no encontrado
-    $showForm = false;
-    $title = 'ERROR - Usuario no Encontrado';
+  if (isset($_GET["userId"]) && is_numeric($_GET["userId"])){
+    //ID seteada
+    $id = $_GET["userId"];
+    include_once("UserCollector.php");
+    $UserCollectorObj = new UserCollector();
+    $response = $UserCollectorObj->showUser($id);
+    if ($response['found']){
+      //Usuario encontrado
+      $ObjUser = $response['user'];
+      $title = 'Editar Usuario';
+      $action = '/admin/users/update-user.php';
+    }else {
+      //Usuario no encontrado
+      $showForm = false;
+      $title = 'ERROR - Usuario no Encontrado';
+    }
   }
-}
 
 if ($showForm){
 ?>
@@ -44,17 +44,17 @@ if ($showForm){
               }
               ?>
         		<label>Usuario</label>
-        		<input class='form-TextBox' type="text" name="username" autofocus required value="<?php echo $ObjUser->getUsername(); ?>"/>
+        		<input class='form-TextBox' type="text" name="username" maxlength="20" autofocus required value="<?php echo $ObjUser->getUsername(); ?>"/>
         		<label>Contraseña</label>
-        		<input class='form-TextBox' type="password" name="password" required value="<?php echo $ObjUser->getPassword(); ?>"/>
+        		<input class='form-TextBox' type="password" name="password" maxlength="32" required value="<?php echo $ObjUser->getPassword(); ?>"/>
         		<label>Nombre</label>
-        		<input class='form-TextBox' type="text" name="name" value="<?php echo $ObjUser->getName(); ?>"/>
+        		<input class='form-TextBox' type="text" name="name" maxlength="25" value="<?php echo $ObjUser->getName(); ?>"/>
         		<label>Apellido</label>
-        		<input class='form-TextBox' type="text" name="lastname" value="<?php echo $ObjUser->getLastname(); ?>"/>
+        		<input class='form-TextBox' type="text" name="lastname" maxlength="25" value="<?php echo $ObjUser->getLastname(); ?>"/>
         		<label>Fecha de nacimiento</label>
         		<input class='form-TextBox' type="date" name="birthdate" value="<?php echo $ObjUser->getBirthdate(); ?>"/>
         		<label>Email</label>
-        		<input class='form-TextBox' type="email" placeholder="example@aol.com" name="email" value="<?php echo $ObjUser->getEmail(); ?>"/>
+        		<input class='form-TextBox' type="email" placeholder="example@aol.com" name="email" maxlength="50" value="<?php echo $ObjUser->getEmail(); ?>"/>
         		<label>Sexo</label>
             <select class='form-TextBox' name="sex" >
               <?php

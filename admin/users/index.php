@@ -12,7 +12,7 @@
     <section id="content">
       <div class="CRUDContainer">
         <h1>Usuarios</h1>
-          <a class='CRUD-button insert' href='/admin/users/form-user.php?userId='>
+          <a class='CRUD-button insert' href='/admin/users/form-user.php'>
             <img src='/assets/img/icons/new_icon.png'>
           </a>
         <table>
@@ -60,9 +60,9 @@
         }
         ?>
 
-        </tbody>
-      </table>
-     </div>
+          </tbody>
+        </table>
+      </div>
     </section>
     <?php include_once('../../pages/adminMenu.php'); ?>
   </body>

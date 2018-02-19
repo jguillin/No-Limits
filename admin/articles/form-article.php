@@ -1,57 +1,38 @@
 <?php
-  session_start();
+  include_once('../../pages/adminHead.php');
   date_default_timezone_set('America/Guayaquil');
-?>
+  include_once("Article.php");
+  $ObjArticle = new Article("","","","","","","");
+  $title = 'Nuevo Artículo';
+  $action = '/admin/articles/create-article.php';
+  $showForm = true;
 
-<!doctype html>
-<html lang="es">
-<head>
-	<meta charset="utf-8">
-  <link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
-
-  <?php
-    include_once('../../pages/adminMenu.php');
-    include_once("Article.php");
+  if (isset($_GET["articleId"]) && is_numeric($_GET["articleId"])){
+    //ID seteada
     $id = $_GET["articleId"];
-    $showForm = true;
-
-    if (empty($id)){
-      //ID Vacía
-      $ObjArticle = new Article("","","","","","","");
-      $title = 'Nuevo Artículo';
-      $action = '/admin/articles/create-article.php';
-
-    }else {
-
-      //ID seteada
-      include_once("ArticleCollector.php");
-      $ArticleCollectorObj = new ArticleCollector();
-      $response = $ArticleCollectorObj->showArticle($id);
-
-      if (!$response['found']){
-        //Artículo no encontrado
-        $showForm = false;
-
-      }else {
-        //Artículo encontrado
-        $ObjArticle = $response['article'];
-        $title = 'Editar Artículo';
-        $action = '/admin/articles/update-article.php';
-      }
-
+    include_once("ArticleCollector.php");
+    $ArticleCollectorObj = new ArticleCollector();
+    $response = $ArticleCollectorObj->showArticle($id);
+    if ($response['found']){
+      //Artículo encontrado
+      $ObjArticle = $response['article'];
+      $title = 'Editar Artículo';
+      $action = '/admin/articles/update-article.php';
+    }else{
+      //Artículo no encontrado
+      $showForm = false;
+      $title = 'ERROR - Artículo no Encontrado';
     }
-
+  }
 
   if ($showForm){
-
   ?>
 
-  <title><?php echo $title; ?></title>
-
+    <title><?php echo $title; ?></title>
   </head>
   <body>
-  <section id="content">
 
+  <section id="content">
     <div class="form-Container">
       <form class='form' action="<?php echo $action; ?>" method="POST">
           <h1><?php echo $title; ?></h1>
@@ -77,11 +58,11 @@
               }
           ?>
       		<label>Título</label>
-      		<input class='form-TextBox' type="text" name="title" value="<?php echo $ObjArticle->getTitle(); ?>"/>
+      		<input class='form-TextBox' type="text" name="title" maxlength="60" required value="<?php echo $ObjArticle->getTitle(); ?>"/>
       		<label>URL de la imagen</label>
-      		<input class='form-TextBox' type="text" name="imageURL" value="<?php echo $ObjArticle->getImageUrl(); ?>"/>
+      		<input class='form-TextBox' type="text" name="imageURL" maxlength="255" value="<?php echo $ObjArticle->getImageUrl(); ?>"/>
       		<label>Contenido</label>
-      		<textarea class='form-TextBox' name="content" /><?php echo $ObjArticle->getContent(); ?></textarea>
+      		<textarea class='form-TextBox' name="content" rows="6" required/><?php echo $ObjArticle->getContent(); ?></textarea>
       		<label>Fecha de última modificación</label>
           <input class='form-TextBox' type="datetime" name="lastModDateTime" value="<?php echo date('Y-m-d H:i:s'); ?>"readonly/>
 
@@ -94,17 +75,16 @@
     </div>
 
   <?php }else{ ?>
-            <title>ARTÍCULO NO ENCONTRADO</title>
+        <title><?php echo $title; ?></title>
+      </head>
+      <body>
+        <section id="content">
+          <h2><?php echo $title; ?></h2><br>
+          <div><a id='cancelButton' class='form-button' href="/admin/articles">Volver</a></div>
 
-            </head>
-            <body>
-              <section id="content">
-                <h2>ARTÍCULO NO ENCONTRADO</h2><br>
-                <a id='cancelButton' class='form-button' href='/admin/articles'>Volver</a>
-          <?php
-          }
-        ?>
+  <?php } ?>
 
-      </section>
-      </body>
-      </html>
+        </section>
+      <?php include_once('../../pages/adminMenu.php'); ?>
+    </body>
+  </html>
