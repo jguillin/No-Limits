@@ -2,4 +2,4 @@ Options -MultiViews
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ pages/error.php [QSA,L]
+RewriteRule ^ pages/error.html [QSA,L]

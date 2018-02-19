@@ -1,0 +1,42 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Source Sans Pro', sans-serif;
+  /* background-color: lightgrey; */
+}
+
+div{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+img{
+  width: 300px;
+}
+
+h1{
+  font-size: 120px;
+}
+h2{
+  font-size: 80px;
+}
+
+a{
+  margin-top: 20px;
+  border: none;
+  padding: 10px 20px;
+  color: #FFF;
+  background-color: #ED6347;
+  width: 60px;
+  text-decoration: none;
+}
+
+a:hover{
+  background-color: #C12B05;
+}
