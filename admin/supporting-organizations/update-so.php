@@ -14,7 +14,7 @@
 
 <?php
 
-	$soId = $_POST["soId"];
+  $soId = $_POST["soId"];
   $name= $_POST["name"];
   $address= $_POST["address"];
   $phone= $_POST["phone"];

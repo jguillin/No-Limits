@@ -19,7 +19,7 @@
 
 ?>
   <section id="content">
-    <h1>Artículos</h1>
+    <h1>Comentarios</h1>
     <br>
       <a class='CRUD-button insert' href='/admin/articles/form-article.php?articleId='>
         <img src='/assets/img/icons/new_icon.png'>

@@ -14,7 +14,7 @@
       <li><a href='/admin/articles'><i class="fa fa-newspaper"></i>Artículos</a></li>
       <li><a href='/admin/articles-comments'><i class="fa fa-comments"></i>Comentarios</a></li>
       <li><a href='/admin/diseases'>Enfermedades</a></li>
-      <li><a href='/admin/diseases-supporting-organizations'>Diseases Supporting Organizations</a></li>
+      <li><a href='/admin/diseases-supporting-organizations'>Organizaciones que apoyan la enfermedad</a></li>
       <li><a href='/admin/supporting-organizations'><i class="fa fa-medkit"></i>Organizaciones</a></li>
 
 

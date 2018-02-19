@@ -20,7 +20,7 @@
   if (empty($id)){
     //ID Vacía
     $ObjDiseaseOrg = new DiseaseOrg("","");
-    $title = 'Nuevo Enfermedades apoyada por organizaciones';
+    $title = 'Nueva organización que apoya la enfermedad';
     $action = '/admin/diseases-supporting-organizations/create-disease-org.php';
 
   }else {
@@ -57,7 +57,7 @@ if ($showForm){
           if ($title === 'Editar Organización'){
             ?>
             <label>Disease Id</label>
-        		<input class='form-TextBox' type="text" name="diseaseId" readonly value="<?php echo $ObjDiseaseOrg->getDiseaseId(); ?>"/>
+        		<input class='form-TextBox' type="text" name="diseaseId" value="<?php echo $ObjDiseaseOrg->getDiseaseId(); ?>"/>
             <?php
           }
           ?>
