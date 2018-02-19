@@ -5,10 +5,9 @@
   $ArtCommentCollectorObj = new ArtCommentCollector();
 ?>
 
-      <title>Comentarios</title>
-    </head>
+    <title>Comentarios</title>
+  </head>
   <body>
-
     <section id="content">
       <div class="CRUDContainer">
         <h1>Comentarios</h1>
@@ -16,18 +15,18 @@
             <img src='/assets/img/icons/new_icon.png'>
           </a>
         <table>
-            <thead>
-              <tr>
-                <th>Comment Id</th>
-                <th>Article Id</th>
-                <th>User Id</th>
-                <th>Content</th>
-                <th>Parent Comment Id</th>
-                <th>Post DateTime</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
+          <thead>
+            <tr>
+              <th>Comment Id</th>
+              <th>Article Id</th>
+              <th>User Id</th>
+              <th>Content</th>
+              <th>Parent Comment Id</th>
+              <th>Post DateTime</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
 
       <?php
 

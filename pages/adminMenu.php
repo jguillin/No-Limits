@@ -6,8 +6,9 @@
       <li><a href='/admin/users'><i class="fa fa-users fa-2x"></i><span class="menuTableName">Usuarios</span></a></li>
       <li><a href='/admin/articles'><i class="fa fa-newspaper-o fa-2x"></i></i><span class="menuTableName">Artículos</span></a></li>
       <li><a href='/admin/articles-comments'><i class="fa fa-comments fa-2x"></i><span class="menuTableName">Comentarios</span></a></li>
+      <li><a href='/admin/diseases-users'><i class="fa fa-wheelchair fa-2x"></i><span class="menuTableName">Enfermedades-Usuarios</span></a></li>
       <li><a href='/admin/diseases'><i class="fa fa-heartbeat fa-2x"></i><span class="menuTableName">Enfermedades</span></a></li>
-      <li><a href='/admin/diseases-supporting-organizations'><i class="fa fa-ambulance fa-2x"></i><span class="menuTableName">Enfermedades-Organiza.</span></a></li>
+      <li><a href='/admin/diseases-supporting-organizations'><i class="fa fa-ambulance fa-2x"></i><span class="menuTableName">Enfermedades-Organizaciones</span></a></li>
       <li><a href='/admin/supporting-organizations'><i class="fa fa-hospital-o fa-2x"></i><span class="menuTableName">Organizaciones</span></a></li>
 
 
