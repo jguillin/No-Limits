@@ -1,25 +1,23 @@
 *{
     margin: 0px;
     padding: 0px;
-        box-sizing: border-box;
-/*    min-height: 100%;*/
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
     display: flex;
-/*    font-family: Helvetica, Arial, sans-serif;*/
-    /* text-align: center; */
-}
-
-div{
-/*    box-sizing: border-box;*/
+    padding-left: 200px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 h1 {
     border-bottom: 3px solid #cc9900;
     color: #996600;
     font-size: 30px;
+    margin: 20px auto 20px auto;
 }
 
 h2{
@@ -125,21 +123,14 @@ header{
 }
 
 #menuContainer{
-    min-height: 100%;
-    /* text-align: center; */
-    position: relative;
-    /* visibility: hidden; */
+    height: 100%;
+    position: fixed;
     display: inline-block;
-    left: 0px;
-    /* width: 200px; */
-    /*height: auto;*/
-    /* margin-top: 80px; */
-    /*background-color: darkseagreen;*/
+    width: 200px;
     background-color: #282c2f;
-    /* box-shadow: 5px 5px 10px 0px grey; */
     z-index: 3;
-    /* overflow: hidden;
-    padding-right: 17px; */
+    left: 200px;
+    margin-left: -200px;
 }
 
 #menuContainer:hover {
@@ -168,13 +159,19 @@ li{
     list-style-image: none;
 }
 
-ul li a, ul li span{
-    font-size: 15px;
-    display: block;
+ul li img{
+  width: 100%;
+  padding: 10px;
+}
+
+ul li a{
+    font-size: 10pt;
+    display: flex;
     width: auto;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 10px 10px 10px;
     color: white;
     text-decoration: none;
+    align-items: center;
 }
 
 ul li a:hover, #nav-toggle:hover{
@@ -186,18 +183,35 @@ ul li a i {
   margin-right: 10px;
 }
 
+.menuIcon{
+  display: none;
+}
+
+@media only screen and (max-width: 960px){
+    body{
+      padding-left: 50px;
+    }
+    #menuContainer{
+      width: 50px;
+    }
+    .menuTableName{
+      display: none;
+    }
+    .menuLogo{
+      display: none;
+    }
+    .menuIcon{
+      display: block;
+      padding: 0px;
+    }
+}
+
 #content{
     position: relative;
     display: flex;
-    /* top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px; */
     text-align: center;
     padding: 20px;
-    /* margin-top: 80px; */
     overflow: auto;
-    /*background-color: antiquewhite;*/
     align-items: center;
     margin: auto;
     flex-direction: column;
@@ -217,6 +231,7 @@ ul li a i {
     background-color: white;
     overflow: auto;
     max-height: 100%;
+    font-size: 10pt;
 }
 
 #loginFormContainer{
@@ -244,6 +259,9 @@ ul li a i {
     padding: 10px 20px;
     color: #FFF;
     background-color: #ED6347;
+    width: 100%;
+    display: block;
+    margin-top: 10px;
 }
 
 .form-button:hover{
@@ -267,6 +285,8 @@ ul li a i {
 #cancelButton{
     color: #1E1E1E;
     background-color: #CFCFCF;
+    text-decoration: none;
+    text-align: center;
 }
 
 #cancelButton:hover{
@@ -291,6 +311,7 @@ table{
     color: #333333;
     margin: 20px auto 20px auto;
     text-align: center;
+    font-size: 12pt;
 
     /*VERTICAL*/
     width: 100%;
@@ -316,7 +337,7 @@ th {
 }
 
 td {
-    /*border: 1px solid #d0d0d0;*/
+    /* border: 1px solid #d0d0d0; */
     border-collapse: collapse;
     padding: 6px;
     color: #333333;
@@ -404,16 +425,6 @@ table tr:nth-child(odd):hover, table tr:nth-child(even):hover{
     background-color: #32a064;
 }
 
-/*
-footer{
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    height: 10px;
-    background-color: gray;
-}
-*/
-
 #popUp{
     width:100%;
     height:100%;
@@ -428,52 +439,21 @@ footer{
     padding: 20px;
 }
 
-#contenedorAsambleistas{
-    display: inline-block;
-    width: 100%;
-    padding: 20px;
-    margin-top: 80px;
-
-    overflow: auto;
-
-    /*background-color: antiquewhite;*/
-    align-items: center;
-}
-.asambleista{
-    position: relative;
-    display: inline-block;
-    width: 20%;
-    border: black solid 1px;
-    margin-right: 20px;
-}
-#listaAsambleista{
-    font-size: 50px;
-}
-
-@media only screen and (min-width: 481px){
+@media only screen and (min-width: 600px){
     .form-Container{
-        width: 440px;
+        width: 500px;
     }
 }
 
 
-@media only screen and (min-width: 200px) and (max-width: 481px) {
-    #contenedorAsambleistas{
-        padding-top: 2000px;
-    }
-    .asambleista{
-        display: block;
+@media only screen and (min-width: 960px){
+    .CRUDContainer{
         width: 100%;
     }
-}
-
-@media only screen and (min-width: 768px){
-    .CRUDContainer{
-        width: auto;
-    }
     table{
-        width: auto;
+        width: 100%;
         max-width: none;
+        font-size: 10pt;
     }
     thead{
         display: table-header-group;
@@ -488,72 +468,4 @@ footer{
     .table-cell-content{
         max-width: none;
     }
-}
-
-
-/* @media only screen and (min-width: 960px){
-    #menuContainer{
-        box-shadow: none;
-        height: 100%;
-    }
-} */
-
-
-
-
-.contenedorVotar {
-
-}
-
-.binomios {
-    border-style: solid;
-    border-width: thin;
-   height: 600px;
-    width: 160px;
-    margin-top: 100px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-
-}
-
-
-
-.papeleta {
-    margin-top: 100px;
-}
-
-.rowElementoPartido {
-    height: 30px;
-}
-
-.rowElementoImagenLista {
-    height: 90px;
-}
-
-.rowElementobtnVotar {
-    height: 25px;
-}
-
-.rowElementoPresidente {
-    height: 180px;
-}
-
-
-
-.NombrePresi {
-    height: 35px;
-}
-
-.imgBinomio {
-       padding:1px;
-    border:1px solid #021a40;
-}
-
-.encuestadorInicio {
-    margin-top: 150px;
-}
-
-.contenedorResumen {
-    margin-top: 200px;
 }
