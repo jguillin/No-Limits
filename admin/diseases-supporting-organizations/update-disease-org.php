@@ -24,9 +24,9 @@ session_start();
 	$DiseaseOrgCollectorObj = new DiseaseOrgCollector();
 
 if ($DiseaseOrgCollectorObj->updateDiseaseOrg($diseaseId, $soId)){
-  echo "La Organización ". $soId ." se ha actualizado correctamente</br>";
+  echo "<h2>La organización con ID ". $soId ." se ha actualizado correctamente a la enfermedad con ID ". $diseaseId ."</h2></br>";
 }else {
-  echo "ERROR al actualizar Organización</br>";
+  echo "<h2>ERROR al actualizar la enfermedad y su organización de soporte</h2></br>";
 }
 
 ?>

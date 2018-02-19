@@ -24,9 +24,9 @@ include_once("DiseaseOrgCollector.php");
 $DiseaseOrgCollectorObj = new DiseaseOrgCollector();
 
 if ($DiseaseOrgCollectorObj->createDiseaseOrg($diseaseId, $soId)){
-  echo "La Organización ". $soId ." se ha creado correctamente</br>";
+  echo "<h2>La enfermedad con ID ". $diseaseId ." con su organización de soporte con ID ". $soId ." se ha creado correctamente</h2></br>";
 }else {
-  echo "ERROR al crear Organización</br>";
+  echo "<h2>ERROR al crear efermedad y su organización</h2></br>";
 }
 
 ?>

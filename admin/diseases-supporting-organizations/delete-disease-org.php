@@ -23,9 +23,9 @@ include_once("DiseaseOrgCollector.php");
 	$DiseaseOrgCollectorObj = new DiseaseOrgCollector();
 
 if ($DiseaseOrgCollectorObj->deleteDiseaseOrg($id)){
-  echo "La Organización ". $id ." se ha borrado correctamente</br>";
+  echo "<h2>Enfermedad con la ID: ".$id." y su respectiva organización de soporte se borraron existosamente</h2></br>";
 }else {
-  echo "ERROR al borrado Organización</br>";
+  echo "<h2>ERROR al elimiar la enfermedad y organización</h2></br>";
 }
 
 ?>

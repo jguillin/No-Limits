@@ -40,7 +40,7 @@ class DiseaseOrgCollector extends Collector
   //Actualiza un usuario
   function updateDiseaseOrg($diseaseId,$soId){
     try {
-      $insertrow = self::$db->updateRow("UPDATE diseases_supporting_organizations SET disease_id=?, so_id=? WHERE disease_id= ?", array("{$diseaseId}","{$soId}"));
+      $insertrow = self::$db->updateRow("UPDATE diseases_supporting_organizations SET so_id=? WHERE disease_id= ?", array("{$soId}","{$diseaseId}"));
       return true;
     } catch (\Exception $e) {
       echo $e;

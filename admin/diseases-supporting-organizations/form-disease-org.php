@@ -54,7 +54,7 @@ if ($showForm){
     <form class='form' action="<?php echo $action; ?>" method="POST">
         <h1><?php echo $title; ?></h1>
         <?php
-          if ($title === 'Editar Organización'){
+          if ($title === 'Editar Organización' || $title === 'Nueva organización que apoya la enfermedad'){
             ?>
             <label>Disease Id</label>
         		<input class='form-TextBox' type="text" name="diseaseId" value="<?php echo $ObjDiseaseOrg->getDiseaseId(); ?>"/>
