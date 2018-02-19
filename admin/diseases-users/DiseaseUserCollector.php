@@ -9,6 +9,9 @@ class DiseaseUserCollector extends Collector
   function showDiseasesUsers($userId) {
     $rows = self::$db->getRows("SELECT * FROM diseases_users WHERE user_uid=?", array("{$userId}"));
 
+    //QUERY
+    // select u.user_id, u.username, du.disease_id, d.name from diseases_users AS du INNER JOIN users AS u ON du.user_uid = u.user_id INNER JOIN diseases AS d ON d.disease_id = du.disease_id
+
     $arrayDU= array();
     foreach ($rows as $c){
       $aux = new DiseaseUser($c{'user_uid'},$c{'disease_id'});
