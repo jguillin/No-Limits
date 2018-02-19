@@ -1,57 +1,38 @@
 <?php
-  session_start();
+  include_once('../../pages/adminHead.php');
   date_default_timezone_set('America/Guayaquil');
-?>
+  include_once("ArtComment.php");
+  $ObjArtComment = new ArtComment("","","","","","");
+  $title = 'Nuevo Comentario';
+  $action = '/admin/articles-comments/create-article-comments.php';
+  $showForm = true;
 
-<!doctype html>
-<html lang="es">
-<head>
-	<meta charset="utf-8">
-  <link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
-
-  <?php
-    include_once('../../pages/adminMenu.php');
-    include_once("ArtComment.php");
+  if (isset($_GET["commentId"]) && is_numeric($_GET["commentId"])){
+    //ID seteada
     $id = $_GET["commentId"];
-    $showForm = true;
-
-    if (empty($id)){
-      //ID Vacía
-      $ObjArtComment = new ArtComment("","","","","","");
-      $title = 'Nuevo Comentario';
-      $action = '/admin/articles-comments/create-article-comments.php';
-
-    }else {
-
-      //ID seteada
-      include_once("ArtCommentCollector.php");
-      $ArtCommentCollectorObj = new ArtCommentCollector();
-      $response = $ArtCommentCollectorObj->showArtComment($id);
-
-      if (!$response['found']){
-        //Artículo no encontrado
-        $showForm = false;
-
-      }else {
-        //Artículo encontrado
-        $ObjArtComment = $response['comment'];
-        $title = 'Editar Comentario';
-        $action = '/admin/articles-comments/update-article-comments.php';
-      }
-
+    include_once("ArtCommentCollector.php");
+    $ArtCommentCollectorObj = new ArtCommentCollector();
+    $response = $ArtCommentCollectorObj->showArtComment($id);
+    if ($response['found']){
+      //Comentario encontrado
+      $ObjArtComment = $response['comment'];
+      $title = 'Editar Comentario';
+      $action = '/admin/articles-comments/update-article-comments.php';
+    }else{
+      //Comentario no encontrado
+      $showForm = false;
+      $title = 'ERROR - Comentario no Encontrado';
     }
-
+  }
 
   if ($showForm){
 
   ?>
 
-  <title><?php echo $title; ?></title>
-
-  </head>
+      <title><?php echo $title; ?></title>
+    </head>
   <body>
   <section id="content">
-
     <div class="form-Container">
       <form class='form' action="<?php echo $action; ?>" method="POST">
           <h1><?php echo $title; ?></h1>
@@ -66,9 +47,9 @@
       		<label>Article ID</label>
       		<input class='form-TextBox' type="text" name="articleId" autofocus required value="<?php echo $ObjArtComment->getArticleId(); ?>"/>
       		<label>Usuario ID</label>
-      		<input class='form-TextBox' type="text" name="userId" value="<?php echo $ObjArtComment->getUserId(); ?>"/>
+      		<input class='form-TextBox' type="text" name="userId" required value="<?php echo $ObjArtComment->getUserId(); ?>"/>
       		<label>Contenido</label>
-      		<textarea class='form-TextBox' name="content" ><?php echo $ObjArtComment->getContent(); ?></textarea>
+      		<textarea class='form-TextBox' name="content" required maxlength="200"><?php echo $ObjArtComment->getContent(); ?></textarea>
       		<label>Comentario Superior ID</label>
       		<input class='form-TextBox' type="text" name="parentCommentId" value="<?php echo $ObjArtComment->getParentCommentId(); ?>"/>
           <label>Fecha-Hora del Post</label>
@@ -92,17 +73,17 @@
     </div>
 
   <?php }else{ ?>
-            <title>COMENTARIO NO ENCONTRADO</title>
 
-            </head>
-            <body>
-              <section id="content">
-                <h2>COMENTARIO NO ENCONTRADO</h2><br>
-                <a id='cancelButton' class='form-button' href='/admin/articles-comments'>Volver</a>
-          <?php
-          }
-        ?>
+        <title><?php echo $title; ?></title>
+      </head>
+      <body>
+        <section id="content">
+          <h2><?php echo $title; ?></h2><br>
+          <div><a id='cancelButton' class='form-button' href="/admin/articles-comments">Volver</a></div>
 
-      </section>
+    <?php } ?>
+
+        </section>
+      <?php include_once('../../pages/adminMenu.php'); ?>
       </body>
-      </html>
+    </html>

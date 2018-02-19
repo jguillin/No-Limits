@@ -10,9 +10,7 @@
 			$title = "Artículo con la ID: ".$id." se borró correctamente";
 		}
 	}
-
 ?>
-
 		<title><?php echo $title; ?></title>
 		</head>
 	<body>

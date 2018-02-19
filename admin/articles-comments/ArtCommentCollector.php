@@ -17,7 +17,7 @@ class ArtCommentCollector extends Collector
     return $arrayDemo;
   }
 
-  //Edita un usuario
+  //Edita un comentario
   function showArtComment($id){
     $ObjArtComment = (object)[];
     $response = ['found'=>false];
@@ -35,7 +35,7 @@ class ArtCommentCollector extends Collector
 
 }
 
-  //Actualiza un usuario
+  //Actualiza un comentario
   function updateArtComment($commentId, $articleId, $userId, $content, $parentCommentId, $postDateTime){
     try {
       $insertrow = self::$db->updateRow("UPDATE article_comments SET article_id=?, user_id=?, content=?, \"parentComment_id\"=?, post_datetime=? WHERE comment_id= ?", array("{$articleId}", "{$userId}", "{$content}", "{$parentCommentId}", "{$postDateTime}", "{$commentId}"));
@@ -46,7 +46,7 @@ class ArtCommentCollector extends Collector
     }
   }
 
-  //Elimina un usuario
+  //Elimina un comentario
   function deleteArtComment($id){
     try {
       $deleterow = self::$db->deleteRow("DELETE FROM article_comments WHERE comment_id= ?", array("{$id}"));
@@ -58,7 +58,7 @@ class ArtCommentCollector extends Collector
 
   }
 
-  //Crea un nuevo usuario
+  //Crea un nuevo comentario
   function createArtComment($articleId, $userId, $content, $parentCommentId, $postDateTime){
     try {
       $insertarrow = self::$db->insertRow("INSERT INTO article_comments (article_id, user_id, content, \"parentComment_id\", post_datetime) VALUES (?,?,?,?,?)", array ("{$articleId}", "{$userId}", "{$content}", "{$parentCommentId}", "{$postDateTime}"));

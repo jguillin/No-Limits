@@ -2,7 +2,7 @@
 	include_once('../../pages/adminHead.php');
 	$title = "ERROR al Eliminar Usuario";
 
-	if (!empty($_GET)){
+	if (isset($_GET["userId"]) && is_numeric($_GET["userId"])){
 		$id=$_GET["userId"];
 		include_once("UserCollector.php");
 		$UserCollectorObj = new UserCollector();
