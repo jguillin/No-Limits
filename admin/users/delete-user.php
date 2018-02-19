@@ -1,35 +1,26 @@
 <?php
-	session_start();
-?>
+	include_once('../../pages/adminHead.php');
+	$title = "ERROR al Eliminar Usuario";
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8">
-		<link rel="StyleSheet" href="/assets/css/admin.css" type="text/css">
-		<title>Eliminar Usuario</title>
-	</head>
-	<body>
-		<?php include_once('../../pages/adminMenu.php'); ?>
-		<section id="content">
+if (!empty($_GET)){
+	$id=$_GET["userId"];
 
-<?php
-$id=$_GET["userId"];
-
-
-include_once("UserCollector.php");
-$UserCollectorObj = new UserCollector();
-
-
-if ($UserCollectorObj->deleteUser($id)){
-	echo "<h2>Usuario con la ID: ".$id." se borró</h2></br>";
-}else {
-	echo "<h2>ERROR AL ELIMINAR EL USUARIO</h2></br>";
+	include_once("UserCollector.php");
+	$UserCollectorObj = new UserCollector();
+	if ($UserCollectorObj->deleteUser($id)){
+		echo "Usuario con la ID: ".$id." se borró correctamente";
+	}
 }
 
 ?>
 
-<div><a id='cancelButton' class='form-button' href="/admin/users/">Volver a Usuarios</a></div>
-</section>
-
-</body>
+		<title><?php echo $title; ?></title>
+		</head>
+	<body>
+		<section id="content">
+			<h2><?php echo $title; ?></h2></br>
+			<div><a id='cancelButton' class='form-button' href="/admin/users">Volver</a></div>
+		</section>
+		<?php include_once('../../pages/adminMenu.php'); ?>
+	</body>
 </html>

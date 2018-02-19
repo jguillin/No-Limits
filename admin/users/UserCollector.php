@@ -30,7 +30,7 @@ class UserCollector extends Collector
       }
       return $response;
     } catch (\Exception $e) {
-      echo $e;
+      // echo $e;
     }
 
 }
@@ -84,12 +84,10 @@ class UserCollector extends Collector
       $insertarrow = self::$db->insertRow("INSERT INTO users (username, \"password\", \"name\", lastname, birthdate, email, sex, role) VALUES (?,md5(?),?,?,?,?,?,?)", array ("{$username}","{$password}","{$name}","{$lastname}","{$birthdate}","{$email}","{$sex}","{$role}"));
       return true;
     } catch (\Exception $e) {
-      echo $e;
+      // echo $e;
       return false;
     }
-
   }
 
 }
-
 ?>
