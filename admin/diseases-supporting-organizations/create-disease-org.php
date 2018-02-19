@@ -14,7 +14,7 @@
 
 <?php
 
-  $diseaseId = 1;
+  $diseaseId = $_POST["diseaseId"];
   $soId= $_POST["soId"];
  
 

@@ -22,11 +22,11 @@ class DiseaseOrgCollector extends Collector
     $ObjDiseaseOrg = (object)[];
     $response = ['found'=>false];
     try {
-      $row = self::$db->getRows("SELECT * FROM diseases_supporting_organizations where disease_id= ? ", array("{$id}"));
+      $row = self::$db->getRows("SELECT * FROM diseases_supporting_organizations where disease_id= ?", array("{$id}"));
       if (!empty($row)){
-        $ObjDiseaseOrj = new DiseaseOrg($row[0]{'disease_id'},$row[0]{'so_Id'});
+        $ObjDiseaseOrg = new DiseaseOrg($row[0]{'disease_id'},$row[0]{'so_id'});
         $response['found'] = true;
-        $response['user'] = $ObjDiseaseOrj;
+        $response['user'] = $ObjDiseaseOrg;
       }
       return $response;
     } catch (\Exception $e) {
@@ -40,7 +40,7 @@ class DiseaseOrgCollector extends Collector
   //Actualiza un usuario
   function updateDiseaseOrg($diseaseId,$soId){
     try {
-      $insertrow = self::$db->updateRow("UPDATE diseases_supporting_organizations SET so_Id=? WHERE disease_id= ?", array("{$soId}","{$diseaseId}"));
+      $insertrow = self::$db->updateRow("UPDATE diseases_supporting_organizations SET disease_id=?, so_id=? WHERE disease_id= ?", array("{$diseaseId}","{$soId}"));
       return true;
     } catch (\Exception $e) {
       echo $e;
@@ -66,7 +66,7 @@ class DiseaseOrgCollector extends Collector
   //Crea un nuevo usuario
   function createDiseaseOrg($diseaseId,$soId){
     try {
-      $insertarrow = self::$db->insertRow("INSERT INTO diseases_supporting_organizations (disease_id, so_id) VALUES (?)", array ("{$diseaseId}", "{$soId}"));
+      $insertarrow = self::$db->insertRow("INSERT INTO diseases_supporting_organizations (disease_id, so_id) VALUES (?,?)", array ("{$diseaseId}", "{$soId}"));
       return true;
     } catch (\Exception $e) {
       echo $e;

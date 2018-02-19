@@ -14,7 +14,6 @@
 
 <?php
 
-  $diseaseId= $_POST["diseaseId"];
   $name = $_POST["name"];
   $synonym= $_POST["synonym"];
   $description= $_POST["description"];
@@ -32,8 +31,8 @@ include_once("DiseasesCollector.php");
 
 $DiseaseCollectorObj = new DiseaseCollector();
 
-if ($DiseaseCollectorObj->createDisease($diseaseId, $name, $synonym, $description, $symtomp, $causes, $population, $disorder, $diagnosis, $treatment, $terhapy, $subdivision)){
-  echo "<h2>La eNfermedad ". $name ." se ha creado correctamente</h2></br>";
+if ($DiseaseCollectorObj->createDisease($name, $synonym, $description, $symtomp, $causes, $population, $disorder, $diagnosis, $treatment, $terhapy, $subdivision)){
+  echo "<h2>La enfermedad ". $name ." se ha creado correctamente</h2></br>";
 }else {
   echo "<h2>ERROR al crear enfermedad</h2></br>";
 }

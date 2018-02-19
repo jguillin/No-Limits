@@ -23,7 +23,7 @@
 
 ?>
   <section id="content">
-    <h1>Sorg</h1>
+    <h1>Organizaciones</h1>
     <br>
       <a class='CRUD-button insert' href='/admin/supporting-organizations/form-so.php?soId='>
         <img src='/assets/img/icons/new_icon.png'>

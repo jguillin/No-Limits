@@ -18,7 +18,7 @@
 
 ?>
   <section id="content">
-    <h1>Organizaciones</h1>
+    <h1>Organizaciones que apoyan la enfermedad</h1>
     <br>
       <a class='CRUD-button insert' href='/admin/diseases-supporting-organizations/form-disease-org.php?diseaseId='>
         <img src='/assets/img/icons/new_icon.png'>

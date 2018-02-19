@@ -17,7 +17,7 @@
   if (empty($id)){
     //ID Vacía
     $ObjSorg = new Sorg("","","","","","");
-    $title = 'Nuevo supporting-organizations';
+    $title = 'Crear Nueva Organización';
     $action = '/admin/supporting-organizations/create-so.php';
 
   }else {
@@ -34,7 +34,7 @@
     }else {
       //Usuario encontrado
       $ObjSorg = $response['sorg'];
-      $title = 'Editar supporting-organizations';
+      $title = 'Editar Organización';
       $action = '/admin/supporting-organizations/update-so.php';
     }
 
@@ -55,7 +55,7 @@ if ($showForm){
     <form class='form' action="<?php echo $action; ?>" method="POST">
         <h1><?php echo $title; ?></h1>
         <?php
-          if ($title === 'Editar supporting-organizations'){
+          if ($title === 'Editar Organización'){
             ?>
             <label>SoId</label>
         		<input class='form-TextBox' type="text" name="soId" readonly value="<?php echo $ObjSorg->getSoId(); ?>"/>
